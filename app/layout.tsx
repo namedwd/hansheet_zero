@@ -82,8 +82,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Google Search Console 등록 후 발급받은 코드를 여기에 입력하세요
-    // google: "여기에-구글-인증-코드",
+    google: "TxP6lqDsuskNqy3mznQc4J17LQDEyGfXCLsUekyA0Ik",
   },
 };
 

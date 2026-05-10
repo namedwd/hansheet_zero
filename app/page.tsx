@@ -9,10 +9,10 @@ import {
 export const metadata: Metadata = {
   title: {
     absolute:
-      "포장영상 자동 촬영 서비스 - 택배 클레임 분쟁을 한 번에 해결 | 제로패킹",
+      "한시트 - 포장영상 자동 촬영으로 택배 클레임을 한 번에 해결",
   },
   description:
-    "포장영상이란 택배 출고 시점의 포장 과정을 촬영한 동영상입니다. 제로패킹은 포장영상을 자동으로 촬영하고 운송장 번호로 즉시 검색하여, 파손·오배송·분실 클레임을 영상 한 편으로 해결합니다. 월 30,000원, 15일 무료체험.",
+    "포장영상이란 택배 출고 시점의 포장 과정을 촬영한 동영상입니다. 한시트가 추천하는 제로패킹은 포장영상을 자동 촬영하고 운송장 번호로 즉시 검색하여, 파손·오배송·분실 클레임을 영상 한 편으로 해결합니다. 월 30,000원, 15일 무료체험.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "포장영상 자동 촬영 서비스 - 클레임 분쟁 해결 | 제로패킹",
@@ -56,12 +56,12 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}#organization`,
-      name: "제로패킹",
-      alternateName: "Zeropacking",
+      name: "한시트",
+      alternateName: ["Hansheet", "제로패킹"],
       url: SITE_URL,
       logo: `${SITE_URL}/logo.png`,
       description:
-        "택배 포장영상을 자동으로 촬영하고 클라우드에 보관하여 클레임 분쟁을 해결하는 SaaS 솔루션.",
+        "포장영상으로 택배 클레임을 줄이는 셀러를 위한 가이드 사이트. 운영사 제로패킹의 포장영상 자동 촬영 SaaS를 안내합니다.",
       contactPoint: {
         "@type": "ContactPoint",
         email: "contact@zeropacking.com",
@@ -74,7 +74,8 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${SITE_URL}#website`,
       url: SITE_URL,
-      name: "제로패킹 포장영상",
+      name: "한시트",
+      alternateName: "한시트 포장영상 가이드",
       inLanguage: "ko-KR",
       publisher: { "@id": `${SITE_URL}#organization` },
     },
@@ -144,7 +145,7 @@ export default function Home() {
         <main className="mx-auto w-full max-w-3xl flex-1 bg-white px-6 py-16 dark:bg-black sm:px-10 sm:py-24">
           <header className="mb-14">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-zinc-500">
-              제로패킹 · 택배 영상 솔루션
+              한시트 · 포장영상 가이드 사이트
             </p>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50 sm:text-5xl">
               포장영상 자동 촬영으로
@@ -153,9 +154,10 @@ export default function Home() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-700 dark:text-zinc-300">
               포장영상은 택배 출고 시점의 포장 과정을 그대로 담은 동영상입니다.
-              제로패킹은 모든 포장영상을 자동으로 촬영하고 클라우드에 안전하게
-              보관하여, 운송장 번호 한 번으로 해당 포장영상을 즉시 찾아 보여
-              드립니다. 더 이상 파손·오배송·누락 분쟁에 시간을 빼앗기지 마세요.
+              한시트가 추천하는 제로패킹은 모든 포장영상을 자동 촬영하고
+              클라우드에 안전하게 보관하여, 운송장 번호 한 번으로 해당 포장영상을
+              즉시 찾아 보여 드립니다. 더 이상 파손·오배송·누락 분쟁에 시간을
+              빼앗기지 마세요.
             </p>
 
             <figure className="mt-8 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">

@@ -2,8 +2,8 @@ import Link from "next/link";
 import { SERVICE_URL } from "../site";
 
 const NAV_LINKS = [
+  { href: "/compare", label: "업체 비교" },
   { href: "/vs-cctv", label: "CCTV 비교" },
-  { href: "/guide", label: "도입 가이드" },
   { href: "/cases", label: "도입 사례" },
   { href: "/claim", label: "클레임 해결" },
   { href: "/pricing", label: "요금" },
@@ -18,7 +18,7 @@ export function Nav() {
     >
       <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-6 py-3 sm:px-10">
         <Link href="/" className="text-base font-bold text-black dark:text-white">
-          제로패킹 <span className="font-medium text-zinc-500">포장영상</span>
+          한시트 <span className="font-medium text-zinc-500">포장영상</span>
         </Link>
 
         {/* 데스크탑 메뉴 */}
@@ -115,6 +115,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li><Link href="/" className="hover:text-black dark:hover:text-white">포장영상이란?</Link></li>
+              <li><Link href="/compare" className="hover:text-black dark:hover:text-white">업체 비교</Link></li>
               <li><Link href="/vs-cctv" className="hover:text-black dark:hover:text-white">포장영상 vs CCTV</Link></li>
               <li><Link href="/guide" className="hover:text-black dark:hover:text-white">도입 가이드</Link></li>
               <li><Link href="/cases" className="hover:text-black dark:hover:text-white">도입 사례</Link></li>
@@ -134,10 +135,10 @@ export function Footer() {
           </div>
           <div>
             <h3 className="mb-3 text-xs font-bold uppercase tracking-widest text-zinc-500">
-              제로패킹
+              한시트
             </h3>
             <ul className="space-y-2">
-              <li><a href={SERVICE_URL} className="hover:text-black dark:hover:text-white">본 서비스 사이트</a></li>
+              <li><a href={SERVICE_URL} className="hover:text-black dark:hover:text-white">제로패킹 서비스</a></li>
               <li>
                 <a href="mailto:contact@zeropacking.com" className="hover:text-black dark:hover:text-white">
                   contact@zeropacking.com
@@ -149,17 +150,16 @@ export function Footer() {
 
         <div className="mt-8 border-t border-zinc-200 pt-6 text-xs text-zinc-500 dark:border-zinc-800">
           <address className="not-italic">
-            <p className="font-semibold text-zinc-700 dark:text-zinc-300">제로패킹</p>
+            <p className="font-semibold text-zinc-700 dark:text-zinc-300">한시트 (운영: 제로패킹)</p>
             <p className="mt-1">대표자: 이완동 · 사업자등록번호: 564-44-01128</p>
             <p>통신판매업신고: 2026-서울강북-0102</p>
             <p className="mt-1">이메일: contact@zeropacking.com · 운영시간: 평일 09:00~18:00 (점심시간 제외)</p>
           </address>
           <p className="mt-4">
-            © {new Date().getFullYear()} 제로패킹 · 택배 포장영상 자동 촬영 및
-            클라우드 보관 서비스. 본 사이트는 포장영상 정보 제공용 페이지이며,
-            서비스 이용은{" "}
+            © {new Date().getFullYear()} 한시트 · 택배 포장영상 자동 촬영
+            가이드 사이트. 실제 서비스 이용은{" "}
             <a href={SERVICE_URL} className="underline hover:text-black dark:hover:text-white">
-              zeropacking.com
+              제로패킹 (zeropacking.com)
             </a>
             에서 가능합니다.
           </p>

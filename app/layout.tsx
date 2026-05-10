@@ -21,13 +21,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "포장영상 자동 촬영 서비스 | 제로패킹 - 택배 클레임 분쟁 해결",
-    template: "%s | 제로패킹 포장영상",
+    default: "한시트 - 포장영상 자동 촬영 가이드 | 택배 클레임 해결",
+    template: "%s | 한시트 포장영상",
   },
   description:
-    "포장영상을 자동으로 촬영하고 클라우드에 보관합니다. 운송장 번호로 즉시 검색되는 택배 포장영상으로 클레임 분쟁을 한 번에 해결하세요. 월 30,000원, 15일 무료체험.",
+    "한시트는 포장영상으로 택배 클레임을 줄이는 셀러를 위한 가이드 사이트입니다. 포장영상 자동 촬영, 클라우드 보관, 운송장 번호 즉시 검색으로 분쟁을 종결하는 방법을 정리했습니다.",
   keywords: [
     "포장영상",
+    "한시트",
+    "hansheet",
     "택배 포장영상",
     "포장 영상 자동 촬영",
     "포장영상 클라우드",
@@ -36,12 +38,11 @@ export const metadata: Metadata = {
     "택배 분쟁 해결",
     "포장 동영상",
     "제로패킹",
-    "zeropacking",
   ],
-  authors: [{ name: "제로패킹" }],
-  creator: "제로패킹",
-  publisher: "제로패킹",
-  applicationName: "제로패킹 포장영상",
+  authors: [{ name: "한시트" }],
+  creator: "한시트",
+  publisher: "한시트",
+  applicationName: "한시트",
   category: "물류 솔루션",
   alternates: {
     canonical: "/",
@@ -50,24 +51,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     url: SITE_URL,
-    siteName: "제로패킹 포장영상",
-    title: "포장영상 자동 촬영 서비스 | 제로패킹",
+    siteName: "한시트",
+    title: "한시트 - 포장영상 자동 촬영 가이드",
     description:
-      "택배 포장영상을 자동으로 촬영·보관하여 운송장 번호로 즉시 검색합니다. 클레임 분쟁을 영상 한 편으로 해결하세요.",
+      "택배 포장영상을 자동 촬영·보관하여 운송장 번호로 즉시 검색합니다. 클레임 분쟁을 영상 한 편으로 종결하세요.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "제로패킹 포장영상 - 택배 포장 자동 촬영 클라우드 서비스",
+        alt: "한시트 - 포장영상 자동 촬영 가이드 사이트",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "포장영상 자동 촬영 서비스 | 제로패킹",
+    title: "한시트 - 포장영상 자동 촬영 가이드",
     description:
-      "택배 포장영상을 자동으로 촬영·보관하여 운송장 번호로 즉시 검색합니다.",
+      "택배 포장영상을 자동 촬영·보관하여 운송장 번호로 즉시 검색합니다.",
     images: ["/og-image.png"],
   },
   robots: {

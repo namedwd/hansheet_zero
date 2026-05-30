@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { SITE_URL, SERVICE_URL, INQUIRY_URL } from "./site";
+import { SITE_URL, SERVICE_URL } from "./site";
 import {
   HeroIllustration,
   StepIllustration,
   ImagePlaceholder,
 } from "./components/Illustrations";
+import { ConversionCTA } from "./components/ConversionCTA";
 
 export const metadata: Metadata = {
   title: {
@@ -340,31 +341,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800 sm:p-10">
-            <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50 sm:text-3xl">
-              지금 포장영상 도입을 시작하세요
-            </h2>
-            <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-              15일 무료체험으로 포장영상이 클레임 분쟁을 어떻게 줄여 주는지
-              직접 확인해 보세요. 카드 등록 없이 바로 시작할 수 있습니다.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={`${SERVICE_URL}/checkout`}
-                className="flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-              >
-                15일 무료체험 시작
-              </a>
-              <a
-                href={INQUIRY_URL}
-                target="_blank"
-                rel="noopener"
-                className="flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"
-              >
-                도입 문의하기
-              </a>
-            </div>
-          </section>
+          <ConversionCTA title="지금 포장영상 도입을 시작하세요" />
         </main>
       </div>
     </>

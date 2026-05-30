@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL, SERVICE_URL } from "../site";
 import { JsonLd, buildBreadcrumb } from "../components/JsonLd";
+import { ConversionCTA } from "../components/ConversionCTA";
 
 const PATH = "/pricing";
 
@@ -232,20 +233,7 @@ export default function PricingPage() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            카드 없이 15일 무료체험
-          </h2>
-          <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-            결제 정보 등록 없이 포장영상의 모든 기능을 체험할 수 있습니다.
-          </p>
-          <a
-            href={`${SERVICE_URL}/checkout`}
-            className="mt-5 inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-          >
-            지금 무료로 시작하기
-          </a>
-        </section>
+        <ConversionCTA title="요금이 확인됐다면, 도입은 이렇게 진행됩니다" />
       </main>
     </>
   );

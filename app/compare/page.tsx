@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../site";
+import { SITE_URL } from "../site";
 import { ImagePlaceholder } from "../components/Illustrations";
 import { JsonLd, buildBreadcrumb, buildArticle } from "../components/JsonLd";
+import { ConversionCTA } from "../components/ConversionCTA";
 
 const PATH = "/compare";
 
@@ -415,29 +416,7 @@ export default function ComparePage() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            제로패킹을 무료로 먼저 써보세요
-          </h2>
-          <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-            카드 등록 없이 15일 무료체험으로 포장영상이 우리 사업장에 어떤 효과를
-            가져오는지 직접 확인할 수 있습니다.
-          </p>
-          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`${SERVICE_URL}/checkout`}
-              className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-            >
-              제로패킹 무료체험 시작
-            </a>
-            <Link
-              href="/pricing"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"
-            >
-              요금 자세히 보기
-            </Link>
-          </div>
-        </section>
+        <ConversionCTA title="비교를 마쳤다면, 제로패킹으로 시작하세요" />
 
         <nav aria-label="관련 글" className="mt-14 grid gap-3 sm:grid-cols-2">
           <Link href="/vs-cctv" className="rounded-2xl border border-zinc-200 p-5 hover:border-black dark:border-zinc-800 dark:hover:border-white">

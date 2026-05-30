@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../site";
+import { SITE_URL } from "../site";
 import { ImagePlaceholder } from "../components/Illustrations";
 import { JsonLd, buildBreadcrumb, buildArticle } from "../components/JsonLd";
+import { ConversionCTA } from "../components/ConversionCTA";
 
 const PATH = "/claim";
 
@@ -229,21 +230,7 @@ export default function ClaimPage() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            오늘부터 클레임 부담을 줄이세요
-          </h2>
-          <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-            포장영상 15일 무료체험으로 다음 클레임부터 영상 한 편으로 종결해
-            보세요.
-          </p>
-          <a
-            href={`${SERVICE_URL}/checkout`}
-            className="mt-5 inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-          >
-            무료체험 시작
-          </a>
-        </section>
+        <ConversionCTA title="오늘부터 클레임 부담을 줄이세요" />
 
         <nav aria-label="관련 글" className="mt-14 grid gap-3 sm:grid-cols-2">
           <Link href="/vs-cctv" className="rounded-2xl border border-zinc-200 p-5 hover:border-black dark:border-zinc-800 dark:hover:border-white">

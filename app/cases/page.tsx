@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL, INQUIRY_URL } from "../site";
+import { SITE_URL } from "../site";
 import { ImagePlaceholder } from "../components/Illustrations";
 import { JsonLd, buildBreadcrumb } from "../components/JsonLd";
+import { ConversionCTA } from "../components/ConversionCTA";
 
 const PATH = "/cases";
 
@@ -266,31 +267,7 @@ export default function CasesPage() {
           </figure>
         </section>
 
-        <section className="mt-14 rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            우리 사업장에서도 같은 효과가 날까요?
-          </h2>
-          <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-            15일 무료체험으로 직접 확인해 보세요. 카드 등록 없이 시작 가능하며,
-            대부분의 셀러가 첫 주 안에 첫 클레임 종결 효과를 경험합니다.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={`${SERVICE_URL}/checkout`}
-              className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-            >
-              무료체험 시작
-            </a>
-            <a
-              href={INQUIRY_URL}
-              target="_blank"
-              rel="noopener"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"
-            >
-              도입 문의하기
-            </a>
-          </div>
-        </section>
+        <ConversionCTA title="우리 사업장에서도 같은 효과가 날까요?" />
 
         <nav aria-label="관련 글" className="mt-14 grid gap-3 sm:grid-cols-2">
           <Link href="/blog/claim-cost-simulation" className="rounded-2xl border border-zinc-200 p-5 hover:border-black dark:border-zinc-800 dark:hover:border-white">

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL, INQUIRY_URL } from "../site";
+import { SITE_URL } from "../site";
 import { ImagePlaceholder } from "../components/Illustrations";
 import { JsonLd, buildBreadcrumb, buildArticle } from "../components/JsonLd";
+import { ConversionCTA } from "../components/ConversionCTA";
 
 const PATH = "/api";
 
@@ -202,22 +203,7 @@ export default function ApiPage() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            연동 컨설팅이 필요하신가요?
-          </h2>
-          <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-            기존 시스템에 맞는 포장영상 연동 방안을 1:1로 안내드립니다.
-          </p>
-          <a
-            href={INQUIRY_URL}
-            target="_blank"
-            rel="noopener"
-            className="mt-5 inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-          >
-            연동 문의하기
-          </a>
-        </section>
+        <ConversionCTA title="기존 시스템 연동, 1:1로 안내드립니다" description="카페24·고도몰·자체 WMS 등 어떤 시스템과도 연동됩니다. 도입 문의를 남기면 우리 시스템에 맞는 연동 방안을 안내받을 수 있습니다." />
 
         <nav aria-label="관련 글" className="mt-14 grid gap-3 sm:grid-cols-2">
           <Link href="/guide" className="rounded-2xl border border-zinc-200 p-5 hover:border-black dark:border-zinc-800 dark:hover:border-white">

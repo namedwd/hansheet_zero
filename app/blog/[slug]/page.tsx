@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { POSTS, type Section } from "../posts";
-import { SITE_URL, SERVICE_URL } from "../../site";
+import { SITE_URL } from "../../site";
 import { JsonLd, buildBreadcrumb, buildArticle } from "../../components/JsonLd";
+import { ConversionCTA } from "../../components/ConversionCTA";
 
 export async function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
@@ -208,20 +209,7 @@ export default async function PostPage({
           </div>
         </article>
 
-        <section className="mt-16 rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-xl font-semibold text-black dark:text-zinc-50">
-            포장영상 15일 무료체험
-          </h2>
-          <p className="mt-2 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-            카드 등록 없이 포장영상의 모든 기능을 체험해 보세요.
-          </p>
-          <a
-            href={`${SERVICE_URL}/checkout`}
-            className="mt-4 inline-flex h-11 items-center justify-center rounded-full bg-black px-6 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-          >
-            무료체험 시작
-          </a>
-        </section>
+        <ConversionCTA />
 
         {related.length > 0 && (
           <nav aria-label="관련 글" className="mt-12">

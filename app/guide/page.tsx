@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../site";
+import { SITE_URL } from "../site";
 import { ImagePlaceholder } from "../components/Illustrations";
 import { JsonLd, buildBreadcrumb, buildArticle } from "../components/JsonLd";
+import { ConversionCTA } from "../components/ConversionCTA";
 
 const PATH = "/guide";
 
@@ -337,21 +338,7 @@ export default function GuidePage() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            오늘 바로 포장영상을 시작하세요
-          </h2>
-          <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-            15일 무료체험으로 카메라 설치 안내부터 클레임 응대까지 직접 경험해
-            보세요.
-          </p>
-          <a
-            href={`${SERVICE_URL}/checkout`}
-            className="mt-5 inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-          >
-            포장영상 무료체험 신청
-          </a>
-        </section>
+        <ConversionCTA title="가이드를 봤다면, 오늘 바로 시작할 수 있습니다" />
 
         <nav aria-label="관련 글" className="mt-14 grid gap-3 sm:grid-cols-2">
           <Link href="/api" className="rounded-2xl border border-zinc-200 p-5 hover:border-black dark:border-zinc-800 dark:hover:border-white">

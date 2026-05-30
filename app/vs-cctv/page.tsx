@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../site";
+import { SITE_URL } from "../site";
 import { ComparisonChart, ImagePlaceholder } from "../components/Illustrations";
 import { JsonLd, buildBreadcrumb, buildArticle } from "../components/JsonLd";
+import { ConversionCTA } from "../components/ConversionCTA";
 
 const PATH = "/vs-cctv";
 
@@ -238,21 +239,7 @@ export default function VsCCTVPage() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            CCTV로 부족하다면, 포장영상을 시작하세요
-          </h2>
-          <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-            15일 무료체험으로 우리 사업장에 포장영상이 얼마나 효과적인지 직접 확인해
-            보세요.
-          </p>
-          <a
-            href={`${SERVICE_URL}/checkout`}
-            className="mt-5 inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-          >
-            포장영상 무료체험 시작
-          </a>
-        </section>
+        <ConversionCTA title="CCTV로 부족하다면, 포장영상을 시작하세요" />
 
         <nav aria-label="관련 글" className="mt-14 grid gap-3 sm:grid-cols-2">
           <Link href="/guide" className="rounded-2xl border border-zinc-200 p-5 hover:border-black dark:border-zinc-800 dark:hover:border-white">

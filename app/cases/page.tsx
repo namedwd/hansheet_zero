@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../site";
+import { SITE_URL, SERVICE_URL, INQUIRY_URL } from "../site";
 import { ImagePlaceholder } from "../components/Illustrations";
 import { JsonLd, buildBreadcrumb } from "../components/JsonLd";
 
@@ -282,10 +282,12 @@ export default function CasesPage() {
               무료체험 시작
             </a>
             <a
-              href="mailto:contact@zeropacking.com"
+              href={INQUIRY_URL}
+              target="_blank"
+              rel="noopener"
               className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"
             >
-              상담 문의
+              도입 문의하기
             </a>
           </div>
         </section>

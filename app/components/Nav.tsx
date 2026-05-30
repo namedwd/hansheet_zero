@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SERVICE_URL } from "../site";
+import { SERVICE_URL, INQUIRY_URL } from "../site";
 
 const NAV_LINKS = [
   { href: "/compare", label: "업체 비교" },
@@ -138,6 +138,11 @@ export function Footer() {
               한시트
             </h3>
             <ul className="space-y-2">
+              <li>
+                <a href={INQUIRY_URL} target="_blank" rel="noopener" className="hover:text-black dark:hover:text-white">
+                  도입 문의하기
+                </a>
+              </li>
               <li><a href={SERVICE_URL} className="hover:text-black dark:hover:text-white">제로패킹 서비스</a></li>
               <li>
                 <a href="mailto:contact@zeropacking.com" className="hover:text-black dark:hover:text-white">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../site";
+import { SITE_URL, SERVICE_URL, INQUIRY_URL } from "../site";
 import { ImagePlaceholder } from "../components/Illustrations";
 import { JsonLd, buildBreadcrumb, buildArticle } from "../components/JsonLd";
 
@@ -210,10 +210,12 @@ export default function ApiPage() {
             기존 시스템에 맞는 포장영상 연동 방안을 1:1로 안내드립니다.
           </p>
           <a
-            href="mailto:contact@zeropacking.com"
+            href={INQUIRY_URL}
+            target="_blank"
+            rel="noopener"
             className="mt-5 inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
           >
-            연동 문의: contact@zeropacking.com
+            연동 문의하기
           </a>
         </section>
 

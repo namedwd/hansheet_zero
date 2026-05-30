@@ -5,3 +5,6 @@ export const SITE_URL =
 
 // 본 서비스(제로패킹) URL — CTA 링크가 향하는 곳. 마이크로사이트와 분리됩니다.
 export const SERVICE_URL = "https://zeropacking.com";
+
+// 도입 문의 링크 — 이 사이트를 본 업체가 도입 문의를 남기는 곳.
+export const INQUIRY_URL = "https://www.zeropacking.com/#inquiry";

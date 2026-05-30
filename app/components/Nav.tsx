@@ -22,7 +22,7 @@ export function Nav() {
         </Link>
 
         {/* 데스크탑 메뉴 */}
-        <ul className="hidden items-center gap-5 text-sm sm:flex">
+        <ul className="hidden items-center gap-4 text-sm lg:flex">
           {NAV_LINKS.map((l) => (
             <li key={l.href}>
               <Link
@@ -36,15 +36,25 @@ export function Nav() {
           <li>
             <a
               href={`${SERVICE_URL}/checkout`}
-              className="inline-flex h-9 items-center justify-center rounded-full bg-black px-4 text-xs font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+              className="inline-flex h-9 items-center justify-center rounded-full border border-zinc-300 px-4 text-xs font-medium text-black hover:bg-zinc-100 dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-900"
             >
               무료체험
             </a>
           </li>
+          <li>
+            <a
+              href={INQUIRY_URL}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex h-9 items-center justify-center rounded-full bg-black px-4 text-xs font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+            >
+              도입 문의
+            </a>
+          </li>
         </ul>
 
-        {/* 모바일 햄버거 메뉴 (zero-JS, <details>) */}
-        <details className="group relative sm:hidden">
+        {/* 모바일·태블릿 햄버거 메뉴 (zero-JS, <details>) */}
+        <details className="group relative lg:hidden">
           <summary
             className="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-md text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900"
             aria-label="메뉴 열기"
@@ -89,12 +99,22 @@ export function Nav() {
                 </Link>
               </li>
             ))}
-            <li className="mt-1 border-t border-zinc-200 pt-1 dark:border-zinc-800">
+            <li className="mt-1 border-t border-zinc-200 pt-2 dark:border-zinc-800">
               <a
-                href={`${SERVICE_URL}/checkout`}
+                href={INQUIRY_URL}
+                target="_blank"
+                rel="noopener"
                 className="block rounded-lg bg-black px-3 py-2 text-center text-sm font-medium text-white dark:bg-white dark:text-black"
               >
-                무료체험 시작
+                도입 문의하기
+              </a>
+            </li>
+            <li className="mt-2">
+              <a
+                href={`${SERVICE_URL}/checkout`}
+                className="block rounded-lg border border-zinc-300 px-3 py-2 text-center text-sm font-medium text-black dark:border-zinc-700 dark:text-white"
+              >
+                15일 무료체험
               </a>
             </li>
           </ul>

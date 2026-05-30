@@ -73,24 +73,14 @@ export default function PricingPage() {
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "Product",
+          "@type": "Service",
+          serviceType: "포장영상 자동 촬영 및 클라우드 보관 서비스",
           name: "제로패킹 포장영상",
           description:
-            "택배 포장영상을 자동 촬영하고 클라우드에 보관하는 SaaS 서비스. 운송장 번호로 즉시 검색.",
-          brand: { "@type": "Brand", name: "제로패킹" },
-          offers: {
-            "@type": "Offer",
-            price: "30000",
-            priceCurrency: "KRW",
-            priceSpecification: {
-              "@type": "UnitPriceSpecification",
-              price: "30000",
-              priceCurrency: "KRW",
-              unitText: "포장대 1개 / 월",
-            },
-            availability: "https://schema.org/InStock",
-            url: `${SERVICE_URL}/checkout`,
-          },
+            "택배 포장영상을 자동 촬영하고 클라우드에 보관하는 SaaS 서비스. 운송장 번호로 즉시 검색. 포장대 1개당 월 30,000원(부가세 별도).",
+          provider: { "@type": "Organization", name: "제로패킹", url: SERVICE_URL },
+          areaServed: "KR",
+          url: `${SERVICE_URL}/checkout`,
         }}
       />
       <JsonLd

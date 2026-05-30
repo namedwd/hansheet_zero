@@ -86,21 +86,9 @@ const jsonLd = {
       name: "제로패킹 포장영상",
       provider: { "@id": `${SITE_URL}#organization` },
       areaServed: "KR",
+      url: `${SERVICE_URL}/pricing`,
       description:
-        "포장영상을 자동 촬영하고 운송장 번호로 즉시 검색할 수 있도록 클라우드에 보관합니다. 택배 클레임·분쟁 해결을 위한 영상 증거 솔루션입니다.",
-      offers: {
-        "@type": "Offer",
-        price: "30000",
-        priceCurrency: "KRW",
-        priceSpecification: {
-          "@type": "UnitPriceSpecification",
-          price: "30000",
-          priceCurrency: "KRW",
-          unitText: "포장대 1개 / 월",
-        },
-        availability: "https://schema.org/InStock",
-        url: `${SERVICE_URL}/pricing`,
-      },
+        "포장영상을 자동 촬영하고 운송장 번호로 즉시 검색할 수 있도록 클라우드에 보관합니다. 택배 클레임·분쟁 해결을 위한 영상 증거 솔루션입니다. 포장대 1개당 월 30,000원.",
     },
     {
       "@type": "FAQPage",

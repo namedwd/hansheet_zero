@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SITE_URL } from "../site";
-import { ImagePlaceholder } from "../components/Illustrations";
 import { JsonLd, buildBreadcrumb, buildArticle } from "../components/JsonLd";
 import { ConversionCTA } from "../components/ConversionCTA";
 
@@ -216,12 +216,17 @@ export default function GuidePage() {
 
         <section className="mb-12">
           <figure>
-            <ImagePlaceholder
-              label="포장대 + 카메라 설치 예시 사진"
-              ratio="16/9"
+            <Image
+              src="/packing-video-hero.webp"
+              alt="포장대 카메라가 택배 상품의 실제 포장 과정을 촬영하고 있는 모습"
+              width={1672}
+              height={941}
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="h-auto w-full rounded-2xl border border-zinc-200 dark:border-zinc-800"
             />
             <figcaption className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-              실제 포장대 카메라 설치 사례 (실사 사진 추가 예정)
+              실제 포장 과정을 자동 촬영 중인 모습 — 바코드 스캔과 동시에 포장영상 녹화가 시작됩니다.
             </figcaption>
           </figure>
         </section>

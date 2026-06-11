@@ -3,6 +3,7 @@ import { Geist_Mono, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "./site";
 import { Nav, Footer } from "./components/Nav";
+import { InquiryBar } from "./components/InquiryBar";
 
 // 한국어 본문 폰트 — Noto Sans KR
 // 한국어 가독성과 검색엔진 친화도를 위해 라틴+한글 모두 지원하는 폰트로 통일.
@@ -105,6 +106,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Nav />
+        <InquiryBar />
         <div className="flex-1">{children}</div>
         <Footer />
       </body>

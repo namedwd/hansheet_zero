@@ -218,7 +218,7 @@ export default function GuidePage() {
           <figure>
             <Image
               src="/packing-video-hero.webp"
-              alt="포장대 카메라가 택배 상품의 실제 포장 과정을 촬영하고 있는 모습"
+              alt="포장대 카메라가 택배 상품의 포장 과정을 촬영하는 모습을 표현한 예시 이미지"
               width={1672}
               height={941}
               priority
@@ -226,7 +226,7 @@ export default function GuidePage() {
               className="h-auto w-full rounded-2xl border border-zinc-200 dark:border-zinc-800"
             />
             <figcaption className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-              실제 포장 과정을 자동 촬영 중인 모습 — 바코드 스캔과 동시에 포장영상 녹화가 시작됩니다.
+              예시 이미지 — 바코드 스캔과 동시에 포장영상 녹화가 시작되는 모습을 표현한 것입니다.
             </figcaption>
           </figure>
         </section>

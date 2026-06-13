@@ -123,7 +123,7 @@ export function Nav() {
   return (
     <nav
       aria-label={locale === "ko" ? "주요 메뉴" : "Main menu"}
-      className="sticky top-0 z-10 border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-black/80"
+      className="border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-black/80"
     >
       <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-6 py-3 sm:px-10">
         <Link

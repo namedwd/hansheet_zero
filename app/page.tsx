@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SITE_URL, SERVICE_URL } from "./site";
 import {
   HeroIllustration,
@@ -294,12 +295,12 @@ export default function Home() {
             {/* TODO: 사용자가 실사 사진 추가 후 ImagePlaceholder를 next/image 로 교체 */}
             <figure className="mt-10">
               <ImagePlaceholder
-                label="실제 포장영상 검색 화면 스크린샷 (1200×750 권장)"
+                label="포장영상 검색 화면 예시 (1200×750 권장)"
                 ratio="16/10"
               />
               <figcaption className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-                실제 포장영상 검색 화면 — 운송장 번호 입력 즉시 해당 포장영상이
-                재생됩니다.
+                예시 화면 — 운송장 번호를 입력하면 해당 포장영상이 즉시
+                재생되는 모습을 표현한 것입니다.
               </figcaption>
             </figure>
           </section>
@@ -343,6 +344,35 @@ export default function Home() {
                 </details>
               ))}
             </div>
+          </section>
+
+          <section className="mb-16">
+            <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50 sm:text-3xl">
+              포장영상 더 알아보기
+            </h2>
+            <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              도입 전에 꼭 확인하면 좋은 포장영상 가이드와 비교 자료를 정리했습니다.
+            </p>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {[
+                { href: "/guide", title: "포장영상 도입 가이드", desc: "카메라 설치부터 운영까지 8단계로 정리한 시작 가이드." },
+                { href: "/vs-cctv", title: "포장영상 vs CCTV", desc: "운송장 번호 검색이 왜 CCTV보다 빠른지 8개 항목 비교." },
+                { href: "/compare", title: "포장영상 업체 비교", desc: "주요 포장영상 솔루션을 기능·가격으로 한눈에 비교." },
+                { href: "/cases", title: "포장영상 도입 사례", desc: "업종별 셀러가 클레임을 줄인 실제 도입 사례." },
+                { href: "/claim", title: "택배 클레임 해결", desc: "유형별 클레임 응대 스크립트와 영상 증거 활용법." },
+                { href: "/pricing", title: "포장영상 요금", desc: "포장대 1개 월 30,000원부터, 연간 결제 17% 할인." },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="block h-full rounded-2xl border border-zinc-200 p-5 transition-colors hover:border-black dark:border-zinc-800 dark:hover:border-white"
+                  >
+                    <p className="font-semibold text-black dark:text-white">{l.title}</p>
+                    <p className="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{l.desc}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <ConversionCTA title="지금 포장영상 도입을 시작하세요" />

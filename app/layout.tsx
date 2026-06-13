@@ -105,8 +105,10 @@ export default function RootLayout({
       className={`${notoSansKR.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Nav />
-        <InquiryBar />
+        <header className="sticky top-0 z-30">
+          <Nav />
+          <InquiryBar />
+        </header>
         <div className="flex-1">{children}</div>
         <Footer />
       </body>

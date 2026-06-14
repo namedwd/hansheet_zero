@@ -37,7 +37,7 @@ export function InquiryBar() {
 
   return (
     <div className="bg-black text-white dark:bg-white dark:text-black">
-      <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-6 py-2 sm:px-10">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-6 py-2 sm:px-10">
         <p className="text-sm font-medium">{c.text}</p>
         <a
           href={inquiryUrl(locale)}

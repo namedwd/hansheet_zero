@@ -38,11 +38,11 @@ const DICT: Record<
   ko: {
     brandSuffix: "포장영상",
     links: [
-      { href: "/compare", label: "업체 비교" },
-      { href: "/vs-cctv", label: "CCTV 비교" },
-      { href: "/guide", label: "도입 가이드" },
-      { href: "/cases", label: "도입 사례" },
-      { href: "/claim", label: "클레임 해결" },
+      { href: "/compare", label: "비교" },
+      { href: "/vs-cctv", label: "vs CCTV" },
+      { href: "/guide", label: "가이드" },
+      { href: "/cases", label: "사례" },
+      { href: "/claim", label: "클레임" },
       { href: "/pricing", label: "요금" },
       { href: "/blog", label: "블로그" },
     ],
@@ -118,11 +118,11 @@ const DICT: Record<
     brandSuffix: "梱包動画",
     // href は ko 基準の基本パス。レンダリング時に localePath(locale, href) で /ja を付与します。
     links: [
-      { href: "/compare", label: "業者比較" },
-      { href: "/vs-cctv", label: "CCTV比較" },
-      { href: "/guide", label: "導入ガイド" },
-      { href: "/cases", label: "導入事例" },
-      { href: "/claim", label: "クレーム解決" },
+      { href: "/compare", label: "比較" },
+      { href: "/vs-cctv", label: "vs CCTV" },
+      { href: "/guide", label: "ガイド" },
+      { href: "/cases", label: "事例" },
+      { href: "/claim", label: "クレーム" },
       { href: "/pricing", label: "料金" },
     ],
     freeTrial: "無料で試す",
@@ -164,12 +164,12 @@ const DICT: Record<
     brandSuffix: "包裝影片",
     // href 為 ko 基準路徑，渲染時以 localePath(locale, href) 補上 /zh-tw。
     links: [
-      { href: "/compare", label: "方案比較" },
-      { href: "/vs-cctv", label: "與 CCTV 比較" },
-      { href: "/guide", label: "導入指南" },
-      { href: "/cases", label: "導入案例" },
-      { href: "/claim", label: "客訴處理" },
-      { href: "/pricing", label: "費用方案" },
+      { href: "/compare", label: "比較" },
+      { href: "/vs-cctv", label: "vs CCTV" },
+      { href: "/guide", label: "指南" },
+      { href: "/cases", label: "案例" },
+      { href: "/claim", label: "客訴" },
+      { href: "/pricing", label: "費用" },
     ],
     freeTrial: "免費試用",
     inquiry: "聯絡我們",
@@ -210,11 +210,11 @@ const DICT: Record<
     brandSuffix: "Video đóng gói",
     // href là đường dẫn gốc (chuẩn ko); khi render sẽ thêm /vi bằng localePath(locale, href).
     links: [
-      { href: "/compare", label: "So sánh nhà cung cấp" },
-      { href: "/vs-cctv", label: "So với CCTV" },
-      { href: "/guide", label: "Hướng dẫn triển khai" },
-      { href: "/cases", label: "Tình huống thực tế" },
-      { href: "/claim", label: "Xử lý khiếu nại" },
+      { href: "/compare", label: "So sánh" },
+      { href: "/vs-cctv", label: "vs CCTV" },
+      { href: "/guide", label: "Hướng dẫn" },
+      { href: "/cases", label: "Tình huống" },
+      { href: "/claim", label: "Khiếu nại" },
       { href: "/pricing", label: "Bảng giá" },
     ],
     freeTrial: "Dùng thử miễn phí",
@@ -267,21 +267,22 @@ export function Nav() {
       aria-label={locale === "ko" ? "주요 메뉴" : "Main menu"}
       className="border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-black/80"
     >
-      <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-6 py-3 sm:px-10">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-6 py-3 sm:px-10">
         <Link
           href={localePath(locale, "/")}
-          className="text-base font-bold text-black dark:text-white"
+          className="whitespace-nowrap text-base font-bold text-black dark:text-white"
         >
-          한시트 <span className="font-medium text-zinc-500">{t.brandSuffix}</span>
+          {locale === "ko" ? "한시트" : "Hansheet"}{" "}
+          <span className="font-medium text-zinc-500">{t.brandSuffix}</span>
         </Link>
 
         {/* 데스크탑 메뉴 */}
-        <ul className="hidden items-center gap-4 text-sm lg:flex">
+        <ul className="hidden items-center gap-4 text-sm xl:flex">
           {t.links.map((l) => (
             <li key={l.href}>
               <Link
                 href={localePath(locale, l.href)}
-                className="text-zinc-700 hover:text-black dark:text-zinc-300 dark:hover:text-white"
+                className="whitespace-nowrap text-zinc-700 hover:text-black dark:text-zinc-300 dark:hover:text-white"
               >
                 {l.label}
               </Link>
@@ -336,7 +337,7 @@ export function Nav() {
         </ul>
 
         {/* 모바일·태블릿 햄버거 메뉴 (zero-JS, <details>) */}
-        <details className="group relative lg:hidden">
+        <details className="group relative xl:hidden">
           <summary
             className="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-md text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900"
             aria-label={t.openMenu}

@@ -287,17 +287,34 @@ export function Nav() {
               </Link>
             </li>
           ))}
-          {otherLocales.map((l) => (
-            <li key={l}>
-              <Link
-                href={localePath(l, "/")}
-                hrefLang={l}
-                className="text-zinc-500 hover:text-black dark:text-zinc-400 dark:hover:text-white"
-              >
-                {LOCALE_LABEL[l]}
-              </Link>
-            </li>
-          ))}
+          {/* 언어 선택 — 드롭다운(zero-JS <details>)으로 묶어 navbar 정리 */}
+          <li className="relative">
+            <details className="group">
+              <summary className="flex cursor-pointer list-none items-center gap-1 text-zinc-500 hover:text-black dark:text-zinc-400 dark:hover:text-white">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+                </svg>
+                {LOCALE_LABEL[locale]}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform group-open:rotate-180" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </summary>
+              <ul className="absolute right-0 top-8 z-20 w-36 rounded-2xl border border-zinc-200 bg-white p-2 shadow-lg dark:border-zinc-800 dark:bg-black">
+                {otherLocales.map((l) => (
+                  <li key={l}>
+                    <Link
+                      href={localePath(l, "/")}
+                      hrefLang={l}
+                      className="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-900"
+                    >
+                      {LOCALE_LABEL[l]}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </li>
           <li>
             <a
               href={serviceLandingUrl(locale)}

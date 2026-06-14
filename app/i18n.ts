@@ -1,7 +1,7 @@
 // 다국어(i18n) 설정 — 기본 언어(한국어)는 접두어 없이 루트에, 그 외 언어는 /<locale> 하위에 둡니다.
 // 예: 한국어 /guide ↔ 영어 /en/guide. 일본어·베트남어는 LOCALES에 추가만 하면 동일하게 확장됩니다.
 
-export const LOCALES = ["ko", "en"] as const;
+export const LOCALES = ["ko", "en", "ja", "zh-tw", "vi"] as const;
 export type Locale = (typeof LOCALES)[number];
 
 // 기본(접두어 없는) 언어. 운영 중인 한국어 사이트가 그대로 루트에 유지됩니다.
@@ -11,12 +11,27 @@ export const DEFAULT_LOCALE: Locale = "ko";
 export const HREFLANG: Record<Locale, string> = {
   ko: "ko-KR",
   en: "en",
+  ja: "ja-JP",
+  "zh-tw": "zh-TW",
+  vi: "vi-VN",
 };
 
 // OpenGraph locale 매핑.
 export const OG_LOCALE: Record<Locale, string> = {
   ko: "ko_KR",
   en: "en_US",
+  ja: "ja_JP",
+  "zh-tw": "zh_TW",
+  vi: "vi_VN",
+};
+
+// 언어 전환기에 표시할 라벨.
+export const LOCALE_LABEL: Record<Locale, string> = {
+  ko: "한국어",
+  en: "EN",
+  ja: "日本語",
+  "zh-tw": "繁體中文",
+  vi: "Tiếng Việt",
 };
 
 // 특정 로케일에서의 경로를 만듭니다. path는 항상 "ko 기준 경로"("/", "/guide" 등).

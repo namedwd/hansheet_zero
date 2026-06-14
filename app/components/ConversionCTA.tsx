@@ -1,4 +1,4 @@
-import { SERVICE_URL, INQUIRY_URL } from "../site";
+import { inquiryUrl, serviceLandingUrl } from "../site";
 import type { Locale } from "../i18n";
 
 // 도입 절차 4단계 — "그래서 어떻게 써야 되는데?"에 답하는 핵심 섹션 (로케일별)
@@ -14,6 +14,24 @@ const STEPS: Record<Locale, { n: string; t: string; d: string }[]> = {
     { n: "2", t: "Free consultation & quote", d: "Get a setup and quote tailored to your number of packing stations and product category." },
     { n: "3", t: "Camera setup", d: "Mount the camera over the packing station and connect the barcode scanner — about one day on average." },
     { n: "4", t: "Go live", d: "A single barcode scan auto-records the packing video and stores it in the cloud." },
+  ],
+  ja: [
+    { n: "1", t: "お問い合わせ", d: "お問い合わせいただくと、ゼロパッキング担当者が営業日1日以内にご連絡します。" },
+    { n: "2", t: "無料相談・お見積り", d: "梱包台の数や商材に合わせた構成とお見積りを1対1でご案内します。" },
+    { n: "3", t: "カメラ設置", d: "梱包台にカメラを設置し、バーコードを連携します。平均1日で完了。" },
+    { n: "4", t: "運用開始", d: "バーコードを一度スキャンするだけで梱包動画が自動撮影・クラウド保管されます。" },
+  ],
+  "zh-tw": [
+    { n: "1", t: "聯絡我們", d: "送出諮詢後，Zeropacking 專人將於一個工作天內與您聯繫。" },
+    { n: "2", t: "免費諮詢・報價", d: "依您的包裝台數量與商品類別，提供一對一的方案與報價。" },
+    { n: "3", t: "安裝攝影機", d: "在包裝台架設攝影機並串接條碼，平均一天即可完成。" },
+    { n: "4", t: "開始使用", d: "只要掃描一次條碼，包裝影片便會自動錄影並儲存於雲端。" },
+  ],
+  vi: [
+    { n: "1", t: "Liên hệ", d: "Sau khi gửi yêu cầu, nhân viên Zeropacking sẽ liên hệ trong vòng 1 ngày làm việc." },
+    { n: "2", t: "Tư vấn & báo giá miễn phí", d: "Nhận cấu hình và báo giá 1:1 phù hợp với số bàn đóng gói và ngành hàng của bạn." },
+    { n: "3", t: "Lắp đặt camera", d: "Lắp camera trên bàn đóng gói và kết nối máy quét mã vạch — trung bình hoàn tất trong 1 ngày." },
+    { n: "4", t: "Bắt đầu vận hành", d: "Chỉ cần quét mã vạch một lần, video đóng gói sẽ tự động ghi và lưu trên đám mây." },
   ],
 };
 
@@ -36,6 +54,30 @@ const COPY: Record<
     inquiry: "Contact sales",
     freeTrial: "15-day free trial",
     note: "The contact link goes to the Zeropacking (zeropacking.com) inquiry form. The free trial starts with no card required.",
+  },
+  ja: {
+    title: "梱包動画、こうして始められます",
+    description:
+      "お問い合わせから運用開始まで平均1〜3日。まずは無料トライアルでお試しいただくこともできます。",
+    inquiry: "お問い合わせ",
+    freeTrial: "無料で試す",
+    note: "お問い合わせはゼロパッキング（zeropacking.com）の日本語窓口につながります。",
+  },
+  "zh-tw": {
+    title: "包裝影片，這樣開始就對了",
+    description:
+      "從諮詢到正式上線平均只要 1〜3 天。也可以先用免費試用體驗看看。",
+    inquiry: "聯絡我們",
+    freeTrial: "免費試用",
+    note: "諮詢將連結至 Zeropacking（zeropacking.com）的繁體中文窗口。",
+  },
+  vi: {
+    title: "Bắt đầu với video đóng gói như thế này",
+    description:
+      "Từ lúc liên hệ đến khi vận hành trung bình chỉ 1–3 ngày. Bạn cũng có thể dùng thử miễn phí trước.",
+    inquiry: "Liên hệ",
+    freeTrial: "Dùng thử miễn phí",
+    note: "Liên hệ sẽ dẫn đến cổng tiếng Việt của Zeropacking (zeropacking.com).",
   },
 };
 
@@ -88,7 +130,7 @@ export function ConversionCTA({
 
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <a
-          href={INQUIRY_URL}
+          href={inquiryUrl(locale)}
           target="_blank"
           rel="noopener"
           className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
@@ -96,7 +138,7 @@ export function ConversionCTA({
           {c.inquiry}
         </a>
         <a
-          href={`${SERVICE_URL}/checkout`}
+          href={serviceLandingUrl(locale)}
           className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:bg-white dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-900"
         >
           {c.freeTrial}

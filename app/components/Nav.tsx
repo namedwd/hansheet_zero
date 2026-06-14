@@ -2,8 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SERVICE_URL, INQUIRY_URL } from "../site";
-import { localeFromPathname, localePath, type Locale } from "../i18n";
+import { SERVICE_URL, inquiryUrl, serviceLandingUrl } from "../site";
+import {
+  LOCALES,
+  LOCALE_LABEL,
+  localeFromPathname,
+  localePath,
+  type Locale,
+} from "../i18n";
 
 // 로케일별 Nav/Footer 문구 사전.
 // 영어는 현재 홈만 번역되어 있어, 영어 Nav 링크는 비워 두고 페이지가 번역될 때마다 추가합니다.
@@ -17,7 +23,6 @@ const DICT: Record<
     inquiryMobile: string;
     freeTrialMobile: string;
     openMenu: string;
-    switchTo: string; // 언어 전환 버튼 라벨
     footer: {
       topicsTitle: string;
       productTitle: string;
@@ -46,7 +51,6 @@ const DICT: Record<
     inquiryMobile: "도입 문의하기",
     freeTrialMobile: "15일 무료체험",
     openMenu: "메뉴 열기",
-    switchTo: "EN",
     footer: {
       topicsTitle: "포장영상 토픽",
       productTitle: "제품",
@@ -88,12 +92,11 @@ const DICT: Record<
     inquiryMobile: "Contact sales",
     freeTrialMobile: "15-day free trial",
     openMenu: "Open menu",
-    switchTo: "한국어",
     footer: {
       topicsTitle: "Packing video",
       productTitle: "Product",
       companyTitle: "Hansheet",
-      topics: [{ href: "/en", label: "What is a packing video?" }],
+      topics: [{ href: "/", label: "What is a packing video?" }],
       product: [
         { href: `${SERVICE_URL}/checkout`, label: "15-day free trial", external: true },
       ],
@@ -111,14 +114,153 @@ const DICT: Record<
       ),
     },
   },
+  ja: {
+    brandSuffix: "梱包動画",
+    // href は ko 基準の基本パス。レンダリング時に localePath(locale, href) で /ja を付与します。
+    links: [
+      { href: "/compare", label: "業者比較" },
+      { href: "/vs-cctv", label: "CCTV比較" },
+      { href: "/guide", label: "導入ガイド" },
+      { href: "/cases", label: "導入事例" },
+      { href: "/claim", label: "クレーム解決" },
+      { href: "/pricing", label: "料金" },
+    ],
+    freeTrial: "無料で試す",
+    inquiry: "お問い合わせ",
+    inquiryMobile: "お問い合わせ",
+    freeTrialMobile: "無料で試す",
+    openMenu: "メニューを開く",
+    footer: {
+      topicsTitle: "梱包動画",
+      productTitle: "製品",
+      companyTitle: "ハンシート",
+      topics: [
+        { href: "/", label: "梱包動画とは？" },
+        { href: "/compare", label: "業者比較" },
+        { href: "/vs-cctv", label: "梱包動画 vs CCTV" },
+        { href: "/guide", label: "導入ガイド" },
+        { href: "/cases", label: "導入事例" },
+        { href: "/claim", label: "宅配クレーム解決" },
+      ],
+      product: [
+        { href: "/api", label: "API・WMS連携" },
+        { href: "/pricing", label: "料金プラン" },
+        { href: "https://www.zeropacking.com/ja", label: "無料で試す", external: true },
+      ],
+      inquiryLink: "お問い合わせ",
+      serviceLink: "ゼロパッキング",
+      rightsNote: (year) => (
+        <>
+          © {year} ハンシート · 宅配の梱包動画 自動撮影ガイド。実際のサービスは{" "}
+          <a href={SERVICE_URL} className="underline hover:text-black dark:hover:text-white">
+            ゼロパッキング (zeropacking.com)
+          </a>
+          {" "}でご利用いただけます。
+        </>
+      ),
+    },
+  },
+  "zh-tw": {
+    brandSuffix: "包裝影片",
+    // href 為 ko 基準路徑，渲染時以 localePath(locale, href) 補上 /zh-tw。
+    links: [
+      { href: "/compare", label: "方案比較" },
+      { href: "/vs-cctv", label: "與 CCTV 比較" },
+      { href: "/guide", label: "導入指南" },
+      { href: "/cases", label: "導入案例" },
+      { href: "/claim", label: "客訴處理" },
+      { href: "/pricing", label: "費用方案" },
+    ],
+    freeTrial: "免費試用",
+    inquiry: "聯絡我們",
+    inquiryMobile: "聯絡我們",
+    freeTrialMobile: "免費試用",
+    openMenu: "開啟選單",
+    footer: {
+      topicsTitle: "包裝影片",
+      productTitle: "產品",
+      companyTitle: "Hansheet",
+      topics: [
+        { href: "/", label: "什麼是包裝影片？" },
+        { href: "/compare", label: "方案比較" },
+        { href: "/vs-cctv", label: "包裝影片 vs CCTV" },
+        { href: "/guide", label: "導入指南" },
+        { href: "/cases", label: "導入案例" },
+        { href: "/claim", label: "宅配客訴處理" },
+      ],
+      product: [
+        { href: "/api", label: "API・WMS 串接" },
+        { href: "/pricing", label: "費用方案" },
+        { href: "https://www.zeropacking.com/zh-tw", label: "免費試用", external: true },
+      ],
+      inquiryLink: "聯絡我們",
+      serviceLink: "Zeropacking 服務",
+      rightsNote: (year) => (
+        <>
+          © {year} Hansheet · 宅配包裝影片自動錄影指南。實際服務由{" "}
+          <a href={SERVICE_URL} className="underline hover:text-black dark:hover:text-white">
+            Zeropacking (zeropacking.com)
+          </a>
+          {" "}提供。
+        </>
+      ),
+    },
+  },
+  vi: {
+    brandSuffix: "Video đóng gói",
+    // href là đường dẫn gốc (chuẩn ko); khi render sẽ thêm /vi bằng localePath(locale, href).
+    links: [
+      { href: "/compare", label: "So sánh nhà cung cấp" },
+      { href: "/vs-cctv", label: "So với CCTV" },
+      { href: "/guide", label: "Hướng dẫn triển khai" },
+      { href: "/cases", label: "Tình huống thực tế" },
+      { href: "/claim", label: "Xử lý khiếu nại" },
+      { href: "/pricing", label: "Bảng giá" },
+    ],
+    freeTrial: "Dùng thử miễn phí",
+    inquiry: "Liên hệ",
+    inquiryMobile: "Liên hệ",
+    freeTrialMobile: "Dùng thử miễn phí",
+    openMenu: "Mở menu",
+    footer: {
+      topicsTitle: "Video đóng gói",
+      productTitle: "Sản phẩm",
+      companyTitle: "Hansheet",
+      topics: [
+        { href: "/", label: "Video đóng gói là gì?" },
+        { href: "/compare", label: "So sánh nhà cung cấp" },
+        { href: "/vs-cctv", label: "Video đóng gói vs CCTV" },
+        { href: "/guide", label: "Hướng dẫn triển khai" },
+        { href: "/cases", label: "Tình huống thực tế" },
+        { href: "/claim", label: "Xử lý khiếu nại giao hàng" },
+      ],
+      product: [
+        { href: "/api", label: "Tích hợp API・WMS" },
+        { href: "/pricing", label: "Bảng giá" },
+        { href: "https://www.zeropacking.com/vi", label: "Dùng thử miễn phí", external: true },
+      ],
+      inquiryLink: "Liên hệ",
+      serviceLink: "Dịch vụ Zeropacking",
+      rightsNote: (year) => (
+        <>
+          © {year} Hansheet · Hướng dẫn tự động ghi video đóng gói cho giao hàng.
+          Dịch vụ thực tế được cung cấp bởi{" "}
+          <a href={SERVICE_URL} className="underline hover:text-black dark:hover:text-white">
+            Zeropacking (zeropacking.com)
+          </a>
+          .
+        </>
+      ),
+    },
+  },
 };
 
 export function Nav() {
   const pathname = usePathname() || "/";
   const locale = localeFromPathname(pathname);
   const t = DICT[locale];
-  // 언어 전환 대상. 대응되는 번역 페이지가 항상 있는 건 아니므로 홈으로 보냅니다.
-  const switchHref = locale === "ko" ? localePath("en", "/") : localePath("ko", "/");
+  // 현재 언어를 뺀 나머지 언어들. 대응 번역 페이지가 항상 있는 건 아니므로 각 언어 홈으로 보냅니다.
+  const otherLocales = LOCALES.filter((l) => l !== locale);
 
   return (
     <nav
@@ -138,25 +280,27 @@ export function Nav() {
           {t.links.map((l) => (
             <li key={l.href}>
               <Link
-                href={l.href}
+                href={localePath(locale, l.href)}
                 className="text-zinc-700 hover:text-black dark:text-zinc-300 dark:hover:text-white"
               >
                 {l.label}
               </Link>
             </li>
           ))}
-          <li>
-            <Link
-              href={switchHref}
-              hrefLang={locale === "ko" ? "en" : "ko"}
-              className="text-zinc-500 hover:text-black dark:text-zinc-400 dark:hover:text-white"
-            >
-              {t.switchTo}
-            </Link>
-          </li>
+          {otherLocales.map((l) => (
+            <li key={l}>
+              <Link
+                href={localePath(l, "/")}
+                hrefLang={l}
+                className="text-zinc-500 hover:text-black dark:text-zinc-400 dark:hover:text-white"
+              >
+                {LOCALE_LABEL[l]}
+              </Link>
+            </li>
+          ))}
           <li>
             <a
-              href={`${SERVICE_URL}/checkout`}
+              href={serviceLandingUrl(locale)}
               className="inline-flex h-9 items-center justify-center rounded-full border border-zinc-300 px-4 text-xs font-medium text-black hover:bg-zinc-100 dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-900"
             >
               {t.freeTrial}
@@ -164,7 +308,7 @@ export function Nav() {
           </li>
           <li>
             <a
-              href={INQUIRY_URL}
+              href={inquiryUrl(locale)}
               target="_blank"
               rel="noopener"
               className="inline-flex h-9 items-center justify-center rounded-full bg-black px-4 text-xs font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
@@ -213,25 +357,27 @@ export function Nav() {
             {t.links.map((l) => (
               <li key={l.href}>
                 <Link
-                  href={l.href}
+                  href={localePath(locale, l.href)}
                   className="block rounded-lg px-3 py-2 text-sm text-zinc-800 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-900"
                 >
                   {l.label}
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                href={switchHref}
-                hrefLang={locale === "ko" ? "en" : "ko"}
-                className="block rounded-lg px-3 py-2 text-sm text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-900"
-              >
-                {t.switchTo}
-              </Link>
-            </li>
+            {otherLocales.map((l) => (
+              <li key={l}>
+                <Link
+                  href={localePath(l, "/")}
+                  hrefLang={l}
+                  className="block rounded-lg px-3 py-2 text-sm text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-900"
+                >
+                  {LOCALE_LABEL[l]}
+                </Link>
+              </li>
+            ))}
             <li className="mt-1 border-t border-zinc-200 pt-2 dark:border-zinc-800">
               <a
-                href={INQUIRY_URL}
+                href={inquiryUrl(locale)}
                 target="_blank"
                 rel="noopener"
                 className="block rounded-lg bg-black px-3 py-2 text-center text-sm font-medium text-white dark:bg-white dark:text-black"
@@ -241,7 +387,7 @@ export function Nav() {
             </li>
             <li className="mt-2">
               <a
-                href={`${SERVICE_URL}/checkout`}
+                href={serviceLandingUrl(locale)}
                 className="block rounded-lg border border-zinc-300 px-3 py-2 text-center text-sm font-medium text-black dark:border-zinc-700 dark:text-white"
               >
                 {t.freeTrialMobile}
@@ -270,7 +416,7 @@ export function Footer() {
             <ul className="space-y-2">
               {f.topics.map((l) => (
                 <li key={l.href + l.label}>
-                  <Link href={l.href} className="hover:text-black dark:hover:text-white">
+                  <Link href={localePath(locale, l.href)} className="hover:text-black dark:hover:text-white">
                     {l.label}
                   </Link>
                 </li>
@@ -291,7 +437,7 @@ export function Footer() {
                   </li>
                 ) : (
                   <li key={l.href + l.label}>
-                    <Link href={l.href} className="hover:text-black dark:hover:text-white">
+                    <Link href={localePath(locale, l.href)} className="hover:text-black dark:hover:text-white">
                       {l.label}
                     </Link>
                   </li>
@@ -305,7 +451,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href={INQUIRY_URL} target="_blank" rel="noopener" className="hover:text-black dark:hover:text-white">
+                <a href={inquiryUrl(locale)} target="_blank" rel="noopener" className="hover:text-black dark:hover:text-white">
                   {f.inquiryLink}
                 </a>
               </li>

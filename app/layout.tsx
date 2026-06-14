@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE_URL } from "./site";
 import { Nav, Footer } from "./components/Nav";
 import { InquiryBar } from "./components/InquiryBar";
+import { HtmlLangSync } from "./components/HtmlLangSync";
 
 // 한국어 본문 폰트 — Noto Sans KR
 // 한국어 가독성과 검색엔진 친화도를 위해 라틴+한글 모두 지원하는 폰트로 통일.
@@ -105,9 +106,10 @@ export default function RootLayout({
       className={`${notoSansKR.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <HtmlLangSync />
         <header className="sticky top-0 z-30">
-          <Nav />
           <InquiryBar />
+          <Nav />
         </header>
         <div className="flex-1">{children}</div>
         <Footer />

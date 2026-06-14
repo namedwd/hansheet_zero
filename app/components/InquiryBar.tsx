@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { INQUIRY_URL } from "../site";
+import { inquiryUrl } from "../site";
 import { localeFromPathname, type Locale } from "../i18n";
 
 // 본문 제일 상단의 슬림 문의 바.
@@ -16,6 +16,18 @@ const COPY: Record<Locale, { text: string; cta: string }> = {
     text: "Considering packing video for your team?",
     cta: "Contact sales",
   },
+  ja: {
+    text: "梱包動画の導入をご検討中ですか？",
+    cta: "お問い合わせ",
+  },
+  "zh-tw": {
+    text: "正在評估導入出貨包裝影片嗎？",
+    cta: "聯絡我們",
+  },
+  vi: {
+    text: "Bạn đang cân nhắc triển khai video đóng gói?",
+    cta: "Liên hệ",
+  },
 };
 
 export function InquiryBar() {
@@ -24,16 +36,17 @@ export function InquiryBar() {
   const c = COPY[locale];
 
   return (
-    <div className="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">
-      <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-6 py-2.5 sm:px-10">
-        <p className="text-sm text-zinc-700 dark:text-zinc-300">{c.text}</p>
+    <div className="bg-black text-white dark:bg-white dark:text-black">
+      <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-6 py-2 sm:px-10">
+        <p className="text-sm font-medium">{c.text}</p>
         <a
-          href={INQUIRY_URL}
+          href={inquiryUrl(locale)}
           target="_blank"
           rel="noopener"
-          className="inline-flex h-8 flex-none items-center justify-center rounded-full bg-black px-4 text-xs font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+          className="inline-flex h-8 flex-none items-center justify-center gap-1 rounded-full bg-white px-4 text-xs font-semibold text-black transition-colors hover:bg-zinc-200 dark:bg-black dark:text-white dark:hover:bg-zinc-800"
         >
           {c.cta}
+          <span aria-hidden="true">→</span>
         </a>
       </div>
     </div>

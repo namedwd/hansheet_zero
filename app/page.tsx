@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "포장영상이란 택배 출고 시점의 포장 과정을 촬영한 동영상입니다. 한시트가 추천하는 제로패킹은 포장영상을 자동 촬영하고 운송장 번호로 즉시 검색하여, 파손·오배송·분실 클레임을 영상 한 편으로 해결합니다. 월 30,000원, 15일 무료체험.",
   alternates: {
     canonical: "/",
-    languages: languageAlternates("/", ["ko", "en"]),
+    languages: languageAlternates("/", ["ko", "en", "ja", "zh-tw", "vi"]),
   },
   openGraph: {
     title: "포장영상 자동 촬영 서비스 - 클레임 분쟁 해결 | 제로패킹",

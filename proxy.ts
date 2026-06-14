@@ -2,10 +2,12 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 // 다국어 로케일 분기.
-// 기본 언어는 한국어(접두어 없는 루트)이므로, 영어를 우선하는 브라우저가 "/"에 들어오면
-// "/en"으로 보냅니다. matcher가 "/" 한 경로만 대상으로 하므로 나머지 페이지/자산은 전혀 건드리지 않습니다.
+// 기본 언어는 한국어(접두어 없는 루트)이므로, 한국어보다 영어/일본어를 우선하는 브라우저가
+// "/"에 들어오면 각각 "/en"·"/ja"로 보냅니다.
+// matcher가 "/" 한 경로만 대상으로 하므로 나머지 페이지/자산은 전혀 건드리지 않습니다.
 
-function prefersEnglishOverKorean(acceptLanguage: string): boolean {
+// accept-language를 q값 기준으로 정렬해, ko/en/ja/zh-tw/vi 중 가장 우선하는 언어를 고릅니다.
+function preferredLocale(acceptLanguage: string): "ko" | "en" | "ja" | "zh-tw" | "vi" {
   const ranked = acceptLanguage
     .split(",")
     .map((part) => {
@@ -20,19 +22,22 @@ function prefersEnglishOverKorean(acceptLanguage: string): boolean {
     .filter((l) => l.base)
     .sort((a, b) => b.q - a.q);
 
-  // ko / en 중 더 높은 우선순위가 무엇인지 확인.
   for (const l of ranked) {
-    if (l.base === "ko") return false;
-    if (l.base === "en") return true;
+    if (l.base === "ko") return "ko";
+    if (l.base === "en") return "en";
+    if (l.base === "ja") return "ja";
+    if (l.base === "zh") return "zh-tw"; // 중국어권은 번체(대만) 페이지로
+    if (l.base === "vi") return "vi";
   }
-  return false; // 둘 다 없으면 기본(한국어) 유지
+  return "ko"; // 아무것도 없으면 기본(한국어) 유지
 }
 
 export function proxy(request: NextRequest) {
   const acceptLanguage = request.headers.get("accept-language") || "";
-  if (prefersEnglishOverKorean(acceptLanguage)) {
+  const locale = preferredLocale(acceptLanguage);
+  if (locale !== "ko") {
     const url = request.nextUrl.clone();
-    url.pathname = "/en";
+    url.pathname = `/${locale}`;
     return NextResponse.redirect(url);
   }
   return NextResponse.next();

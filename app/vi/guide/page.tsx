@@ -138,7 +138,7 @@ const FAQ = [
   },
   {
     q: "Video đóng gói được lưu trong bao lâu?",
-    a: "Mặc định được lưu trên đám mây trong 3 tháng. Khoảng 90% khiếu nại vận chuyển xảy ra trong vòng 30 ngày sau khi xuất hàng nên 3 tháng là đủ cover phần lớn. Tiêu chí chọn thời gian lưu trữ vui lòng tham khảo bài viết về thời gian lưu trữ video đóng gói.",
+    a: "Mặc định được lưu trên đám mây trong 3 tháng. Phần lớn khiếu nại được gửi trong vòng một tháng sau khi xuất hàng, nhưng cũng không ít tranh chấp liên quan đến đổi hàng, gửi lại hoặc được nêu ra muộn. Camera giám sát (CCTV) hay các dịch vụ chỉ lưu một tháng khó xử lý những khiếu nại muộn này, còn Zeropacking lưu 3 tháng nên bao phủ an toàn cả những tranh chấp đến muộn.",
   },
   {
     q: "Đổi nhân viên thì vận hành có vấn đề gì không?",
@@ -159,7 +159,7 @@ const FAQ = [
 ];
 
 export default function GuidePage() {
-  const today = new Date().toISOString();
+  const today = "2026-06-14T00:00:00.000Z";
   return (
     <>
       <JsonLd

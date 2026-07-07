@@ -154,7 +154,7 @@ const FAQ = [
 ];
 
 export default function ComparePage() {
-  const today = new Date().toISOString();
+  const today = "2026-06-14T00:00:00.000Z";
   return (
     <>
       <JsonLd
@@ -378,8 +378,9 @@ export default function ComparePage() {
               中途解約困難。月繳在彈性上較有利。
             </li>
             <li>
-              <strong className="text-black dark:text-white">影片保存期間</strong>：客訴有 90%
-              發生在出貨後平均 30 天內。最少 3 個月以上才安全。
+              <strong className="text-black dark:text-white">影片保存期間</strong>：多數客訴在一個月內
+              提出，但換貨、重新出貨、延遲提出的客訴之後仍會發生。監視器（7～30 天覆寫）或保存一個月的服務容易漏接，
+              建議確認是否像 Zeropacking 一樣保存 3 個月。
             </li>
             <li>
               <strong className="text-black dark:text-white">查詢方式</strong>：務必確認是否能以

@@ -149,7 +149,7 @@ const FAQ = [
 ];
 
 export default function ComparePage() {
-  const today = new Date().toISOString();
+  const today = "2026-06-14T00:00:00.000Z";
   return (
     <>
       <JsonLd
@@ -373,8 +373,9 @@ export default function ComparePage() {
               중도 해지가 어렵습니다. 월 단위 결제가 유연성 면에서 유리합니다.
             </li>
             <li>
-              <strong className="text-black dark:text-white">영상 보관 기간</strong>: 클레임은 출고
-              후 평균 30일 안에 90% 발생합니다. 최소 3개월 이상이 안전합니다.
+              <strong className="text-black dark:text-white">영상 보관 기간</strong>: 클레임 대부분은
+              한 달 안에 들어오지만, 교환·재배송·지연 클레임은 그 이후에도 발생합니다. CCTV(7~30일 덮어씀)나
+              1개월 보관 서비스로는 놓치기 쉬우니, 제로패킹처럼 3개월 보관되는지 확인하세요.
             </li>
             <li>
               <strong className="text-black dark:text-white">검색 방식</strong>: 운송장 번호로

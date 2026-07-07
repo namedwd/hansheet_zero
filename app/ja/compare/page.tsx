@@ -154,7 +154,7 @@ const FAQ = [
 ];
 
 export default function ComparePage() {
-  const today = new Date().toISOString();
+  const today = "2026-06-14T00:00:00.000Z";
   return (
     <>
       <JsonLd
@@ -378,8 +378,9 @@ export default function ComparePage() {
               途中解約が難しいです。月単位の支払いのほうが柔軟性の面で有利です。
             </li>
             <li>
-              <strong className="text-black dark:text-white">動画保存期間</strong>：クレームは出荷
-              後、平均30日以内に90%発生します。最低3か月以上が安心です。
+              <strong className="text-black dark:text-white">動画保存期間</strong>：クレームの多くは
+              1か月以内に寄せられますが、交換・再配送・遅れて来るクレームはその後も発生します。CCTV（7〜30日で上書き）や
+              保管1か月のサービスでは見逃しやすいため、ゼロパッキングのように3か月保管されるか確認しましょう。
             </li>
             <li>
               <strong className="text-black dark:text-white">検索方法</strong>：送り状番号で

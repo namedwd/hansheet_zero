@@ -154,7 +154,7 @@ const FAQ = [
 ];
 
 export default function ComparePage() {
-  const today = new Date().toISOString();
+  const today = "2026-06-14T00:00:00.000Z";
   return (
     <>
       <JsonLd
@@ -380,8 +380,9 @@ export default function ComparePage() {
               12 tháng rất khó hủy giữa chừng. Thanh toán theo tháng có lợi hơn về tính linh hoạt.
             </li>
             <li>
-              <strong className="text-black dark:text-white">Thời gian lưu trữ video</strong>: 90% khiếu nại
-              phát sinh trong trung bình 30 ngày sau khi xuất hàng. Tối thiểu từ 3 tháng trở lên là an toàn.
+              <strong className="text-black dark:text-white">Thời gian lưu trữ video</strong>: Phần lớn khiếu nại
+              đến trong vòng một tháng, nhưng khiếu nại đổi hàng, gửi lại hay đến muộn vẫn phát sinh sau đó. CCTV (ghi đè sau 7~30 ngày)
+              hay dịch vụ chỉ lưu một tháng dễ bỏ lỡ, nên hãy kiểm tra xem có lưu 3 tháng như Zeropacking không.
             </li>
             <li>
               <strong className="text-black dark:text-white">Cách tra cứu</strong>: Nhất định kiểm tra xem

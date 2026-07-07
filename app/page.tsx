@@ -12,7 +12,7 @@ import { languageAlternates } from "./i18n";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "한시트 - 포장영상 자동 촬영으로 택배 클레임을 한 번에 해결",
+      "포장영상 자동 촬영 서비스 - 택배 클레임 한 번에 해결 | 한시트",
   },
   description:
     "포장영상이란 택배 출고 시점의 포장 과정을 촬영한 동영상입니다. 한시트가 추천하는 제로패킹은 포장영상을 자동 촬영하고 운송장 번호로 즉시 검색하여, 파손·오배송·분실 클레임을 영상 한 편으로 해결합니다. 월 30,000원, 15일 무료체험.",
@@ -84,6 +84,18 @@ const jsonLd = {
       alternateName: "한시트 포장영상 가이드",
       inLanguage: "ko-KR",
       publisher: { "@id": `${SITE_URL}#organization` },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: `${SITE_URL}/`,
+      name: "포장영상 자동 촬영 서비스 - 택배 클레임 해결",
+      isPartOf: { "@id": `${SITE_URL}#website` },
+      about: { "@id": `${SITE_URL}#service` },
+      primaryImageOfPage: `${SITE_URL}/og-image.png`,
+      inLanguage: "ko-KR",
+      description:
+        "포장영상 자동 촬영으로 택배 파손·오배송·분실 클레임을 운송장 번호 한 번으로 해결하는 서비스 안내.",
     },
     {
       "@type": "Service",

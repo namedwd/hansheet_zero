@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SITE_URL, SERVICE_URL, inquiryUrl } from "./site";
 import {
-  HeroIllustration,
   StepIllustration,
   ImagePlaceholder,
 } from "./components/Illustrations";
@@ -166,11 +166,18 @@ export default function Home() {
               시작되며, 더 이상 파손·오배송·누락 분쟁에 시간을 빼앗기지 마세요.
             </p>
 
-            <figure className="mt-8 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">
-              <HeroIllustration className="h-auto w-full" />
+            <figure className="mt-8 overflow-hidden rounded-2xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
+              <Image
+                src="/packing-video-webtoon.png"
+                alt="포장영상으로 부당 클레임을 해결하는 4컷 웹툰 — ① 고객이 '빈 박스가 왔다'며 환불 요구 ② 포장대 카메라가 바코드 스캔과 동시에 포장영상 자동 촬영 ③ 운송장 번호로 포장영상을 조회해 고객에게 전송 ④ 부당 클레임 종결, 고객 만족"
+                width={1254}
+                height={1254}
+                priority
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="h-auto w-full"
+              />
               <figcaption className="border-t border-zinc-200 bg-white px-4 py-3 text-xs text-zinc-600 dark:border-zinc-800 dark:bg-black dark:text-zinc-400">
-                포장대 위 카메라가 포장영상을 자동 촬영하여 클라우드에 저장하고,
-                운송장 번호로 즉시 검색되는 구조도.
+                포장영상 한 편이면 '빈 박스·파손·오배송' 부당 클레임을 출고 영상으로 종결할 수 있습니다.
               </figcaption>
             </figure>
 

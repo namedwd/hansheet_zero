@@ -138,12 +138,12 @@ export default function HomeJa() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="https://www.zeropacking.com/ja"
+                href="https://www.zeropacking.com/ja#inquiry"
                 target="_blank"
                 rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
               >
-                無料で試す
+                お問い合わせ
               </a>
               <a
                 href="https://www.zeropacking.com/ja"
@@ -151,7 +151,7 @@ export default function HomeJa() {
                 rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"
               >
-                仕組みを見る
+                無料で試す
               </a>
             </div>
           </header>

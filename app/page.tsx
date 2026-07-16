@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "./site";
+import { SITE_URL, SERVICE_URL, inquiryUrl } from "./site";
 import {
   HeroIllustration,
   StepIllustration,
@@ -162,8 +162,8 @@ export default function Home() {
               포장영상은 택배 출고 시점의 포장 과정을 그대로 담은 동영상입니다.
               한시트가 추천하는 제로패킹은 모든 포장영상을 자동 촬영하고
               클라우드에 안전하게 보관하여, 운송장 번호 한 번으로 해당 포장영상을
-              즉시 찾아 보여 드립니다. 더 이상 파손·오배송·누락 분쟁에 시간을
-              빼앗기지 마세요.
+              즉시 찾아 보여 드립니다. 포장영상 촬영은 포장대 카메라 한 대로
+              시작되며, 더 이상 파손·오배송·누락 분쟁에 시간을 빼앗기지 마세요.
             </p>
 
             <figure className="mt-8 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">
@@ -176,18 +176,24 @@ export default function Home() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href={`${SERVICE_URL}/checkout`}
+                href={inquiryUrl("ko")}
+                target="_blank"
+                rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
               >
-                15일 무료로 포장영상 시작하기
+                포장영상 도입 문의하기
               </a>
               <a
-                href={`${SERVICE_URL}/packing-video`}
+                href={`${SERVICE_URL}/checkout`}
                 className="flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"
               >
-                포장영상 가이드 보기
+                15일 무료체험 (카드 등록 없음)
               </a>
             </div>
+            <p className="mt-3 text-sm text-zinc-500">
+              도입 문의를 남기면 제로패킹 담당자가 영업일 1일 내 연락드립니다.
+              무료체험은 카드 등록 없이 바로 시작할 수 있습니다.
+            </p>
           </header>
 
           <section className="mb-16 border-t border-zinc-200 pt-12 dark:border-zinc-800">

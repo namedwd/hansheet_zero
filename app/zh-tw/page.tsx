@@ -137,12 +137,12 @@ export default function HomeZhTw() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="https://www.zeropacking.com/zh-tw"
+                href="https://www.zeropacking.com/zh-tw#inquiry"
                 target="_blank"
                 rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
               >
-                免費試用
+                聯絡我們
               </a>
               <a
                 href="https://www.zeropacking.com/zh-tw"
@@ -150,7 +150,7 @@ export default function HomeZhTw() {
                 rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"
               >
-                了解運作方式
+                免費試用
               </a>
             </div>
           </header>

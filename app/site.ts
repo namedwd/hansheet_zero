@@ -19,8 +19,23 @@ const LOCALE_INQUIRY: Partial<Record<Locale, string>> = {
   vi: "https://www.zeropacking.com/vi#inquiry",
 };
 
-export function inquiryUrl(locale: Locale): string {
-  return LOCALE_INQUIRY[locale] ?? INQUIRY_URL;
+// UTM 추적 — 한시트에서 제로패킹으로 나가는 링크에 자동으로 붙입니다.
+// 제로패킹 쪽 GA에서 "어느 언어 사이트의 어느 버튼이 문의를 만들었나"를 볼 수 있습니다.
+//   utm_source=hansheet · utm_medium=microsite · utm_campaign=<로케일> · utm_content=<버튼 위치>
+// 주의: 문의 URL에는 #inquiry 앵커가 있으므로 쿼리는 반드시 해시 '앞'에 넣어야 앵커가 살아 있습니다.
+function withUtm(rawUrl: string, locale: Locale, content: string): string {
+  const [base, hash] = rawUrl.split("#");
+  const url = new URL(base);
+  url.searchParams.set("utm_source", "hansheet");
+  url.searchParams.set("utm_medium", "microsite");
+  url.searchParams.set("utm_campaign", locale);
+  url.searchParams.set("utm_content", content);
+  return hash ? `${url.toString()}#${hash}` : url.toString();
+}
+
+// content = 버튼 위치(top-bar, nav, hero, cta, footer 등). 어디서 눌렀는지 추적용.
+export function inquiryUrl(locale: Locale, content = "inquiry"): string {
+  return withUtm(LOCALE_INQUIRY[locale] ?? INQUIRY_URL, locale, content);
 }
 
 // 무료체험/서비스 랜딩. 해외 로케일은 해당 언어 랜딩으로.
@@ -30,6 +45,6 @@ const LOCALE_LANDING: Partial<Record<Locale, string>> = {
   vi: "https://www.zeropacking.com/vi",
 };
 
-export function serviceLandingUrl(locale: Locale): string {
-  return LOCALE_LANDING[locale] ?? `${SERVICE_URL}/checkout`;
+export function serviceLandingUrl(locale: Locale, content = "trial"): string {
+  return withUtm(LOCALE_LANDING[locale] ?? `${SERVICE_URL}/checkout`, locale, content);
 }

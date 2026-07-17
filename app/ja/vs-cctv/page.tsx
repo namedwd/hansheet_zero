@@ -9,9 +9,16 @@ import { languageAlternates, localePath } from "../../i18n";
 const PATH = "/vs-cctv";
 
 export const metadata: Metadata = {
-  title: "梱包動画 vs CCTV - 何がどう違うのか？",
+  title: "梱包動画 vs 防犯カメラ(CCTV) - 誤出荷対策にどちらが有効か",
   description:
-    "梱包動画と一般的な店舗用CCTV（防犯カメラ）の違いを一目で比較します。送り状番号での検索、動画の保管ポリシー、クレーム対応時間、コストの観点でどのような違いがあるのかをご確認ください。",
+    "誤出荷やクレームの証拠として、梱包動画と一般的な防犯カメラ（CCTV）の違いを一目で比較します。送り状番号での検索、動画の保管ポリシー、クレーム対応時間、コストの観点でどのような違いがあるのかをご確認ください。",
+  keywords: [
+    "誤出荷 防犯カメラ",
+    "誤出荷 対策 カメラ",
+    "出荷記録 CCTV 比較",
+    "梱包動画 CCTV 違い",
+    "防犯カメラ 出荷 証拠",
+  ],
   alternates: {
     canonical: localePath("ja", PATH),
     languages: languageAlternates(PATH, ["ko", "ja"]),
@@ -58,8 +65,8 @@ const TABLE = [
   },
   {
     item: "初期費用",
-    cctv: "数百万ウォン（DVR + 大容量HDD + 工事）",
-    pv: "0ウォン（梱包台1台あたり月30,000ウォン）",
+    cctv: "数十万円（DVR + 大容量HDD + 工事）",
+    pv: "0円（梱包台1台あたり月4,980円）",
   },
   {
     item: "法的証拠能力",
@@ -79,7 +86,7 @@ const FAQ = [
   },
   {
     q: "CCTVより梱包動画の方が高くつくのではありませんか？",
-    a: "初期費用を比較すると、梱包動画の方がはるかに安価です。CCTVはDVR・HDD・工事費で数百万ウォンかかりますが、梱包動画は梱包台1台あたり月30,000ウォンで、別途の初期費用はありません。クレームを1件減らすだけで1か月分の費用が回収できる事業者がほとんどです。",
+    a: "初期費用を比較すると、梱包動画の方がはるかに安価です。CCTVはDVR・HDD・工事費で数十万円かかりますが、梱包動画は梱包台1台あたり月4,980円で、別途の初期費用はありません。クレームを1件減らすだけで1か月分の費用が回収できる事業者がほとんどです。",
   },
 ];
 
@@ -125,9 +132,9 @@ export default function VsCCTVPage() {
 
         <header className="mb-12">
           <h1 className="text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50 sm:text-5xl">
-            梱包動画 vs CCTV
+            梱包動画 vs 防犯カメラ(CCTV)
             <br />
-            <span className="text-zinc-500">何がどう違うのか？</span>
+            <span className="text-zinc-500">誤出荷対策にどちらが有効か</span>
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
             CCTVがあるから梱包動画は必要ないとお考えではありませんか？両者は目的も

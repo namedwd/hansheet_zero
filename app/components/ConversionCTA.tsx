@@ -130,7 +130,7 @@ export function ConversionCTA({
 
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <a
-          href={inquiryUrl(locale)}
+          href={inquiryUrl(locale, "cta")}
           target="_blank"
           rel="noopener"
           className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
@@ -138,7 +138,7 @@ export function ConversionCTA({
           {c.inquiry}
         </a>
         <a
-          href={serviceLandingUrl(locale)}
+          href={serviceLandingUrl(locale, "cta-trial")}
           className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:bg-white dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-900"
         >
           {c.freeTrial}

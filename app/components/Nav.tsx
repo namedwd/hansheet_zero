@@ -318,7 +318,7 @@ export function Nav() {
           </li>
           <li>
             <a
-              href={serviceLandingUrl(locale)}
+              href={serviceLandingUrl(locale, "nav-trial")}
               className="inline-flex h-9 items-center justify-center rounded-full border border-zinc-300 px-4 text-xs font-medium text-black hover:bg-zinc-100 dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-900"
             >
               {t.freeTrial}
@@ -326,7 +326,7 @@ export function Nav() {
           </li>
           <li>
             <a
-              href={inquiryUrl(locale)}
+              href={inquiryUrl(locale, "nav")}
               target="_blank"
               rel="noopener"
               className="inline-flex h-9 items-center justify-center rounded-full bg-black px-4 text-xs font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
@@ -395,7 +395,7 @@ export function Nav() {
             ))}
             <li className="mt-1 border-t border-zinc-200 pt-2 dark:border-zinc-800">
               <a
-                href={inquiryUrl(locale)}
+                href={inquiryUrl(locale, "nav-mobile")}
                 target="_blank"
                 rel="noopener"
                 className="block rounded-lg bg-black px-3 py-2 text-center text-sm font-medium text-white dark:bg-white dark:text-black"
@@ -405,7 +405,7 @@ export function Nav() {
             </li>
             <li className="mt-2">
               <a
-                href={serviceLandingUrl(locale)}
+                href={serviceLandingUrl(locale, "nav-trial-mobile")}
                 className="block rounded-lg border border-zinc-300 px-3 py-2 text-center text-sm font-medium text-black dark:border-zinc-700 dark:text-white"
               >
                 {t.freeTrialMobile}
@@ -469,7 +469,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href={inquiryUrl(locale)} target="_blank" rel="noopener" className="hover:text-black dark:hover:text-white">
+                <a href={inquiryUrl(locale, "footer")} target="_blank" rel="noopener" className="hover:text-black dark:hover:text-white">
                   {f.inquiryLink}
                 </a>
               </li>

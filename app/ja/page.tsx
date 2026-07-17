@@ -1,23 +1,34 @@
 import type { Metadata } from "next";
-import { SITE_URL } from "../site";
+import { SITE_URL, inquiryUrl, serviceLandingUrl } from "../site";
 import { StepIllustration, ImagePlaceholder } from "../components/Illustrations";
 import { ConversionCTA } from "../components/ConversionCTA";
 import { languageAlternates, localePath } from "../i18n";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "ハンシート — 梱包動画の自動撮影で宅配クレームを一発解決",
+    absolute: "誤出荷・クレーム対策に｜出荷時の梱包動画を自動記録 - ハンシート",
   },
   description:
-    "梱包動画とは、商品の発送時に梱包の様子を撮影した動画です。ハンシートが推奨するゼロパッキングは、梱包動画を自動撮影し、追跡番号ですぐに検索できるようクラウド保管。破損・誤配送・紛失クレームを動画1本で解決します。",
+    "誤出荷やクレームが起きても、出荷時点の梱包動画が残っていれば動画1本で解決できます。ハンシートが推奨するゼロパッキングは、バーコードを一度スキャンするだけで梱包動画を自動撮影し、送り状番号で即座に検索。破損・誤配送・欠品の対策に。",
+  keywords: [
+    "誤出荷 対策",
+    "誤出荷防止",
+    "誤出荷 クレーム",
+    "出荷ミス 対策",
+    "梱包動画",
+    "出荷 動画 記録",
+    "出荷検品 動画",
+    "通販 クレーム 対策",
+    "誤配送 証拠",
+  ],
   alternates: {
     canonical: localePath("ja", "/"),
     languages: languageAlternates("/", ["ko", "en", "ja", "zh-tw", "vi"]),
   },
   openGraph: {
-    title: "梱包動画の自動撮影サービス — クレーム対応を一発解決 | ゼロパッキング",
+    title: "誤出荷・クレーム対策 — 出荷時の梱包動画を自動記録 | ゼロパッキング",
     description:
-      "宅配の梱包動画を自動撮影・クラウド保管。追跡番号ですぐに検索し、クレームを素早く解決します。",
+      "宅配の梱包動画を自動撮影・クラウド保管。送り状番号ですぐに検索し、誤出荷やクレームを素早く解決します。",
     url: localePath("ja", "/"),
     type: "website",
     locale: "ja_JP",
@@ -113,16 +124,17 @@ export default function HomeJa() {
               ハンシート · 梱包動画ガイド
             </p>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50 sm:text-5xl">
-              梱包動画の自動撮影で
+              誤出荷・クレーム対策は
               <br />
-              宅配クレームを一発解決
+              出荷時の「梱包動画」で
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-              梱包動画とは、商品の発送時の梱包工程をそのまま記録した動画です。
-              ハンシートが推奨するゼロパッキングは、すべての梱包動画を自動撮影し、
-              クラウドに安全に保管。追跡番号を入力するだけで、該当の梱包動画を
-              すぐに呼び出せます。破損・誤配送・欠品のトラブルに時間を奪われる
-              のは、もう終わりにしましょう。
+              誤出荷や「商品が入っていない」というクレームは、出荷時点の状態を
+              証明できるかどうかで結果が変わります。梱包動画とは、その出荷時の
+              梱包工程をそのまま記録した動画です。ハンシートが推奨するゼロパッキングは、
+              すべての梱包動画を自動撮影してクラウドに安全に保管。送り状番号を
+              入力するだけで該当の梱包動画をすぐに呼び出せるので、誤出荷・破損・
+              欠品のトラブルに時間を奪われることがなくなります。
             </p>
 
             <figure className="mt-8 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">
@@ -138,7 +150,7 @@ export default function HomeJa() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="https://www.zeropacking.com/ja#inquiry"
+                href={inquiryUrl("ja", "hero")}
                 target="_blank"
                 rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
@@ -146,7 +158,7 @@ export default function HomeJa() {
                 お問い合わせ
               </a>
               <a
-                href="https://www.zeropacking.com/ja"
+                href={serviceLandingUrl("ja", "hero-trial")}
                 target="_blank"
                 rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"

@@ -41,7 +41,7 @@ const CASES: Case[] = [
     id: "food",
     category: "食品賣家",
     scale: "每月出貨 1,500 件",
-    bizType: "momo + 自家官網",
+    bizType: "Naver 智慧商店 + 自家官網",
     beforeQuote:
       "保存期限、新鮮度的客訴很多，但因為沒有資料能證明出貨當下的狀態，每次都只能直接退款。一個月損失將近 50 萬韓元。",
     afterQuote:
@@ -59,7 +59,7 @@ const CASES: Case[] = [
     id: "fashion",
     category: "服飾、時尚賣家",
     scale: "每月出貨 4,000 件",
-    bizType: "蝦皮 + 自家官網 + PChome",
+    bizType: "Coupang + 自家官網 + MUSINSA",
     beforeQuote:
       "說尺寸、顏色寄錯了的客訴真的非常多。一旦進入消費爭議調處，大多是賣家敗訴，每月損失超過 100 萬韓元。",
     afterQuote:
@@ -77,7 +77,7 @@ const CASES: Case[] = [
     id: "cosmetic",
     category: "美妝賣家",
     scale: "每月出貨 2,200 件",
-    bizType: "momo + 康是美專櫃進駐",
+    bizType: "Naver 智慧商店 + Olive Young 專櫃進駐",
     beforeQuote:
       "樣品、贈品組合缺件的客訴每週湧入 5～6 件。光靠照片無法證明，只能一律重寄。",
     afterQuote:
@@ -95,7 +95,7 @@ const CASES: Case[] = [
     id: "electronics",
     category: "電子產品賣家",
     scale: "每月出貨 800 件（客單價 12 萬韓元）",
-    bizType: "蝦皮 + momo + 自家官網",
+    bizType: "Coupang + 11st + 自家官網",
     beforeQuote:
       "因為是高價商品，每一件破損、瑕疵客訴的損失都很大。「一收到就無法開機」的客訴，根本分不清是真的瑕疵還是不合理的退款嘗試。",
     afterQuote:
@@ -113,7 +113,7 @@ const CASES: Case[] = [
     id: "books",
     category: "書籍、教材賣家",
     scale: "每月出貨 3,500 件",
-    bizType: "momo + 博客來進駐",
+    bizType: "Naver 智慧商店 + Aladin 進駐",
     beforeQuote:
       "客單價低但客訴頻率高，處理時間是最大的成本。一名員工整天都只在處理客訴。",
     afterQuote:
@@ -172,6 +172,10 @@ export default function CasesPage() {
             這是食品、服飾、美妝、電子產品、書籍品類 5 家賣家的導入前後比較
             數據。所有數值皆以實際營運數據為基礎，賣家的識別資訊均以不公開
             方式處理。
+          </p>
+          <p className="mt-3 text-xs text-zinc-500">
+            ※ 以下皆為<strong>韓國賣家的實際導入案例</strong>，進駐通路名稱與金額均維持
+            當地（韓元）原樣呈現。台灣的導入成效預估，歡迎洽詢我們個別說明。
           </p>
         </header>
 

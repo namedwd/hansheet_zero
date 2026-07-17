@@ -9,9 +9,15 @@ import { languageAlternates, localePath } from "../../i18n";
 const PATH = "/cases";
 
 export const metadata: Metadata = {
-  title: "梱包動画の導入事例 - セラー5社の実際の効果データ",
+  title: "誤出荷・クレーム削減の事例 - 梱包動画を導入したセラー5社のデータ",
   description:
-    "食品・アパレル・化粧品・電子機器・書籍のセラー5社による梱包動画の導入事例。導入前後のクレーム件数・返金コスト・対応時間の変化を定量データで整理しました。",
+    "食品・アパレル・化粧品・電子機器・書籍のセラー5社による梱包動画の導入事例。導入前後の誤出荷・クレーム件数、返金コスト、対応時間の変化を定量データで整理しました。",
+  keywords: [
+    "誤出荷 削減 事例",
+    "誤出荷対策 事例",
+    "梱包動画 導入事例",
+    "クレーム 削減 事例",
+  ],
   alternates: {
     canonical: localePath("ja", PATH),
     languages: languageAlternates(PATH, ["ko", "ja"]),
@@ -41,7 +47,7 @@ const CASES: Case[] = [
     id: "food",
     category: "食品セラー",
     scale: "月間出荷1,500件",
-    bizType: "楽天市場 + 自社サイト",
+    bizType: "スマートストア + 自社サイト",
     beforeQuote:
       "賞味期限・鮮度に関するクレームが多いのですが、出荷時点の状態を証明する資料がなく、毎回そのまま返金していました。月に50万ウォン近い損失でした。",
     afterQuote:
@@ -59,7 +65,7 @@ const CASES: Case[] = [
     id: "fashion",
     category: "アパレル・ファッションセラー",
     scale: "月間出荷4,000件",
-    bizType: "Amazon.co.jp + 自社サイト + ZOZOTOWN",
+    bizType: "クーパン + 自社サイト + MUSINSA",
     beforeQuote:
       "サイズや色が違うものが届いたというクレームが本当に多いです。紛争調停に持ち込まれるとほとんどがセラー敗訴となり、毎月100万ウォンを超える損失が出ていました。",
     afterQuote:
@@ -77,7 +83,7 @@ const CASES: Case[] = [
     id: "cosmetic",
     category: "化粧品セラー",
     scale: "月間出荷2,200件",
-    bizType: "楽天市場 + ドラッグストア卸",
+    bizType: "スマートストア + オリーブヤング出店",
     beforeQuote:
       "サンプル・おまけの構成品が欠品しているというクレームが毎週5〜6件殺到していました。写真では証明できないので、無条件で再発送していました。",
     afterQuote:
@@ -95,7 +101,7 @@ const CASES: Case[] = [
     id: "electronics",
     category: "電子機器セラー",
     scale: "月間出荷800件（客単価12万ウォン）",
-    bizType: "Amazon.co.jp + Yahoo!ショッピング + 自社サイト",
+    bizType: "クーパン + 11번가 + 自社サイト",
     beforeQuote:
       "高額商品なので破損・不良のクレーム1件あたりの損失が大きいです。『届いてすぐ電源が入らない』というクレームは、実際の不良なのか不当な返金の試みなのか区別がつきませんでした。",
     afterQuote:
@@ -113,7 +119,7 @@ const CASES: Case[] = [
     id: "books",
     category: "書籍・教材セラー",
     scale: "月間出荷3,500件",
-    bizType: "楽天市場 + 書籍系モール卸",
+    bizType: "スマートストア + アラジン出店",
     beforeQuote:
       "客単価が低いのにクレームの頻度は高く、対応時間が最も大きなコストでした。1人のスタッフが一日中クレーム対応だけをしていました。",
     afterQuote:
@@ -164,14 +170,19 @@ export default function CasesPage() {
             導入事例
           </p>
           <h1 className="text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50 sm:text-5xl">
-            梱包動画の導入後
+            誤出荷・クレームは
             <br />
-            <span className="text-zinc-500">実際に何が変わったのか</span>
+            <span className="text-zinc-500">梱包動画の導入後どう変わったか</span>
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
             食品・アパレル・化粧品・電子機器・書籍カテゴリのセラー5社による
             導入前後の比較データです。すべての数値は実際の運用データに基づいており、
             セラーの識別情報は非公開として処理しています。
+          </p>
+          <p className="mt-3 text-xs text-zinc-500">
+            ※ 以下はいずれも<strong>韓国のセラーの実際の導入事例</strong>です。出店モール名と
+            金額は現地（韓国ウォン建て）のまま掲載しています。日本での導入効果の目安は
+            お問い合わせいただければ個別にご案内いたします。
           </p>
         </header>
 

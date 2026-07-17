@@ -9,9 +9,16 @@ import { languageAlternates, localePath } from "../../i18n";
 const PATH = "/claim";
 
 export const metadata: Metadata = {
-  title: "宅配クレーム解決 - 梱包動画一本で完結させる方法",
+  title: "通販の宅配クレーム対応 - 誤出荷・欠品を梱包動画で解決",
   description:
-    "商品の欠品、誤配送、破損、空箱の主張 — 宅配クレーム6つのタイプ別の解決方法と、梱包動画で紛争を即座に終わらせる標準対応スクリプトを提供します。",
+    "商品の欠品、誤出荷・誤配送、破損、空箱の主張 — 宅配クレーム6つのタイプ別の解決方法と、梱包動画で紛争を即座に終わらせる標準対応スクリプトを提供します。",
+  keywords: [
+    "通販 クレーム 対応",
+    "誤出荷 クレーム 対応",
+    "誤配送 返金",
+    "宅配 クレーム 解決",
+    "空箱 クレーム 証拠",
+  ],
   alternates: {
     canonical: localePath("ja", PATH),
     languages: languageAlternates(PATH, ["ko", "ja"]),
@@ -142,7 +149,7 @@ export default function ClaimPage() {
             クレーム解決ガイド
           </p>
           <h1 className="text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50 sm:text-5xl">
-            宅配クレームを
+            誤出荷・宅配クレームを
             <br />
             梱包動画で完結させましょう
           </h1>

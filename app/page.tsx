@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { SITE_URL, SERVICE_URL, inquiryUrl } from "./site";
+import { SITE_URL, SERVICE_URL, inquiryUrl, serviceLandingUrl } from "./site";
 import {
   StepIllustration,
   ImagePlaceholder,
@@ -183,7 +183,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href={inquiryUrl("ko")}
+                href={inquiryUrl("ko", "hero")}
                 target="_blank"
                 rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
@@ -191,7 +191,7 @@ export default function Home() {
                 포장영상 도입 문의하기
               </a>
               <a
-                href={`${SERVICE_URL}/checkout`}
+                href={serviceLandingUrl("ko", "hero-trial")}
                 className="flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"
               >
                 15일 무료체험 (카드 등록 없음)

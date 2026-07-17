@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../../site";
+import { SITE_URL, SERVICE_URL, serviceLandingUrl } from "../../site";
 import { JsonLd, buildBreadcrumb } from "../../components/JsonLd";
 import { ConversionCTA } from "../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../i18n";
@@ -8,15 +8,21 @@ import { languageAlternates, localePath } from "../../i18n";
 const PATH = "/pricing";
 
 export const metadata: Metadata = {
-  title: "梱包動画の料金 - 梱包台1台あたり月額30,000ウォン、全機能込み",
+  title: "梱包動画の料金 - 月額4,980円｜誤出荷対策にかかる費用",
   description:
-    "ゼロパッキングの梱包動画はシンプルな単一プラン — 梱包台1台あたり月額30,000ウォン（税別）で、WMS・API連携を含むすべての機能をご利用いただけます。年額払いで17%割引、15日間の無料トライアル。",
+    "誤出荷・クレーム対策の梱包動画はシンプルな単一プラン — 梱包台1台あたり月額4,980円（税別）で、WMS・API連携を含むすべての機能をご利用いただけます。年額払いで17%割引、15日間の無料トライアル。",
+  keywords: [
+    "梱包動画 料金",
+    "誤出荷対策 費用",
+    "出荷 録画 システム 価格",
+    "梱包動画 いくら",
+  ],
   alternates: {
     canonical: localePath("ja", PATH),
     languages: languageAlternates(PATH, ["ko", "ja"]),
   },
   openGraph: {
-    title: "梱包動画の料金 - 月額30,000ウォン、全機能込み",
+    title: "梱包動画の料金 - 月額4,980円、全機能込み",
     description:
       "単一プランでWMS・API・HD録画・3か月クラウド保管まですべてご利用可能。カード登録なしで無料トライアルできます。",
     url: localePath("ja", PATH),
@@ -39,11 +45,11 @@ const FEATURES = [
 const FAQ = [
   {
     q: "梱包動画の料金に消費税は含まれていますか？",
-    a: "表示価格の30,000ウォンは税別です。お支払い時に消費税10%が加算され、合計33,000ウォンが請求されます。",
+    a: "表示価格の4,980円は税別です。日本国内のお客様の消費税の取り扱いおよび請求方法については、お問い合わせいただければ個別にご案内いたします。",
   },
   {
     q: "年額払いの割引はどのくらいですか？",
-    a: "年額払いで17%割引となります。月額30,000ウォンが24,900ウォンに適用され、年額払いの場合は約298,800ウォンです。",
+    a: "年額払いで17%割引となります。月額4,980円が月あたり4,130円に適用され、年額払いの場合は年間49,560円です。",
   },
   {
     q: "無料トライアル後、自動的に課金されますか？",
@@ -55,7 +61,7 @@ const FAQ = [
   },
   {
     q: "梱包台が増えると料金はどうなりますか？",
-    a: "梱包台1台単位で追加されます。同じ事業所内の複数の梱包台を同時に運用でき、各梱包台にカメラを1台設置します。例）梱包台3台運用時は月額90,000ウォン。",
+    a: "梱包台1台単位で追加されます。同じ事業所内の複数の梱包台を同時に運用でき、各梱包台にカメラを1台設置します。例）梱包台3台運用時は月額14,940円。",
   },
   {
     q: "WMSやAPI連携も同じ価格に含まれますか？",
@@ -83,10 +89,17 @@ export default function PricingPage() {
           serviceType: "梱包動画の自動撮影およびクラウド保管サービス",
           name: "ゼロパッキング 梱包動画",
           description:
-            "宅配の梱包動画を自動撮影し、クラウドに保管するSaaSサービス。送り状番号で即座に検索。梱包台1台あたり月額30,000ウォン（税別）。",
+            "宅配の梱包動画を自動撮影し、クラウドに保管するSaaSサービス。送り状番号で即座に検索。梱包台1台あたり月額4,980円（税別）。",
           provider: { "@type": "Organization", name: "ゼロパッキング", url: SERVICE_URL },
-          areaServed: "KR",
-          url: `${SERVICE_URL}/checkout`,
+          areaServed: "JP",
+          url: "https://www.zeropacking.com/ja",
+          offers: {
+            "@type": "Offer",
+            price: 4980,
+            priceCurrency: "JPY",
+            url: "https://www.zeropacking.com/ja",
+            description: "梱包台1台あたり月額（税別）。年額払いで17%割引。",
+          },
         }}
       />
       <JsonLd
@@ -116,7 +129,7 @@ export default function PricingPage() {
             シンプルな料金、全機能込み
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            プランを比較する必要はありません。梱包台1台あたり月額30,000ウォンで、WMS・API連携を含むすべての機能をご利用いただけます。カード登録なしの15日間無料トライアルでお始めください。
+            プランを比較する必要はありません。梱包台1台あたり月額4,980円で、WMS・API連携を含むすべての機能をご利用いただけます。カード登録なしの15日間無料トライアルでお始めください。
           </p>
         </header>
 
@@ -129,10 +142,10 @@ export default function PricingPage() {
             <h2 className="text-lg font-bold text-black dark:text-white">梱包動画 単一プラン</h2>
 
             <div className="mt-5">
-              <span className="text-5xl font-bold text-black dark:text-white">30,000ウォン</span>
+              <span className="text-5xl font-bold text-black dark:text-white">4,980円</span>
               <span className="ml-2 text-base text-zinc-500">/ 梱包台 / 月</span>
               <p className="mt-2 text-sm text-zinc-500">税別 · 年額払いで17%割引</p>
-              <p className="mt-2 text-sm text-zinc-500">日本でのご利用料金や見積りはお問い合わせください。</p>
+              <p className="mt-2 text-sm text-zinc-500">複数台・大規模運用のお見積りはお問い合わせください。</p>
             </div>
 
             <ul className="mt-7 space-y-3 text-sm">
@@ -145,7 +158,9 @@ export default function PricingPage() {
             </ul>
 
             <a
-              href={`${SERVICE_URL}/checkout`}
+              href={serviceLandingUrl("ja", "pricing-trial")}
+              target="_blank"
+              rel="noopener"
               className="mt-8 inline-flex h-12 w-full items-center justify-center rounded-full bg-black px-5 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
             >
               15日間の無料トライアルを始める
@@ -171,21 +186,21 @@ export default function PricingPage() {
               </thead>
               <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
                 {[
-                  { count: 1, monthly: 30000, yearlyMonthly: 24900 },
-                  { count: 2, monthly: 60000, yearlyMonthly: 49800 },
-                  { count: 3, monthly: 90000, yearlyMonthly: 74700 },
-                  { count: 5, monthly: 150000, yearlyMonthly: 124500 },
-                  { count: 10, monthly: 300000, yearlyMonthly: 249000 },
+                  { count: 1, monthly: 4980, yearlyMonthly: 4130 },
+                  { count: 2, monthly: 9960, yearlyMonthly: 8260 },
+                  { count: 3, monthly: 14940, yearlyMonthly: 12390 },
+                  { count: 5, monthly: 24900, yearlyMonthly: 20650 },
+                  { count: 10, monthly: 49800, yearlyMonthly: 41300 },
                 ].map((row) => (
                   <tr key={row.count}>
                     <td className="px-4 py-3 font-medium text-zinc-900 dark:text-zinc-100">
                       梱包台 {row.count}台
                     </td>
                     <td className="px-4 py-3 text-zinc-700 dark:text-zinc-300">
-                      月 {row.monthly.toLocaleString()}ウォン
+                      月 {row.monthly.toLocaleString()}円
                     </td>
                     <td className="px-4 py-3 font-semibold text-emerald-600 dark:text-emerald-400">
-                      月 {row.yearlyMonthly.toLocaleString()}ウォン（年 {(row.yearlyMonthly * 12).toLocaleString()}ウォン）
+                      月 {row.yearlyMonthly.toLocaleString()}円（年 {(row.yearlyMonthly * 12).toLocaleString()}円）
                     </td>
                   </tr>
                 ))}
@@ -203,10 +218,10 @@ export default function PricingPage() {
           </h2>
           <div className="mt-5 space-y-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
             <p>
-              梱包動画の1か月分の料金30,000ウォンは、不当な返金を1件減らすだけで回収できます。平均的なセラーの場合、1〜2か月以内にROIが得られ、クレーム対応の時間削減まで加味すると実質的な効果はさらに大きくなります。
+              梱包動画の1か月分の料金4,980円は、不当な返金を1件減らすだけで回収できます。平均的なセラーの場合、1〜2か月以内にROIが得られ、クレーム対応の時間削減まで加味すると実質的な効果はさらに大きくなります。
             </p>
             <p>
-              Google広告でキーワード1クリックあたり平均2万ウォン近くを支出されている場合、梱包動画の1か月分の費用は広告クリック1.5回分の費用にすぎません。
+              リスティング広告のクリック数回分にも満たない金額で、出荷1件ごとの客観的な証拠が残ります。
             </p>
           </div>
           <p className="mt-5 text-sm font-medium text-zinc-700 dark:text-zinc-300">

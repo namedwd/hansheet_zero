@@ -41,7 +41,7 @@ const CASES: Case[] = [
     id: "food",
     category: "Nhà bán hàng thực phẩm",
     scale: "Xuất hàng 1.500 đơn/tháng",
-    bizType: "Lazada + website riêng",
+    bizType: "Naver Smart Store + website riêng",
     beforeQuote:
       "Khiếu nại về hạn sử dụng và độ tươi rất nhiều, nhưng vì không có bằng chứng về tình trạng sản phẩm tại thời điểm xuất hàng nên lần nào chúng tôi cũng đành phải hoàn tiền. Mỗi tháng thiệt hại gần 50 vạn won.",
     afterQuote:
@@ -59,7 +59,7 @@ const CASES: Case[] = [
     id: "fashion",
     category: "Nhà bán hàng thời trang & quần áo",
     scale: "Xuất hàng 4.000 đơn/tháng",
-    bizType: "Shopee + website riêng + TikTok Shop",
+    bizType: "Coupang + website riêng + MUSINSA",
     beforeQuote:
       "Khiếu nại nói giao sai size, sai màu thực sự rất nhiều. Khi đưa ra giải quyết tranh chấp thì phần lớn nhà bán hàng đều thua, nên mỗi tháng thiệt hại hơn 100 vạn won.",
     afterQuote:
@@ -77,7 +77,7 @@ const CASES: Case[] = [
     id: "cosmetic",
     category: "Nhà bán hàng mỹ phẩm",
     scale: "Xuất hàng 2.200 đơn/tháng",
-    bizType: "Lazada + gian hàng trong chuỗi mỹ phẩm",
+    bizType: "Naver Smart Store + gian hàng Olive Young",
     beforeQuote:
       "Khiếu nại thiếu hàng mẫu thử và quà tặng kèm xuất hiện 5~6 vụ mỗi tuần. Vì hình ảnh không chứng minh được nên cứ phải gửi lại vô điều kiện.",
     afterQuote:
@@ -95,7 +95,7 @@ const CASES: Case[] = [
     id: "electronics",
     category: "Nhà bán hàng thiết bị điện tử",
     scale: "Xuất hàng 800 đơn/tháng (đơn giá 12 vạn won)",
-    bizType: "Shopee + Lazada + website riêng",
+    bizType: "Coupang + 11st + website riêng",
     beforeQuote:
       "Vì là sản phẩm giá cao nên thiệt hại mỗi vụ khiếu nại hư hỏng, lỗi rất lớn. Với khiếu nại 'vừa nhận đã không lên nguồn' thì không phân biệt được là lỗi thật hay là cố tình đòi hoàn tiền vô lý.",
     afterQuote:
@@ -113,7 +113,7 @@ const CASES: Case[] = [
     id: "books",
     category: "Nhà bán hàng sách & giáo trình",
     scale: "Xuất hàng 3.500 đơn/tháng",
-    bizType: "Lazada + gian hàng trên sàn sách",
+    bizType: "Naver Smart Store + gian hàng Aladin",
     beforeQuote:
       "Đơn giá thấp nhưng tần suất khiếu nại lại cao, nên thời gian xử lý là chi phí lớn nhất. Một nhân viên cả ngày chỉ làm mỗi việc xử lý khiếu nại.",
     afterQuote:
@@ -173,6 +173,11 @@ export default function CasesPage() {
             thuộc các ngành thực phẩm, thời trang, mỹ phẩm, thiết bị điện tử và sách.
             Mọi số liệu đều dựa trên dữ liệu vận hành thực tế, và thông tin nhận
             dạng nhà bán hàng được xử lý bảo mật.
+          </p>
+          <p className="mt-3 text-xs text-zinc-500">
+            ※ Tất cả đều là <strong>case study thực tế của các nhà bán hàng Hàn Quốc</strong>. Tên sàn
+            và số tiền được giữ nguyên theo thị trường Hàn Quốc (đơn vị won). Về hiệu quả dự kiến
+            tại Việt Nam, vui lòng liên hệ để được tư vấn riêng.
           </p>
         </header>
 

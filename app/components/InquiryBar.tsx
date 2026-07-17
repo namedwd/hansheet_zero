@@ -40,7 +40,7 @@ export function InquiryBar() {
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-6 py-2 sm:px-10">
         <p className="text-sm font-medium">{c.text}</p>
         <a
-          href={inquiryUrl(locale)}
+          href={inquiryUrl(locale, "top-bar")}
           target="_blank"
           rel="noopener"
           className="inline-flex h-8 flex-none items-center justify-center gap-1 rounded-full bg-white px-4 text-xs font-semibold text-black transition-colors hover:bg-zinc-200 dark:bg-black dark:text-white dark:hover:bg-zinc-800"

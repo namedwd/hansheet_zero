@@ -9,9 +9,15 @@ import { languageAlternates, localePath } from "../../i18n";
 const PATH = "/compare";
 
 export const metadata: Metadata = {
-  title: "梱包動画サービス比較 - 価格・機能・保存期間を一覧で整理",
+  title: "誤出荷対策システム比較 - 梱包動画サービスの価格・機能を一覧で",
   description:
-    "梱包動画サービス4タイプ（ゼロパッキング + A社・B社・C社）の価格、保存期間、WMS連携、API、契約条件を1つの表で比較します。事業規模別のおすすめマトリクス付き。",
+    "誤出荷・クレーム対策として使える梱包動画サービス4タイプ（ゼロパッキング + A社・B社・C社）の価格、保存期間、WMS連携、API、契約条件を1つの表で比較します。事業規模別のおすすめマトリクス付き。",
+  keywords: [
+    "誤出荷対策 システム 比較",
+    "誤出荷 防止 システム",
+    "梱包動画 サービス 比較",
+    "出荷 録画 システム 比較",
+  ],
   alternates: {
     canonical: localePath("ja", PATH),
     languages: languageAlternates(PATH, ["ko", "ja"]),
@@ -49,14 +55,14 @@ const VENDORS: Vendor[] = [
     name: "ゼロパッキング",
     badge: "ハンシートおすすめ",
     type: "梱包動画専用SaaS",
-    price: "30,000ウォン",
+    price: "4,980円",
     priceNote: "梱包台あたり / 月（税別）",
     storage: "3か月",
     quality: "HD",
     search: "送り状番号で即検索（平均3秒）",
     wms: "✅ 標準搭載",
     api: "✅ REST + Webhook標準搭載",
-    camera: "別売（USBウェブカメラ5〜10万ウォンから対応）",
+    camera: "別売（USBウェブカメラ5,000〜10,000円から対応）",
     contract: "月単位（契約縛りなし）、年間払いで17%割引",
     trial: "15日間無料体験（カード登録不要）",
     bestFor: "月間出荷200〜5,000件のセラー、クレーム対応の負担を減らしたい場合",
@@ -65,7 +71,7 @@ const VENDORS: Vendor[] = [
     id: "vendor-a",
     name: "A社（大型物流SaaS）",
     type: "WMS・OMS総合パッケージの動画モジュール",
-    price: "50,000〜80,000ウォン + α",
+    price: "約5,500〜8,800円 + α",
     priceNote: "梱包台あたり / 月、WMS本ライセンス別途",
     storage: "1〜3か月（料金プランにより差あり）",
     quality: "HD〜FHD",
@@ -81,14 +87,14 @@ const VENDORS: Vendor[] = [
     id: "vendor-b",
     name: "B社（自社開発型ソリューション）",
     type: "オンプレミス + カメラパッケージ",
-    price: "100,000〜150,000ウォン",
-    priceNote: "梱包台あたり / 月 + 初期設置費100万ウォン〜",
+    price: "約11,000〜16,500円",
+    priceNote: "梱包台あたり / 月 + 初期設置費 約11万円〜",
     storage: "6か月（自社NVR依存）",
     quality: "FHD",
     search: "DVRタイムライン検索（送り状インデックス一部対応）",
     wms: "△ 別途モジュール追加時",
     api: "△ 限定的",
-    camera: "専用IPカメラの必須購入（1台30〜50万ウォン）",
+    camera: "専用IPカメラの必須購入（1台 約3.3〜5.5万円）",
     contract: "12〜24か月契約、設置費は返金不可",
     trial: "別途デモ申込",
     bestFor: "外部クラウドを利用できないセキュリティ重視環境、大型物流センター",
@@ -97,7 +103,7 @@ const VENDORS: Vendor[] = [
     id: "vendor-c",
     name: "C社（スタートアップ / ベータ）",
     type: "初期段階の新規サービス",
-    price: "0ウォン〜15,000ウォン",
+    price: "0円〜約1,650円",
     priceNote: "梱包台あたり / 月（ベータ期間）",
     storage: "1か月",
     quality: "HD（一部SD）",
@@ -210,8 +216,9 @@ export default function ComparePage() {
           </p>
           <p className="mt-3 text-xs text-zinc-500">
             本比較は2026年5月時点の市場一般資料をもとにした客観的な分析であり、
-            A社・B社・C社はカテゴリー代表の匿名表記です。正確な現在の価格は各社に
-            直接ご確認ください。
+            A社・B社・C社は特定の企業ではなく<strong>ソリューションのカテゴリーを代表する匿名表記</strong>です。
+            A社・B社・C社の価格は<strong>韓国市場の一般的な価格帯を円換算した参考値</strong>で、為替により変動します。
+            ゼロパッキングの4,980円は日本でのご提供価格です。正確な価格は各社に直接ご確認ください。
           </p>
         </header>
 

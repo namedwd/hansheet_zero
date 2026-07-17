@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL } from "../site";
+import { SITE_URL, inquiryUrl, serviceLandingUrl } from "../site";
 import { StepIllustration, ImagePlaceholder } from "../components/Illustrations";
 import { ConversionCTA } from "../components/ConversionCTA";
 import { languageAlternates, localePath } from "../i18n";
@@ -138,7 +138,7 @@ export default function HomeVi() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="https://www.zeropacking.com/vi#inquiry"
+                href={inquiryUrl("vi", "hero")}
                 target="_blank"
                 rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
@@ -146,7 +146,7 @@ export default function HomeVi() {
                 Liên hệ
               </a>
               <a
-                href="https://www.zeropacking.com/vi"
+                href={serviceLandingUrl("vi", "hero-trial")}
                 target="_blank"
                 rel="noopener"
                 className="flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"

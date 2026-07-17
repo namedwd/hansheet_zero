@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../../site";
+import { SITE_URL, SERVICE_URL, serviceLandingUrl } from "../../site";
 import { JsonLd, buildBreadcrumb } from "../../components/JsonLd";
 import { ConversionCTA } from "../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../i18n";
@@ -8,15 +8,15 @@ import { languageAlternates, localePath } from "../../i18n";
 const PATH = "/pricing";
 
 export const metadata: Metadata = {
-  title: "Chi phí video đóng gói - 30,000 won/tháng cho mỗi bàn đóng gói, bao gồm mọi tính năng",
+  title: "Chi phí video đóng gói - 599.000đ/tháng cho mỗi bàn đóng gói, bao gồm mọi tính năng",
   description:
-    "Video đóng gói Zeropacking dùng gói duy nhất — 30,000 won/tháng cho mỗi bàn đóng gói (chưa gồm thuế GTGT), bao gồm tất cả tính năng kể cả tích hợp WMS·API. Giảm 17% khi thanh toán theo năm, dùng thử miễn phí 15 ngày.",
+    "Video đóng gói Zeropacking dùng gói duy nhất — 599.000đ/tháng cho mỗi bàn đóng gói (chưa bao gồm VAT), bao gồm tất cả tính năng kể cả tích hợp WMS·API. Giảm 17% khi thanh toán theo năm, dùng thử miễn phí 15 ngày.",
   alternates: {
     canonical: localePath("vi", PATH),
     languages: languageAlternates(PATH, ["ko", "ja", "zh-tw", "vi"]),
   },
   openGraph: {
-    title: "Chi phí video đóng gói - 30,000 won/tháng, bao gồm mọi tính năng",
+    title: "Chi phí video đóng gói - 599.000đ/tháng, bao gồm mọi tính năng",
     description:
       "Gói duy nhất bao gồm cả WMS·API·ghi hình HD·lưu trữ đám mây 3 tháng. Dùng thử miễn phí không cần đăng ký thẻ.",
     url: localePath("vi", PATH),
@@ -38,12 +38,12 @@ const FEATURES = [
 
 const FAQ = [
   {
-    q: "Chi phí video đóng gói đã bao gồm thuế GTGT chưa?",
-    a: "Giá hiển thị 30,000 won là chưa gồm thuế GTGT. Khi thanh toán sẽ cộng thêm 10% thuế GTGT, tổng cộng bị tính 33,000 won.",
+    q: "Chi phí video đóng gói đã bao gồm VAT chưa?",
+    a: "Giá hiển thị 599.000đ chưa bao gồm VAT. Về cách xử lý thuế và xuất hoá đơn tại Việt Nam, vui lòng liên hệ để được tư vấn riêng.",
   },
   {
     q: "Thanh toán theo năm được giảm bao nhiêu?",
-    a: "Thanh toán theo năm được giảm 17%. Mức 30,000 won/tháng còn 24,900 won, nên thanh toán theo năm khoảng 298,800 won.",
+    a: "Thanh toán theo năm được giảm 17%. Mức 599.000đ/tháng còn 499.000đ/tháng, nên thanh toán theo năm là 5.988.000đ.",
   },
   {
     q: "Sau khi dùng thử miễn phí có tự động thanh toán không?",
@@ -55,7 +55,7 @@ const FAQ = [
   },
   {
     q: "Khi tăng số bàn đóng gói thì chi phí thế nào?",
-    a: "Được cộng theo từng đơn vị 1 bàn đóng gói. Bạn có thể vận hành nhiều bàn đóng gói cùng lúc tại một cơ sở, mỗi bàn đóng gói lắp một camera. Ví dụ) vận hành 3 bàn đóng gói là 90,000 won/tháng.",
+    a: "Được cộng theo từng đơn vị 1 bàn đóng gói. Bạn có thể vận hành nhiều bàn đóng gói cùng lúc tại một cơ sở, mỗi bàn đóng gói lắp một camera. Ví dụ) vận hành 3 bàn đóng gói là 1.797.000đ/tháng.",
   },
   {
     q: "Tích hợp WMS hay API có được bao gồm trong cùng mức giá không?",
@@ -83,10 +83,18 @@ export default function PricingPage() {
           serviceType: "Dịch vụ tự động quay và lưu trữ đám mây video đóng gói",
           name: "Video đóng gói Zeropacking",
           description:
-            "Dịch vụ SaaS tự động quay video đóng gói bưu kiện và lưu trên đám mây. Tìm kiếm tức thì theo mã vận đơn. 30,000 won/tháng cho mỗi bàn đóng gói (chưa gồm thuế GTGT).",
+            "Dịch vụ SaaS tự động quay video đóng gói bưu kiện và lưu trên đám mây. Tìm kiếm tức thì theo mã vận đơn. 599.000đ mỗi bàn đóng gói / tháng (chưa VAT).",
           provider: { "@type": "Organization", name: "Zeropacking", url: SERVICE_URL },
-          areaServed: "KR",
-          url: `${SERVICE_URL}/checkout`,
+          areaServed: "VN",
+          url: "https://www.zeropacking.com/vi",
+          offers: {
+            "@type": "Offer",
+            price: 599000,
+            priceCurrency: "VND",
+            url: "https://www.zeropacking.com/vi",
+            description:
+              "Mỗi bàn đóng gói / tháng (chưa VAT). Giảm 17% khi thanh toán theo năm.",
+          },
         }}
       />
       <JsonLd
@@ -116,7 +124,7 @@ export default function PricingPage() {
             Giá đơn giản, bao gồm mọi tính năng
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            Bạn không cần so sánh các gói. Với 30,000 won/tháng cho mỗi bàn đóng
+            Bạn không cần so sánh các gói. Với 599.000đ/tháng cho mỗi bàn đóng
             gói, bạn được dùng tất cả tính năng kể cả tích hợp WMS·API. Hãy bắt
             đầu với bản dùng thử miễn phí 15 ngày không cần đăng ký thẻ.
           </p>
@@ -131,10 +139,10 @@ export default function PricingPage() {
             <h2 className="text-lg font-bold text-black dark:text-white">Gói duy nhất cho video đóng gói</h2>
 
             <div className="mt-5">
-              <span className="text-5xl font-bold text-black dark:text-white">30,000 won</span>
+              <span className="text-5xl font-bold text-black dark:text-white">599.000đ</span>
               <span className="ml-2 text-base text-zinc-500">/ bàn đóng gói / tháng</span>
-              <p className="mt-2 text-sm text-zinc-500">Chưa gồm thuế GTGT · Giảm 17% khi thanh toán theo năm</p>
-              <p className="mt-2 text-sm text-zinc-500">Vui lòng liên hệ để biết chi phí và báo giá tại Việt Nam.</p>
+              <p className="mt-2 text-sm text-zinc-500">Chưa bao gồm VAT · Giảm 17% khi thanh toán theo năm</p>
+              <p className="mt-2 text-sm text-zinc-500">Vui lòng liên hệ để nhận báo giá cho nhiều bàn đóng gói hoặc quy mô lớn.</p>
             </div>
 
             <ul className="mt-7 space-y-3 text-sm">
@@ -147,7 +155,9 @@ export default function PricingPage() {
             </ul>
 
             <a
-              href={`${SERVICE_URL}/checkout`}
+              href={serviceLandingUrl("vi", "pricing-trial")}
+              target="_blank"
+              rel="noopener"
               className="mt-8 inline-flex h-12 w-full items-center justify-center rounded-full bg-black px-5 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
             >
               Bắt đầu dùng thử miễn phí 15 ngày
@@ -173,21 +183,21 @@ export default function PricingPage() {
               </thead>
               <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
                 {[
-                  { count: 1, monthly: 30000, yearlyMonthly: 24900 },
-                  { count: 2, monthly: 60000, yearlyMonthly: 49800 },
-                  { count: 3, monthly: 90000, yearlyMonthly: 74700 },
-                  { count: 5, monthly: 150000, yearlyMonthly: 124500 },
-                  { count: 10, monthly: 300000, yearlyMonthly: 249000 },
+                  { count: 1, monthly: 599000, yearlyMonthly: 499000 },
+                  { count: 2, monthly: 1198000, yearlyMonthly: 998000 },
+                  { count: 3, monthly: 1797000, yearlyMonthly: 1497000 },
+                  { count: 5, monthly: 2995000, yearlyMonthly: 2495000 },
+                  { count: 10, monthly: 5990000, yearlyMonthly: 4990000 },
                 ].map((row) => (
                   <tr key={row.count}>
                     <td className="px-4 py-3 font-medium text-zinc-900 dark:text-zinc-100">
                       {row.count} bàn đóng gói
                     </td>
                     <td className="px-4 py-3 text-zinc-700 dark:text-zinc-300">
-                      {row.monthly.toLocaleString()} won/tháng
+                      {row.monthly.toLocaleString("vi-VN")}đ/tháng
                     </td>
                     <td className="px-4 py-3 font-semibold text-emerald-600 dark:text-emerald-400">
-                      {row.yearlyMonthly.toLocaleString()} won/tháng ({(row.yearlyMonthly * 12).toLocaleString()} won/năm)
+                      {row.yearlyMonthly.toLocaleString("vi-VN")}đ/tháng ({(row.yearlyMonthly * 12).toLocaleString("vi-VN")}đ/năm)
                     </td>
                   </tr>
                 ))}
@@ -205,15 +215,14 @@ export default function PricingPage() {
           </h2>
           <div className="mt-5 space-y-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
             <p>
-              Chi phí một tháng video đóng gói 30,000 won được thu hồi chỉ cần
+              Chi phí một tháng video đóng gói 599.000đ được thu hồi chỉ cần
               giảm 1 trường hợp hoàn tiền bất hợp lý. Với người bán trung bình,
               ROI phát sinh trong vòng 1~2 tháng, và nếu cộng thêm thời gian tiết
               kiệm khi xử lý khiếu nại thì hiệu quả thực tế còn lớn hơn nhiều.
             </p>
             <p>
-              Nếu bạn chi gần 20,000 won cho mỗi lần nhấp vào một từ khóa quảng
-              cáo Google, thì chi phí một tháng video đóng gói chỉ tương đương
-              chi phí của 1,5 lần nhấp quảng cáo.
+              Số tiền này còn chưa bằng vài lượt nhấp quảng cáo, nhưng để lại
+              bằng chứng khách quan cho từng đơn xuất hàng.
             </p>
           </div>
         </section>

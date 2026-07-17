@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../../site";
+import { SITE_URL, SERVICE_URL, serviceLandingUrl } from "../../site";
 import { JsonLd, buildBreadcrumb } from "../../components/JsonLd";
 import { ConversionCTA } from "../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../i18n";
@@ -8,15 +8,15 @@ import { languageAlternates, localePath } from "../../i18n";
 const PATH = "/pricing";
 
 export const metadata: Metadata = {
-  title: "包裝影片費用 - 每個包裝台每月 30,000 韓元，全功能包含",
+  title: "包裝影片費用 - 每個包裝台每月 990 元，全功能包含",
   description:
-    "Zeropacking 包裝影片採單一方案 — 每個包裝台每月 30,000 韓元（未稅），即可使用包含 WMS、API 串接在內的所有功能。年繳享 17% 折扣，15 天免費試用。",
+    "Zeropacking 包裝影片採單一方案 — 每個包裝台每月 990 元（未稅），即可使用包含 WMS、API 串接在內的所有功能。年繳享 17% 折扣，15 天免費試用。",
   alternates: {
     canonical: localePath("zh-tw", PATH),
     languages: languageAlternates(PATH, ["ko", "ja", "zh-tw"]),
   },
   openGraph: {
-    title: "包裝影片費用 - 每月 30,000 韓元，全功能包含",
+    title: "包裝影片費用 - 每月 990 元，全功能包含",
     description:
       "單一方案即可使用 WMS、API、HD 錄影、3 個月雲端保存等所有功能。無需登錄信用卡即可免費試用。",
     url: localePath("zh-tw", PATH),
@@ -39,11 +39,11 @@ const FEATURES = [
 const FAQ = [
   {
     q: "包裝影片費用是否含稅？",
-    a: "顯示價格 30,000 韓元為未稅。結帳時會另加 10% 加值稅，總計收取 33,000 韓元。",
+    a: "顯示價格 990 元為未稅。台灣地區的稅務處理與請款方式，歡迎洽詢我們個別說明。",
   },
   {
     q: "年繳折扣有多少？",
-    a: "年繳享 17% 折扣。每月 30,000 韓元相當於 24,900 韓元，年繳總計約 298,800 韓元。",
+    a: "年繳享 17% 折扣。每月 990 元相當於 820 元，年繳總計 9,840 元。",
   },
   {
     q: "免費試用後會自動扣款嗎？",
@@ -55,7 +55,7 @@ const FAQ = [
   },
   {
     q: "包裝台增加時費用如何計算？",
-    a: "以每個包裝台為單位增加。同一營業場所可同時運作多個包裝台，每個包裝台會安裝一台攝影機。例如：運作 3 個包裝台時每月 90,000 韓元。",
+    a: "以每個包裝台為單位增加。同一營業場所可同時運作多個包裝台，每個包裝台會安裝一台攝影機。例如：運作 3 個包裝台時每月 2,970 元。",
   },
   {
     q: "WMS 或 API 串接也包含在相同價格中嗎？",
@@ -83,10 +83,17 @@ export default function PricingPage() {
           serviceType: "包裝影片自動拍攝及雲端保存服務",
           name: "Zeropacking 包裝影片",
           description:
-            "自動拍攝宅配包裝影片並保存至雲端的 SaaS 服務。可透過託運單號即時搜尋。每個包裝台每月 30,000 韓元（未稅）。",
+            "自動拍攝宅配包裝影片並保存至雲端的 SaaS 服務。可透過託運單號即時搜尋。每個包裝台每月 990 元（未稅）。",
           provider: { "@type": "Organization", name: "Zeropacking", url: SERVICE_URL },
-          areaServed: "KR",
-          url: `${SERVICE_URL}/checkout`,
+          areaServed: "TW",
+          url: "https://www.zeropacking.com/zh-tw",
+          offers: {
+            "@type": "Offer",
+            price: 990,
+            priceCurrency: "TWD",
+            url: "https://www.zeropacking.com/zh-tw",
+            description: "每個包裝台每月（未稅）。年繳享 17% 折扣。",
+          },
         }}
       />
       <JsonLd
@@ -116,7 +123,7 @@ export default function PricingPage() {
             單純的費用，全功能包含
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            無需比較各種方案。每個包裝台每月 30,000 韓元，即可使用包含 WMS、API
+            無需比較各種方案。每個包裝台每月 990 元，即可使用包含 WMS、API
             串接在內的所有功能。無需登錄信用卡，立即以 15 天免費試用開始吧。
           </p>
         </header>
@@ -130,10 +137,10 @@ export default function PricingPage() {
             <h2 className="text-lg font-bold text-black dark:text-white">包裝影片單一方案</h2>
 
             <div className="mt-5">
-              <span className="text-5xl font-bold text-black dark:text-white">30,000 韓元</span>
+              <span className="text-5xl font-bold text-black dark:text-white">990 元</span>
               <span className="ml-2 text-base text-zinc-500">/ 包裝台 / 月</span>
               <p className="mt-2 text-sm text-zinc-500">未稅 · 年繳享 17% 折扣</p>
-              <p className="mt-2 text-sm text-zinc-500">台灣地區的費用與報價請洽詢</p>
+              <p className="mt-2 text-sm text-zinc-500">多台或大規模運用的報價，歡迎洽詢。</p>
             </div>
 
             <ul className="mt-7 space-y-3 text-sm">
@@ -146,7 +153,9 @@ export default function PricingPage() {
             </ul>
 
             <a
-              href={`${SERVICE_URL}/checkout`}
+              href={serviceLandingUrl("zh-tw", "pricing-trial")}
+              target="_blank"
+              rel="noopener"
               className="mt-8 inline-flex h-12 w-full items-center justify-center rounded-full bg-black px-5 text-base font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
             >
               開始 15 天免費試用
@@ -172,21 +181,21 @@ export default function PricingPage() {
               </thead>
               <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
                 {[
-                  { count: 1, monthly: 30000, yearlyMonthly: 24900 },
-                  { count: 2, monthly: 60000, yearlyMonthly: 49800 },
-                  { count: 3, monthly: 90000, yearlyMonthly: 74700 },
-                  { count: 5, monthly: 150000, yearlyMonthly: 124500 },
-                  { count: 10, monthly: 300000, yearlyMonthly: 249000 },
+                  { count: 1, monthly: 990, yearlyMonthly: 820 },
+                  { count: 2, monthly: 1980, yearlyMonthly: 1640 },
+                  { count: 3, monthly: 2970, yearlyMonthly: 2460 },
+                  { count: 5, monthly: 4950, yearlyMonthly: 4100 },
+                  { count: 10, monthly: 9900, yearlyMonthly: 8200 },
                 ].map((row) => (
                   <tr key={row.count}>
                     <td className="px-4 py-3 font-medium text-zinc-900 dark:text-zinc-100">
                       包裝台 {row.count} 個
                     </td>
                     <td className="px-4 py-3 text-zinc-700 dark:text-zinc-300">
-                      月 {row.monthly.toLocaleString()} 韓元
+                      月 {row.monthly.toLocaleString()} 元
                     </td>
                     <td className="px-4 py-3 font-semibold text-emerald-600 dark:text-emerald-400">
-                      月 {row.yearlyMonthly.toLocaleString()} 韓元（年 {(row.yearlyMonthly * 12).toLocaleString()} 韓元）
+                      月 {row.yearlyMonthly.toLocaleString()} 元（年 {(row.yearlyMonthly * 12).toLocaleString()} 元）
                     </td>
                   </tr>
                 ))}
@@ -204,13 +213,12 @@ export default function PricingPage() {
           </h2>
           <div className="mt-5 space-y-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
             <p>
-              包裝影片每月費用 30,000 韓元，只要減少 1 件不當退款即可回本。
+              包裝影片每月費用 990 元，只要減少 1 件不當退款即可回本。
               以一般賣家為基準，1～2 個月內即可產生 ROI，再加上客訴應對
               時間的節省，實際效益遠遠更大。
             </p>
             <p>
-              若您透過 Google 廣告每次關鍵字點擊平均花費將近 2 萬韓元，
-              包裝影片一個月的費用，僅相當於 1.5 次廣告點擊的成本。
+              這個金額不到關鍵字廣告幾次點擊的費用，卻能為每一筆出貨留下客觀證據。
             </p>
           </div>
           <span className="mt-5 inline-flex items-center text-sm font-medium text-zinc-700 dark:text-zinc-300">

@@ -60,7 +60,7 @@ const INTEGRATIONS = [
 const FAQ = [
   {
     q: "Việc gọi API có tính phí riêng không?",
-    a: "Việc sử dụng API·Webhook đã bao gồm trong gói cước duy nhất (30.000 won/tháng/bàn đóng gói), nên với quy mô cửa hàng thông thường sẽ không phát sinh chi phí thêm. Với quy mô doanh nghiệp có lượng gọi rất lớn, vui lòng liên hệ riêng để được tư vấn.",
+    a: "Việc sử dụng API·Webhook đã bao gồm trong gói cước duy nhất (599.000đ/tháng/bàn đóng gói), nên với quy mô cửa hàng thông thường sẽ không phát sinh chi phí thêm. Với quy mô doanh nghiệp có lượng gọi rất lớn, vui lòng liên hệ riêng để được tư vấn.",
   },
   {
     q: "Tích hợp API cần bao nhiêu nhân lực phát triển?",

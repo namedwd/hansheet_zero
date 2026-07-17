@@ -88,7 +88,7 @@ const STEPS = [
 // Danh sách kiểm tra vật tư chuẩn bị trước khi triển khai
 const PREP = [
   { item: "PC bàn đóng gói (có thể tận dụng cái sẵn có)", note: "Không cần máy chủ riêng, chỉ cài client" },
-  { item: "Camera (webcam USB hoặc camera IP)", note: "Tương thích từ webcam USB tầm 1~2 triệu won" },
+  { item: "Camera (webcam USB hoặc camera IP)", note: "Tương thích từ webcam USB tầm 900.000~1.800.000đ" },
   { item: "Giá đỡ camera hoặc ngàm gắn trần", note: "Cố định ở độ cao 80~120cm trên bàn đóng gói" },
   { item: "Máy quét mã vạch", note: "Khuyến nghị USB có dây (loại không dây cần quản lý pin)" },
   { item: "Đèn phụ trợ (tùy chọn)", note: "Kho thiếu sáng thì lắp bên cạnh camera" },
@@ -130,7 +130,7 @@ const FAQ = [
   },
   {
     q: "Nên mua camera loại nào?",
-    a: "Nhà bán hàng cá nhân・quy mô nhỏ thì webcam USB tầm 1~2 triệu won là đủ. Nếu có từ 3 bàn đóng gói trở lên thì khuyến nghị camera công nghiệp FHD hoặc camera IP PoE. Tiêu chí chọn camera theo quy mô cơ sở được tổng hợp chi tiết trong bài viết gợi ý camera video đóng gói.",
+    a: "Nhà bán hàng cá nhân・quy mô nhỏ thì webcam USB tầm 900.000~1.800.000đ là đủ. Nếu có từ 3 bàn đóng gói trở lên thì khuyến nghị camera công nghiệp FHD hoặc camera IP PoE. Tiêu chí chọn camera theo quy mô cơ sở được tổng hợp chi tiết trong bài viết gợi ý camera video đóng gói.",
   },
   {
     q: "Camera nên lắp ở độ cao・góc nào?",
@@ -150,11 +150,11 @@ const FAQ = [
   },
   {
     q: "Có nhiều bàn đóng gói thì có phải lắp hết không?",
-    a: "Video đóng gói có cấu trúc 1 camera + 30.000 won/tháng cho mỗi bàn đóng gói. Cũng có thể ưu tiên triển khai trước ở bàn đóng gói tập trung nhiều khiếu nại rồi mở rộng dần theo từng giai đoạn.",
+    a: "Video đóng gói có cấu trúc 1 camera + 599.000đ/tháng cho mỗi bàn đóng gói. Cũng có thể ưu tiên triển khai trước ở bàn đóng gói tập trung nhiều khiếu nại rồi mở rộng dần theo từng giai đoạn.",
   },
   {
     q: "Chi phí triển khai có thực sự đáng so với hiệu quả không?",
-    a: "Chi phí một tháng của video đóng gói (30.000 won) chỉ cần giảm được 1 đơn hoàn tiền không chính đáng là đã thu hồi được. Mô phỏng số tiền tiết kiệm thực tế theo mức 1.000 đơn xuất hàng/tháng có thể xem trong bài mô phỏng chi phí khiếu nại.",
+    a: "Chi phí một tháng của video đóng gói (599.000đ) chỉ cần giảm được 1 đơn hoàn tiền không chính đáng là đã thu hồi được. Mô phỏng số tiền tiết kiệm thực tế theo mức 1.000 đơn xuất hàng/tháng có thể xem trong bài mô phỏng chi phí khiếu nại.",
   },
 ];
 

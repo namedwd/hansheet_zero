@@ -49,14 +49,14 @@ const VENDORS: Vendor[] = [
     name: "Zeropacking",
     badge: "Hansheet 推薦",
     type: "包裝影片專用 SaaS",
-    price: "30,000 韓元",
+    price: "990 元",
     priceNote: "每包裝台 / 月（未含營業稅）",
     storage: "3 個月",
     quality: "HD",
     search: "物流單號／追蹤號碼即時查詢（平均 3 秒）",
     wms: "✅ 基本內含",
     api: "✅ REST + Webhook 基本內含",
-    camera: "另計（相容 USB 網路攝影機，5～10 萬韓元起）",
+    camera: "另計（相容 USB 網路攝影機，NT$1,200～2,300 起）",
     contract: "月繳（無合約綁約）, 年繳享 17% 折扣",
     trial: "15 天免費試用（免綁信用卡）",
     bestFor: "每月出貨 200～5,000 件的賣家，想減輕客訴應對負擔者",
@@ -65,7 +65,7 @@ const VENDORS: Vendor[] = [
     id: "vendor-a",
     name: "A公司（大型物流 SaaS）",
     type: "WMS・OMS 綜合套裝中的影片模組",
-    price: "50,000～80,000 韓元 + α",
+    price: "約 NT$1,200～1,900 + α",
     priceNote: "每包裝台 / 月，WMS 主授權另計",
     storage: "1～3 個月（依方案差異）",
     quality: "HD～FHD",
@@ -81,14 +81,14 @@ const VENDORS: Vendor[] = [
     id: "vendor-b",
     name: "B公司（自行開發型解決方案）",
     type: "地端部署 + 攝影機套裝",
-    price: "100,000～150,000 韓元",
-    priceNote: "每包裝台 / 月 + 初期安裝費 100 萬韓元起",
+    price: "約 NT$2,300～3,500",
+    priceNote: "每包裝台 / 月 + 初期安裝費約 NT$2.3 萬起",
     storage: "6 個月（依賴自家 NVR）",
     quality: "FHD",
     search: "DVR 時間軸查詢（物流單號索引部分支援）",
     wms: "△ 需另加購模組",
     api: "△ 有限",
-    camera: "必須採購專用 IP 攝影機（每台 30～50 萬韓元）",
+    camera: "必須採購專用 IP 攝影機（每台約 NT$7,000～1.2 萬）",
     contract: "12～24 個月合約, 安裝費不可退",
     trial: "需另行申請 Demo",
     bestFor: "無法使用外部雲端的資安敏感環境、大型物流中心",
@@ -97,7 +97,7 @@ const VENDORS: Vendor[] = [
     id: "vendor-c",
     name: "C公司（新創／Beta）",
     type: "初期階段的新服務",
-    price: "0 韓元～15,000 韓元",
+    price: "NT$0～約 350",
     priceNote: "每包裝台 / 月（Beta 期間）",
     storage: "1 個月",
     quality: "HD（部分 SD）",
@@ -210,8 +210,10 @@ export default function ComparePage() {
           </p>
           <p className="mt-3 text-xs text-zinc-500">
             本比較是以截至 2026 年 5 月的市場一般資料為基礎的客觀分析，
-            A公司・B公司・C公司為各類別代表的匿名標示。正確的目前價格請直接向各業者
-            確認。
+            A公司・B公司・C公司並非特定企業，而是<strong>代表解決方案類別的匿名標示</strong>。
+            A公司・B公司・C公司的價格為<strong>韓國市場一般價格帶換算為新台幣的參考值</strong>，
+            會隨匯率變動。Zeropacking 的 990 元為台灣的實際提供價格。
+            正確的目前價格請直接向各業者確認。
           </p>
         </header>
 

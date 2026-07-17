@@ -58,8 +58,8 @@ const TABLE = [
   },
   {
     item: "Chi phí ban đầu",
-    cctv: "Vài triệu won (DVR + HDD dung lượng lớn + thi công)",
-    pv: "0 won (30.000 won/tháng cho mỗi bàn đóng gói)",
+    cctv: "Hàng chục triệu đồng (DVR + HDD dung lượng lớn + thi công)",
+    pv: "0đ (mỗi bàn đóng gói 599.000đ/tháng)",
   },
   {
     item: "Giá trị làm bằng chứng pháp lý",
@@ -79,7 +79,7 @@ const FAQ = [
   },
   {
     q: "Chẳng phải video đóng gói đắt hơn CCTV sao?",
-    a: "Nếu so sánh chi phí ban đầu thì video đóng gói rẻ hơn nhiều. CCTV tốn vài triệu won cho DVR・HDD・chi phí thi công, trong khi video đóng gói chỉ 30.000 won/tháng cho mỗi bàn đóng gói và không có chi phí ban đầu riêng. Phần lớn người bán chỉ cần giảm được 1 khiếu nại là đã thu hồi được chi phí của cả tháng.",
+    a: "Nếu so sánh chi phí ban đầu thì video đóng gói rẻ hơn nhiều. CCTV tốn hàng chục triệu đồng cho DVR・HDD・chi phí thi công, trong khi video đóng gói chỉ 599.000đ/tháng cho mỗi bàn đóng gói và không có chi phí ban đầu riêng. Phần lớn người bán chỉ cần giảm được 1 khiếu nại là đã thu hồi được chi phí của cả tháng.",
   },
 ];
 

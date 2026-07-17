@@ -49,14 +49,14 @@ const VENDORS: Vendor[] = [
     name: "Zeropacking",
     badge: "Hansheet gợi ý",
     type: "SaaS chuyên dụng cho video đóng gói",
-    price: "30.000 won",
-    priceNote: "mỗi bàn đóng gói / tháng (chưa gồm VAT)",
+    price: "599.000đ",
+    priceNote: "mỗi bàn đóng gói / tháng (chưa bao gồm VAT)",
     storage: "3 tháng",
     quality: "HD",
     search: "Tra cứu tức thì bằng mã vận đơn (trung bình 3 giây)",
     wms: "✅ Bao gồm sẵn",
     api: "✅ REST + Webhook bao gồm sẵn",
-    camera: "Mua riêng (tương thích webcam USB từ 50.000~100.000 won)",
+    camera: "Mua riêng (tương thích webcam USB từ 900.000~1.800.000đ)",
     contract: "Theo tháng (không cam kết), giảm 17% khi thanh toán theo năm",
     trial: "Dùng thử miễn phí 15 ngày (không cần đăng ký thẻ)",
     bestFor: "Người bán có 200~5.000 đơn xuất/tháng, muốn giảm gánh nặng xử lý khiếu nại",
@@ -65,7 +65,7 @@ const VENDORS: Vendor[] = [
     id: "vendor-a",
     name: "Công ty A (SaaS logistics lớn)",
     type: "Mô-đun video trong gói tổng hợp WMS·OMS",
-    price: "50.000~80.000 won + α",
+    price: "khoảng 900.000~1.500.000đ + α",
     priceNote: "mỗi bàn đóng gói / tháng, giấy phép WMS chính tính riêng",
     storage: "1~3 tháng (tùy gói cước)",
     quality: "HD~FHD",
@@ -81,14 +81,14 @@ const VENDORS: Vendor[] = [
     id: "vendor-b",
     name: "Công ty B (giải pháp tự phát triển)",
     type: "On-premise + gói camera",
-    price: "100.000~150.000 won",
-    priceNote: "mỗi bàn đóng gói / tháng + phí lắp đặt ban đầu từ 1.000.000 won",
+    price: "khoảng 1.800.000~2.800.000đ",
+    priceNote: "mỗi bàn đóng gói / tháng + phí lắp đặt ban đầu từ khoảng 18 triệu đồng",
     storage: "6 tháng (phụ thuộc NVR riêng)",
     quality: "FHD",
     search: "Tra cứu theo dòng thời gian DVR (hỗ trợ một phần lập chỉ mục mã vận đơn)",
     wms: "△ Khi thêm mô-đun riêng",
     api: "△ Hạn chế",
-    camera: "Bắt buộc mua camera IP chuyên dụng (300.000~500.000 won mỗi cái)",
+    camera: "Bắt buộc mua camera IP chuyên dụng (khoảng 5.500.000~9.000.000đ mỗi cái)",
     contract: "Cam kết 12~24 tháng, không hoàn phí lắp đặt",
     trial: "Đăng ký demo riêng",
     bestFor: "Môi trường nhạy cảm về bảo mật không dùng được đám mây bên ngoài, trung tâm logistics lớn",
@@ -97,7 +97,7 @@ const VENDORS: Vendor[] = [
     id: "vendor-c",
     name: "Công ty C (startup / beta)",
     type: "Dịch vụ mới ở giai đoạn đầu",
-    price: "0 won~15.000 won",
+    price: "0đ~khoảng 280.000đ",
     priceNote: "mỗi bàn đóng gói / tháng (giai đoạn beta)",
     storage: "1 tháng",
     quality: "HD (một phần SD)",
@@ -210,10 +210,16 @@ export default function ComparePage() {
             quy mô doanh nghiệp của bạn.
           </p>
           <p className="mt-3 text-xs text-zinc-500">
-            So sánh này là phân tích khách quan dựa trên tài liệu thị trường chung
-            tính đến tháng 5/2026, và Công ty A·B·C là cách ghi ẩn danh đại diện
-            cho từng nhóm. Giá hiện tại chính xác vui lòng xác nhận trực tiếp với
-            từng nhà cung cấp.
+            So sánh này dựa trên tài liệu thị trường chung tính đến tháng 5/2026.
+            Công ty A·B·C không phải doanh nghiệp cụ thể mà là{" "}
+            <strong>ký hiệu ẩn danh đại diện cho từng nhóm giải pháp</strong>. Giá
+            của Công ty A·B·C là{" "}
+            <strong>
+              giá trị tham khảo quy đổi từ mặt bằng giá thị trường Hàn Quốc sang VND
+            </strong>{" "}
+            và thay đổi theo tỷ giá. Mức 599.000đ của Zeropacking là giá cung cấp
+            thực tế tại Việt Nam. Giá chính xác vui lòng xác nhận trực tiếp với từng
+            nhà cung cấp.
           </p>
         </header>
 

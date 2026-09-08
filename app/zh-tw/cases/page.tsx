@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "食品、服飾、美妝、電子產品、書籍 5 家賣家的包裝影片導入案例。以量化數據整理導入前後的客訴件數、退款成本與處理時間變化。",
   alternates: {
     canonical: localePath("zh-tw", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "包裝影片導入案例 - 5 家賣家的實際成效",
     description:
       "5 個品類賣家的包裝影片導入前後比較。客訴下降率、ROI 回收期間、營運變化。",
@@ -223,13 +224,13 @@ export default function CasesPage() {
                     <p className="mb-2 text-xs font-bold uppercase tracking-widest text-rose-600 dark:text-rose-400">
                       導入前
                     </p>
-                    <p className="italic">"{c.beforeQuote}"</p>
+                    <p className="italic">&quot;{c.beforeQuote}&quot;</p>
                   </blockquote>
                   <blockquote className="rounded-2xl bg-emerald-50 p-4 text-sm leading-6 text-emerald-900 dark:bg-emerald-950/30 dark:text-emerald-200">
                     <p className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
                       導入後
                     </p>
-                    <p className="italic">"{c.afterQuote}"</p>
+                    <p className="italic">&quot;{c.afterQuote}&quot;</p>
                   </blockquote>
                 </div>
 

@@ -46,7 +46,6 @@ export function buildArticle(args: {
     publisher: {
       "@type": "Organization",
       name: "제로패킹",
-      logo: { "@type": "ImageObject", url: `${args.siteUrl}/logo.png` },
     },
   };
 }

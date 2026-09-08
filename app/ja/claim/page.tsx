@@ -21,9 +21,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: localePath("ja", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "宅配クレーム解決ガイド",
     description:
       "梱包動画で宅配紛争を一本の動画で完結させる方法と対応スクリプト。",

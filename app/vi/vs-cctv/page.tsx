@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "So sánh nhanh sự khác biệt giữa video đóng gói và camera giám sát (CCTV) thông thường tại cửa hàng. Tìm hiểu khác biệt về tìm kiếm theo mã vận đơn, chính sách lưu trữ video, thời gian xử lý khiếu nại và chi phí.",
   alternates: {
     canonical: localePath("vi", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "Hướng dẫn so sánh video đóng gói vs CCTV",
     description:
       "CCTV có đủ để giải quyết khiếu nại giao hàng không? Tổng hợp khác biệt về thời gian tìm kiếm, cách lưu trữ và giá trị làm bằng chứng giữa video đóng gói và CCTV.",
@@ -178,14 +179,14 @@ export default function VsCCTVPage() {
           </h2>
           <div className="mt-5 space-y-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
             <p>
-              Hạn chế cốt lõi của CCTV là không có "chỉ mục theo từng đơn hàng". Khi
-              một khách hàng khiếu nại rằng "hộp nhận được trống rỗng", để xử lý bằng
+              Hạn chế cốt lõi của CCTV là không có &quot;chỉ mục theo từng đơn hàng&quot;. Khi
+              một khách hàng khiếu nại rằng &quot;hộp nhận được trống rỗng&quot;, để xử lý bằng
               CCTV bạn phải trải qua các bước sau.
             </p>
             <ol className="list-decimal space-y-2 pl-6">
               <li>Ước lượng ngày・giờ xuất hàng theo mã vận đơn.</li>
               <li>Tìm bản ghi CCTV của khung giờ đó.</li>
-              <li>Tự mắt tìm "chiếc hộp này" trong video của khung giờ đó.</li>
+              <li>Tự mắt tìm &quot;chiếc hộp này&quot; trong video của khung giờ đó.</li>
               <li>Cắt riêng đoạn đó rồi chuyển thành video.</li>
               <li>Gửi cho khách hàng.</li>
             </ol>

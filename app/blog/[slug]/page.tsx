@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "../../i18n";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { POSTS, type Section } from "../posts";
@@ -24,8 +25,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: path },
+    alternates: { canonical: path, languages: languageAlternates(path) },
     openGraph: {
+    images: ["/packing-video-hero.webp"],
       type: "article",
       title: post.title,
       description: post.description,

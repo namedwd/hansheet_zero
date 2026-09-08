@@ -20,9 +20,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: localePath("ja", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "梱包動画サービス比較 - 価格・機能を一覧で",
     description:
       "梱包動画4サービスタイプの比較表 + 事業規模別おすすめガイド。",

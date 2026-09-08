@@ -12,9 +12,10 @@ export const metadata: Metadata = {
     "Video đóng gói là đoạn video ghi lại quá trình đóng gói ngay khi xuất hàng. Zeropacking do Hansheet giới thiệu tự động ghi mọi video đóng gói, tìm kiếm tức thì theo mã vận đơn và lưu trên đám mây — giải quyết khiếu nại hư hỏng, giao sai, thiếu hàng chỉ với một video.",
   alternates: {
     canonical: localePath("vi", "/"),
-    languages: languageAlternates("/", ["ko", "en", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates("/"),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "Dịch vụ tự động ghi video đóng gói — giải quyết tranh chấp khiếu nại | Zeropacking",
     description:
       "Tự động ghi và lưu video đóng gói trên đám mây. Tìm kiếm tức thì theo mã vận đơn và đóng khiếu nại nhanh chóng.",
@@ -56,7 +57,7 @@ const jsonLd = {
       name: "Hansheet",
       alternateName: ["한시트", "ハンシート", "Zeropacking"],
       url: SITE_URL,
-      logo: `${SITE_URL}/logo.png`,
+
       description:
         "Trang hướng dẫn dành cho người bán giảm khiếu nại giao hàng bằng video đóng gói. Giới thiệu dịch vụ tự động ghi video đóng gói của đơn vị vận hành Zeropacking.",
       contactPoint: {

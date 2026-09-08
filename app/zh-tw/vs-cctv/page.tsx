@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "一次看懂包裝影片與一般賣場 CCTV（監視器）的差異。從物流單號檢索、影片保存政策、客訴處理時間到成本各方面，了解兩者究竟有何不同。",
   alternates: {
     canonical: localePath("zh-tw", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "包裝影片 vs CCTV 比較指南",
     description:
       "想解決宅配客訴，只靠 CCTV 就夠了嗎？本文整理了包裝影片與 CCTV 在檢索時間、保存方式與舉證能力上的差異。",

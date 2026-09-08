@@ -20,9 +20,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: localePath("ja", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "梱包動画の導入事例 - セラー5社の実際の効果",
     description:
       "5つのカテゴリのセラーによる梱包動画の導入前後比較。クレーム削減率、ROI回収期間、運用の変化。",
@@ -230,13 +231,13 @@ export default function CasesPage() {
                     <p className="mb-2 text-xs font-bold uppercase tracking-widest text-rose-600 dark:text-rose-400">
                       導入前
                     </p>
-                    <p className="italic">"{c.beforeQuote}"</p>
+                    <p className="italic">&quot;{c.beforeQuote}&quot;</p>
                   </blockquote>
                   <blockquote className="rounded-2xl bg-emerald-50 p-4 text-sm leading-6 text-emerald-900 dark:bg-emerald-950/30 dark:text-emerald-200">
                     <p className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
                       導入後
                     </p>
-                    <p className="italic">"{c.afterQuote}"</p>
+                    <p className="italic">&quot;{c.afterQuote}&quot;</p>
                   </blockquote>
                 </div>
 

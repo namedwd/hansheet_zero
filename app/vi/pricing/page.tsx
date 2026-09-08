@@ -13,9 +13,10 @@ export const metadata: Metadata = {
     "Video đóng gói Zeropacking dùng gói duy nhất — 599.000đ/tháng cho mỗi bàn đóng gói (chưa bao gồm VAT), bao gồm tất cả tính năng kể cả tích hợp WMS·API. Giảm 17% khi thanh toán theo năm, dùng thử miễn phí 15 ngày.",
   alternates: {
     canonical: localePath("vi", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "Chi phí video đóng gói - 599.000đ/tháng, bao gồm mọi tính năng",
     description:
       "Gói duy nhất bao gồm cả WMS·API·ghi hình HD·lưu trữ đám mây 3 tháng. Dùng thử miễn phí không cần đăng ký thẻ.",

@@ -24,9 +24,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: localePath("ja", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "梱包動画 導入ガイド2026 - カメラ設置から運用まで",
     description:
       "梱包動画が初めてなら、この記事1本で十分です。カメラの位置・角度、バーコード連携、スタッフ教育、業種別の導入ポイント。",

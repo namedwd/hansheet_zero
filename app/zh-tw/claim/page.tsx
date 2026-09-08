@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "商品缺件、寄錯、破損、空箱主張 — 提供宅配客訴 6 大類型的處理方法，以及用包裝影片即時化解爭議的標準客服話術。",
   alternates: {
     canonical: localePath("zh-tw", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "宅配客訴處理指南",
     description:
       "用包裝影片，以一支影片化解宅配爭議的方法與客服話術。",

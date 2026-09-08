@@ -13,9 +13,10 @@ export const metadata: Metadata = {
     "Zeropacking 包裝影片採單一方案 — 每個包裝台每月 990 元（未稅），即可使用包含 WMS、API 串接在內的所有功能。年繳享 17% 折扣，15 天免費試用。",
   alternates: {
     canonical: localePath("zh-tw", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "包裝影片費用 - 每月 990 元，全功能包含",
     description:
       "單一方案即可使用 WMS、API、HD 錄影、3 個月雲端保存等所有功能。無需登錄信用卡即可免費試用。",

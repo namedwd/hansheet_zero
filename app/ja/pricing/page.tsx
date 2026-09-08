@@ -19,9 +19,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: localePath("ja", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "梱包動画の料金 - 月額4,980円、全機能込み",
     description:
       "単一プランでWMS・API・HD録画・3か月クラウド保管まですべてご利用可能。カード登録なしで無料トライアルできます。",

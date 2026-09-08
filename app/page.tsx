@@ -2,28 +2,26 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, SERVICE_URL, inquiryUrl, serviceLandingUrl } from "./site";
-import {
-  StepIllustration,
-  ImagePlaceholder,
-} from "./components/Illustrations";
+import { StepIllustration } from "./components/Illustrations";
 import { ConversionCTA } from "./components/ConversionCTA";
 import { languageAlternates } from "./i18n";
 
 export const metadata: Metadata = {
   title: {
     absolute:
-      "포장영상 자동 촬영 서비스 - 택배 클레임 한 번에 해결 | 한시트",
+      "포장영상 자동 촬영·운송장 검색·도입 가이드 | 한시트",
   },
   description:
-    "포장영상이란 택배 출고 시점의 포장 과정을 촬영한 동영상입니다. 한시트가 추천하는 제로패킹은 포장영상을 자동 촬영하고 운송장 번호로 즉시 검색하여, 파손·오배송·분실 클레임을 영상 한 편으로 해결합니다. 월 30,000원, 15일 무료체험.",
+    "포장영상이란 택배 출고 시점의 포장 과정을 촬영한 동영상입니다. 한시트를 운영하는 제로패킹은 포장영상을 자동 촬영하고 운송장 번호로 즉시 검색하여, 출고 당시 상품과 포장 상태를 확인할 수 있도록 돕습니다. 월 30,000원, 15일 무료체험.",
   alternates: {
     canonical: "/",
-    languages: languageAlternates("/", ["ko", "en", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates("/"),
   },
   openGraph: {
-    title: "포장영상 자동 촬영 서비스 - 클레임 분쟁 해결 | 제로패킹",
+    images: ["/packing-video-hero.webp"],
+    title: "포장영상 자동 촬영·운송장 검색 가이드 | 한시트",
     description:
-      "택배 포장영상을 자동 촬영·클라우드 보관. 운송장으로 즉시 검색하여 클레임을 빠르게 종결합니다.",
+      "택배 포장영상을 자동 촬영·클라우드 보관하고 운송장으로 검색하여 출고 당시 상품과 포장 상태를 확인합니다.",
     url: "/",
     type: "website",
   },
@@ -36,7 +34,7 @@ const FAQ = [
   },
   {
     q: "포장영상을 왜 자동으로 촬영해야 하나요?",
-    a: "수동 촬영은 누락이 잦고, 영상 파일을 운송장과 매칭해 보관하는 작업도 부담입니다. 자동 포장영상 서비스는 바코드 스캔 한 번으로 촬영을 시작·종료하고, 운송장 번호로 자동 색인하여 평균 3초 안에 해당 영상을 찾아냅니다.",
+    a: "수동 촬영은 누락이 잦고, 영상 파일을 운송장과 매칭해 보관하는 작업도 부담입니다. 자동 포장영상 서비스는 출고 전 스캔으로 촬영을 시작하고 포장 후 다시 스캔해 종료하며, 운송장 번호와 연결해 해당 주문의 영상을 찾을 수 있습니다.",
   },
   {
     q: "포장영상은 몇 개월간 보관되나요?",
@@ -44,11 +42,11 @@ const FAQ = [
   },
   {
     q: "포장영상으로 어떤 클레임을 해결할 수 있나요?",
-    a: "상품 누락, 오배송, 파손, 사이즈·색상 불일치, 빈 박스 수령 주장 등 거의 모든 형태의 택배 분쟁에 대응할 수 있습니다. 포장영상 링크를 고객에게 공유하면 대부분의 클레임이 즉시 종결됩니다.",
+    a: "상품 누락, 오배송, 파손, 사이즈·색상 불일치, 빈 박스 수령 주장 등 거의 모든 형태의 택배 분쟁에 대응할 수 있습니다. 포장영상은 출고 사실을 확인하는 자료이며, 처리 결과는 주문 내역과 배송 상황 등 추가 자료에 따라 달라집니다.",
   },
   {
     q: "기존 WMS·OMS와 연동되나요?",
-    a: "예. 제로패킹 포장영상은 표준 API와 바코드 인터페이스를 제공하여 카페24·고도몰·자체 WMS 등 대부분의 시스템과 연동됩니다.",
+    a: "예. 제로패킹 포장영상은 WMS 연동과 API 제공을 안내하고 있습니다. 사용 중인 시스템과 필요한 연동 범위는 도입 전에 확인해 주세요.",
   },
   {
     q: "포장영상 도입 비용은 얼마인가요?",
@@ -65,7 +63,7 @@ const jsonLd = {
       name: "한시트",
       alternateName: ["Hansheet", "제로패킹"],
       url: SITE_URL,
-      logo: `${SITE_URL}/logo.png`,
+
       description:
         "포장영상으로 택배 클레임을 줄이는 셀러를 위한 가이드 사이트. 운영사 제로패킹의 포장영상 자동 촬영 SaaS를 안내합니다.",
       contactPoint: {
@@ -92,7 +90,7 @@ const jsonLd = {
       name: "포장영상 자동 촬영 서비스 - 택배 클레임 해결",
       isPartOf: { "@id": `${SITE_URL}#website` },
       about: { "@id": `${SITE_URL}#service` },
-      primaryImageOfPage: `${SITE_URL}/og-image.png`,
+      primaryImageOfPage: `${SITE_URL}/packing-video-hero.webp`,
       inLanguage: "ko-KR",
       description:
         "포장영상 자동 촬영으로 택배 파손·오배송·분실 클레임을 운송장 번호 한 번으로 해결하는 서비스 안내.",
@@ -156,11 +154,11 @@ export default function Home() {
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50 sm:text-5xl">
               포장영상 자동 촬영으로
               <br />
-              택배 클레임을 한 번에 해결하세요
+              출고 기록을 주문별로 확인하세요
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-700 dark:text-zinc-300">
               포장영상은 택배 출고 시점의 포장 과정을 그대로 담은 동영상입니다.
-              한시트가 추천하는 제로패킹은 모든 포장영상을 자동 촬영하고
+              한시트를 운영하는 제로패킹은 모든 포장영상을 자동 촬영하고
               클라우드에 안전하게 보관하여, 운송장 번호 한 번으로 해당 포장영상을
               즉시 찾아 보여 드립니다. 포장영상 촬영은 포장대 카메라 한 대로
               시작되며, 더 이상 파손·오배송·누락 분쟁에 시간을 빼앗기지 마세요.
@@ -177,7 +175,7 @@ export default function Home() {
                 className="h-auto w-full"
               />
               <figcaption className="border-t border-zinc-200 bg-white px-4 py-3 text-xs text-zinc-600 dark:border-zinc-800 dark:bg-black dark:text-zinc-400">
-                포장영상 한 편이면 '빈 박스·파손·오배송' 부당 클레임을 출고 영상으로 종결할 수 있습니다.
+                포장영상 활용을 설명한 웹툰입니다. 실제 고객 사례나 처리 결과를 나타내지 않습니다.
               </figcaption>
             </figure>
 
@@ -216,8 +214,8 @@ export default function Home() {
                 있습니다.
               </p>
               <p>
-                "상품을 받았는데 비어 있었다", "잘못된 상품이 왔다",
-                "파손되어 있었다"는 클레임은 셀러에게 가장 큰 비용 중
+                &quot;상품을 받았는데 비어 있었다&quot;, &quot;잘못된 상품이 왔다&quot;,
+                &quot;파손되어 있었다&quot;는 클레임은 셀러에게 가장 큰 비용 중
                 하나입니다. 포장영상은 이 모든 주장에 대해 출고 시점의
                 객관적인 증거를 제공합니다.
               </p>
@@ -231,38 +229,38 @@ export default function Home() {
             <ul className="mt-6 space-y-5">
               <li className="rounded-2xl border border-zinc-200 p-5 dark:border-zinc-800">
                 <h3 className="text-lg font-semibold text-black dark:text-zinc-50">
-                  분쟁 해결 시간 90% 단축
+                  주문별 영상으로 출고 사실 확인
                 </h3>
                 <p className="mt-2 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                  운송장 번호로 검색되는 포장영상 링크를 고객에게 보내는 것만으로
-                  대부분의 클레임이 즉시 종결됩니다.
+                  운송장 번호로 영상을 찾아 상품 종류·수량·포장 상태를 확인하고,
+                  고객에게 출고 당시 상황을 설명할 수 있습니다.
                 </p>
               </li>
               <li className="rounded-2xl border border-zinc-200 p-5 dark:border-zinc-800">
                 <h3 className="text-lg font-semibold text-black dark:text-zinc-50">
-                  사람이 깜빡해도 영상은 남는다
+                  출고 작업과 촬영을 연결
                 </h3>
                 <p className="mt-2 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                  바코드 스캔 한 번으로 포장영상이 자동 시작·종료되므로,
-                  바쁜 출고 시간에도 영상 누락이 발생하지 않습니다.
+                  출고 전 스캔으로 녹화를 시작하고 포장 후 다시 스캔해 종료합니다.
+                  작업자는 촬영 상태와 업로드 완료 여부를 확인합니다.
                 </p>
               </li>
               <li className="rounded-2xl border border-zinc-200 p-5 dark:border-zinc-800">
                 <h3 className="text-lg font-semibold text-black dark:text-zinc-50">
-                  CCTV로는 못 찾는 영상, 3초 만에 검색
+                  시간대 대신 운송장 번호로 검색
                 </h3>
                 <p className="mt-2 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                  CCTV는 시간대로만 검색되지만, 제로패킹 포장영상은 운송장
-                  번호로 색인되어 평균 3초 안에 해당 주문의 영상을 찾아 줍니다.
+                  제로패킹은 영상을 운송장 번호와 연결해 해당 주문을 찾도록 돕습니다.
+                  실제 검색 속도는 네트워크와 사용 환경에서 확인해 보세요.
                 </p>
               </li>
               <li className="rounded-2xl border border-zinc-200 p-5 dark:border-zinc-800">
                 <h3 className="text-lg font-semibold text-black dark:text-zinc-50">
-                  반품·환불 비용 감소
+                  환불·재발송 판단에 필요한 기록
                 </h3>
                 <p className="mt-2 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                  포장영상이 도입된 셀러는 평균적으로 부당 클레임으로 인한
-                  반품·환불 비용을 30% 이상 줄였다고 보고합니다.
+                  영상과 주문 내역을 대조해 누락·오배송 여부를 확인합니다.
+                  도입 효과는 응대 시간과 환불·재발송 비용을 기록해 비교하세요.
                 </p>
               </li>
             </ul>
@@ -287,12 +285,12 @@ export default function Home() {
                 {
                   n: 3 as const,
                   title: "운송장 번호로 클라우드 자동 색인",
-                  desc: "완료된 포장영상은 운송장 번호와 함께 클라우드에 저장되어 누구나 즉시 검색·공유할 수 있습니다.",
+                  desc: "포장 후 다시 스캔하면 녹화가 종료되고 운송장 번호와 함께 클라우드에 저장됩니다.",
                 },
                 {
                   n: 4 as const,
                   title: "클레임 발생 시 영상 링크 한 줄 전송",
-                  desc: "분쟁 발생 시 해당 운송장의 포장영상 링크를 카톡·문자로 보내는 것만으로 대부분의 클레임이 종결됩니다.",
+                  desc: "해당 주문의 영상을 확인하고 필요한 장면을 고객과 공유하여 출고 사실을 설명합니다.",
                 },
               ].map((s) => (
                 <li
@@ -317,17 +315,16 @@ export default function Home() {
               ))}
             </ol>
 
-            {/* TODO: 사용자가 실사 사진 추가 후 ImagePlaceholder를 next/image 로 교체 */}
-            <figure className="mt-10">
-              <ImagePlaceholder
-                label="포장영상 검색 화면 예시 (1200×750 권장)"
-                ratio="16/10"
-              />
-              <figcaption className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-                예시 화면 — 운송장 번호를 입력하면 해당 포장영상이 즉시
-                재생되는 모습을 표현한 것입니다.
-              </figcaption>
-            </figure>
+            <div className="mt-10 rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800">
+              <h3 className="text-lg font-semibold">무료체험에서 직접 확인할 순서</h3>
+              <ol className="mt-4 list-decimal space-y-3 pl-5 leading-7">
+                <li>테스트 주문의 바코드를 스캔하고 녹화 시작 여부를 확인합니다.</li>
+                <li>상품 라벨·수량·완충재가 가리지 않게 포장한 뒤 다시 스캔합니다.</li>
+                <li>업로드 완료 후 같은 주문번호로 검색해 처음부터 끝까지 재생합니다.</li>
+                <li>영상 누락, 라벨 식별 여부, 검색 시간과 공유 범위를 확인합니다.</li>
+              </ol>
+              <p className="mt-4 text-sm text-zinc-500">실제 촬영 환경으로 확인하세요. 조명·카메라 위치·네트워크에 따라 결과가 달라집니다.</p>
+            </div>
           </section>
 
           <section className="mb-16 rounded-3xl bg-zinc-50 p-8 dark:bg-zinc-950 sm:p-10">
@@ -340,6 +337,7 @@ export default function Home() {
               <br />
               3개월 클라우드 보관, 30GB 저장, HD 화질, 영상 링크 공유 기능 모두 포함.
             </p>
+            <p className="mt-4 text-sm text-zinc-500">출처: <a href={SERVICE_URL} className="underline">제로패킹 공식 안내</a> · 확인일 <time dateTime="2026-09-08">2026년 9월 8일</time></p>
             <div className="mt-6">
               <a
                 href={`${SERVICE_URL}/pricing`}
@@ -382,8 +380,8 @@ export default function Home() {
               {[
                 { href: "/guide", title: "포장영상 도입 가이드", desc: "카메라 설치부터 운영까지 8단계로 정리한 시작 가이드." },
                 { href: "/vs-cctv", title: "포장영상 vs CCTV", desc: "운송장 번호 검색이 왜 CCTV보다 빠른지 8개 항목 비교." },
-                { href: "/compare", title: "포장영상 업체 비교", desc: "주요 포장영상 솔루션을 기능·가격으로 한눈에 비교." },
-                { href: "/cases", title: "포장영상 도입 사례", desc: "업종별 셀러가 클레임을 줄인 실제 도입 사례." },
+                { href: "/compare", title: "포장영상 업체 비교", desc: "촬영 방식별 차이와 업체 견적에서 확인할 항목." },
+                { href: "/cases", title: "포장영상 도입 사례", desc: "업종별 촬영 항목과 도입 효과를 측정하는 방법." },
                 { href: "/claim", title: "택배 클레임 해결", desc: "유형별 클레임 응대 스크립트와 영상 증거 활용법." },
                 { href: "/pricing", title: "포장영상 요금", desc: "포장대 1개 월 30,000원부터, 연간 결제 17% 할인." },
               ].map((l) => (

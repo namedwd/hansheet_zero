@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "包裝影片服務 4 種類型（Zeropacking + A公司・B公司・C公司）的價格、保存期間、WMS 整合、API、合約條件以一張表完整比較。附事業規模別推薦矩陣。",
   alternates: {
     canonical: localePath("zh-tw", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "包裝影片業者比較 - 價格・功能一覽",
     description:
       "包裝影片 4 種服務類型比較表 + 事業規模別推薦指南。",

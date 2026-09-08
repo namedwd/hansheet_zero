@@ -23,9 +23,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: localePath("zh-tw", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "包裝影片導入指南 2026 — 從攝影機安裝到日常運作",
     description:
       "第一次接觸包裝影片，看這一篇就夠了。攝影機位置・角度、條碼串接、員工教育、各產業導入要點。",

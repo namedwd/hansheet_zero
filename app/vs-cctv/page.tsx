@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "../i18n";
 import Link from "next/link";
 import { SITE_URL } from "../site";
 import { ComparisonChart, ImagePlaceholder } from "../components/Illustrations";
@@ -11,8 +12,9 @@ export const metadata: Metadata = {
   title: "포장영상 vs CCTV - 무엇이 어떻게 다른가요?",
   description:
     "포장영상과 일반 매장 CCTV의 차이를 한눈에 비교합니다. 운송장 번호 검색, 영상 보관 정책, 클레임 대응 시간, 비용 측면에서 어떤 차이가 있는지 알아보세요.",
-  alternates: { canonical: PATH },
+  alternates: { canonical: PATH, languages: languageAlternates(PATH) },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "포장영상 vs CCTV 비교 가이드",
     description:
       "택배 클레임 해결을 위해 CCTV로 충분할까요? 포장영상과 CCTV의 검색 시간, 보관 방식, 증거 능력 차이를 정리했습니다.",
@@ -172,14 +174,14 @@ export default function VsCCTVPage() {
           </h2>
           <div className="mt-5 space-y-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
             <p>
-              CCTV의 핵심 한계는 "주문 단위 색인"이 없다는 점입니다. 어떤 고객이
-              "받은 박스가 비어 있었다"고 클레임을 걸면, CCTV로 대응하려면 다음
+              CCTV의 핵심 한계는 &quot;주문 단위 색인&quot;이 없다는 점입니다. 어떤 고객이
+              &quot;받은 박스가 비어 있었다&quot;고 클레임을 걸면, CCTV로 대응하려면 다음
               과정을 거쳐야 합니다.
             </p>
             <ol className="list-decimal space-y-2 pl-6">
               <li>운송장 번호로 출고 일자·시각을 추정한다.</li>
               <li>해당 시간대의 CCTV 녹화본을 찾는다.</li>
-              <li>그 시간대의 영상에서 "이 박스"를 직접 눈으로 찾는다.</li>
+              <li>그 시간대의 영상에서 &quot;이 박스&quot;를 직접 눈으로 찾는다.</li>
               <li>해당 구간만 잘라 영상으로 변환한다.</li>
               <li>고객에게 전송한다.</li>
             </ol>

@@ -12,9 +12,10 @@ export const metadata: Metadata = {
     "包裝影片是商品出貨當下的包裝過程錄影。Hansheet 推薦的 Zeropacking 會自動錄製每一支包裝影片，並依物流單號即時搜尋、雲端保存，讓破損、寄錯、缺件等客訴用一支影片就能解決。",
   alternates: {
     canonical: localePath("zh-tw", "/"),
-    languages: languageAlternates("/", ["ko", "en", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates("/"),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "包裝影片自動錄影服務 — 一次解決客訴爭議 | Zeropacking",
     description:
       "宅配包裝影片自動錄影、雲端保存。依物流單號即時搜尋，快速結案客訴。",
@@ -56,7 +57,7 @@ const jsonLd = {
       name: "Hansheet",
       alternateName: ["한시트", "ハンシート", "Zeropacking"],
       url: SITE_URL,
-      logo: `${SITE_URL}/logo.png`,
+
       description:
         "為以包裝影片減少宅配客訴的賣家而設的指南網站。介紹營運方 Zeropacking 的包裝影片自動錄影服務。",
       contactPoint: {

@@ -21,9 +21,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: localePath("ja", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "梱包動画 vs CCTV 比較ガイド",
     description:
       "宅配クレームの解決にCCTV（防犯カメラ）だけで十分でしょうか？梱包動画とCCTVの検索時間、保管方式、証拠能力の違いをまとめました。",

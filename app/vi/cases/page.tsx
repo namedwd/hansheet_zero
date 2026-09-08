@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "Case study triển khai video đóng gói của 5 nhà bán hàng ngành thực phẩm, thời trang, mỹ phẩm, thiết bị điện tử và sách. Tổng hợp bằng dữ liệu định lượng về thay đổi số lượng khiếu nại, chi phí hoàn tiền và thời gian xử lý trước và sau khi triển khai.",
   alternates: {
     canonical: localePath("vi", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "Case study triển khai video đóng gói - Hiệu quả thực tế của 5 nhà bán hàng",
     description:
       "So sánh trước và sau khi triển khai video đóng gói của nhà bán hàng thuộc 5 ngành hàng. Tỷ lệ giảm khiếu nại, thời gian hoàn vốn ROI và thay đổi trong vận hành.",
@@ -225,13 +226,13 @@ export default function CasesPage() {
                     <p className="mb-2 text-xs font-bold uppercase tracking-widest text-rose-600 dark:text-rose-400">
                       Trước khi triển khai
                     </p>
-                    <p className="italic">"{c.beforeQuote}"</p>
+                    <p className="italic">&quot;{c.beforeQuote}&quot;</p>
                   </blockquote>
                   <blockquote className="rounded-2xl bg-emerald-50 p-4 text-sm leading-6 text-emerald-900 dark:bg-emerald-950/30 dark:text-emerald-200">
                     <p className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
                       Sau khi triển khai
                     </p>
-                    <p className="italic">"{c.afterQuote}"</p>
+                    <p className="italic">&quot;{c.afterQuote}&quot;</p>
                   </blockquote>
                 </div>
 

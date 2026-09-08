@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "Cách tích hợp video đóng gói với hệ thống WMS·OMS·thương mại điện tử hiện có. API REST chuẩn và giao diện mã vạch hỗ trợ Shopify·Haravan·Sapo·hệ thống tự phát triển.",
   alternates: {
     canonical: localePath("vi", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "API video đóng gói · Hướng dẫn tích hợp WMS",
     description:
       "Tích hợp video đóng gói vào WMS·OMS·thương mại điện tử hiện có bằng API REST chuẩn. Tự động khớp mã vận đơn và gửi liên kết video tự động.",

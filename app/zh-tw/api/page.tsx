@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "將包裝影片與既有 WMS·OMS·電商系統串接的方法。透過標準 REST API 與條碼介面，全面支援 Shopify·Cyberbiz·91APP 等電商系統與自建開發系統。",
   alternates: {
     canonical: localePath("zh-tw", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "包裝影片 API · WMS 串接指南",
     description:
       "以標準 REST API 將包裝影片整合至既有 WMS·OMS·電商系統。物流單號自動配對與影片連結自動發送。",

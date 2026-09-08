@@ -23,9 +23,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: localePath("ja", "/"),
-    languages: languageAlternates("/", ["ko", "en", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates("/"),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "誤出荷・クレーム対策 — 出荷時の梱包動画を自動記録 | ゼロパッキング",
     description:
       "宅配の梱包動画を自動撮影・クラウド保管。送り状番号ですぐに検索し、誤出荷やクレームを素早く解決します。",
@@ -67,7 +68,7 @@ const jsonLd = {
       name: "ハンシート",
       alternateName: ["Hansheet", "한시트", "Zeropacking"],
       url: SITE_URL,
-      logo: `${SITE_URL}/logo.png`,
+
       description:
         "梱包動画で宅配クレームを減らす事業者向けのガイドサイト。運営元ゼロパッキングの梱包動画 自動撮影サービスを紹介します。",
       contactPoint: {

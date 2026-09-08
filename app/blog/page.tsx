@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "../i18n";
 import Link from "next/link";
 import { SITE_URL } from "../site";
 import { POSTS } from "./posts";
@@ -10,8 +11,9 @@ export const metadata: Metadata = {
   title: "포장영상 블로그 - 택배 클레임·분쟁 해결 인사이트",
   description:
     "포장영상으로 택배 분쟁을 해결하는 셀러를 위한 인사이트. 쿠팡·스마트스토어 클레임 대응, 택배 파손 보상, 빈박스 분쟁 등 실전 노하우를 정리합니다.",
-  alternates: { canonical: PATH },
+  alternates: { canonical: PATH, languages: languageAlternates(PATH) },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "포장영상 블로그",
     description: "택배 클레임·분쟁 해결을 위한 셀러 인사이트.",
     url: PATH,

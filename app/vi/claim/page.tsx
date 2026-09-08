@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "Thiếu hàng, giao sai, hư hỏng, hộp rỗng — phương pháp xử lý theo 6 dạng khiếu nại giao hàng, kèm kịch bản phản hồi chuẩn giúp dùng video đóng gói để đóng tranh chấp ngay lập tức.",
   alternates: {
     canonical: localePath("vi", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "Hướng dẫn giải quyết khiếu nại giao hàng",
     description:
       "Cách dùng video đóng gói để đóng tranh chấp giao hàng chỉ với một video, kèm kịch bản phản hồi.",
@@ -147,8 +148,8 @@ export default function ClaimPage() {
             bằng video đóng gói
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            "Trong hộp không có sản phẩm", "Hộp bị móp méo khi đến nơi", "Tôi nhận
-            được sản phẩm khác" — bất kỳ người bán nào cũng từng gặp những khiếu
+            &quot;Trong hộp không có sản phẩm&quot;, &quot;Hộp bị móp méo khi đến nơi&quot;, &quot;Tôi nhận
+            được sản phẩm khác&quot; — bất kỳ người bán nào cũng từng gặp những khiếu
             nại như vậy. Bài viết này cung cấp phương pháp xử lý theo 6 dạng khiếu
             nại giao hàng, kèm kịch bản phản hồi chuẩn giúp dùng video đóng gói để
             đóng tranh chấp ngay lập tức.
@@ -212,10 +213,10 @@ export default function ClaimPage() {
 
         <section className="mb-14 rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
           <blockquote className="text-lg italic leading-8 text-zinc-800 dark:text-zinc-200">
-            "Trước đây mỗi yêu cầu hoàn tiền vì hộp rỗng tôi phải gọi điện cả 30
+            &quot;Trước đây mỗi yêu cầu hoàn tiền vì hộp rỗng tôi phải gọi điện cả 30
             phút, nhưng từ khi áp dụng video đóng gói, chỉ cần gửi một dòng liên
             kết video qua tin nhắn là xong. Với hàng COD, các yêu cầu hoàn tiền vô
-            lý cũng giảm hẳn."
+            lý cũng giảm hẳn.&quot;
           </blockquote>
           <p className="mt-4 text-sm text-zinc-500">— Anh K., người bán ngành thực phẩm</p>
         </section>

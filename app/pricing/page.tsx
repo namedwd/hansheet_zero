@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "../i18n";
 import Link from "next/link";
 import { SITE_URL, SERVICE_URL } from "../site";
 import { JsonLd, buildBreadcrumb } from "../components/JsonLd";
@@ -10,8 +11,9 @@ export const metadata: Metadata = {
   title: "포장영상 요금 - 포장대 1개당 월 30,000원, 모든 기능 포함",
   description:
     "제로패킹 포장영상은 단일 요금제 — 포장대 1개당 월 30,000원(부가세 별도)으로 WMS·API 연동을 포함한 모든 기능을 사용할 수 있습니다. 연간 결제 시 17% 할인, 15일 무료체험.",
-  alternates: { canonical: PATH },
+  alternates: { canonical: PATH, languages: languageAlternates(PATH) },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "포장영상 요금 - 월 30,000원, 모든 기능 포함",
     description:
       "단일 요금제로 WMS·API·HD 녹화·3개월 클라우드 보관까지 모두 사용. 카드 등록 없이 무료체험 가능.",

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | 한시트 포장영상",
   },
   description:
-    "한시트는 포장영상으로 택배 클레임을 줄이는 셀러를 위한 가이드 사이트입니다. 포장영상 자동 촬영, 클라우드 보관, 운송장 번호 즉시 검색으로 분쟁을 종결하는 방법을 정리했습니다.",
+    "한시트는 제로패킹이 운영하는 포장영상 가이드입니다. 자동 촬영, 클라우드 보관, 운송장 검색부터 촬영 방식 비교와 업종별 활용 방법까지 안내합니다.",
   keywords: [
     "포장영상",
     "한시트",
@@ -56,22 +56,19 @@ export const metadata: Metadata = {
     siteName: "한시트",
     title: "한시트 - 포장영상 자동 촬영 가이드",
     description:
-      "택배 포장영상을 자동 촬영·보관하여 운송장 번호로 즉시 검색합니다. 클레임 분쟁을 영상 한 편으로 종결하세요.",
+      "택배 포장영상 자동 촬영·보관·운송장 검색과 출고 기록 활용 방법을 확인하세요.",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/packing-video-hero.webp",
+        width: 1672,
+        height: 941,
         alt: "한시트 - 포장영상 자동 촬영 가이드 사이트",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "한시트 - 포장영상 자동 촬영 가이드",
-    description:
-      "택배 포장영상을 자동 촬영·보관하여 운송장 번호로 즉시 검색합니다.",
-    images: ["/og-image.png"],
+    images: ["/packing-video-hero.webp"],
   },
   robots: {
     index: true,

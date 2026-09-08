@@ -12,9 +12,11 @@ export const metadata: Metadata = {
     "A packing video records the moment each parcel is packed and shipped. Zeropacking, recommended by Hansheet, auto-records every packing video and lets you find any order instantly by tracking number — settling damage, wrong-item and lost-package claims with a single clip. From ₩30,000/month, 15-day free trial.",
   alternates: {
     canonical: localePath("en", "/"),
-    languages: languageAlternates("/", ["ko", "en", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates("/"),
   },
   openGraph: {
+    locale: "en_US",
+    images: ["/packing-video-hero.webp"],
     title: "Automatic packing video service — settle claim disputes | Zeropacking",
     description:
       "Auto-record and cloud-store every parcel packing video. Find any order instantly by tracking number and close claims fast.",
@@ -59,7 +61,7 @@ const jsonLd = {
       name: "Hansheet",
       alternateName: ["한시트", "Zeropacking"],
       url: SITE_URL,
-      logo: `${SITE_URL}/logo.png`,
+
       description:
         "A guide for online sellers reducing parcel claims with packing video. Introduces operator Zeropacking's automatic packing-video SaaS.",
       contactPoint: {

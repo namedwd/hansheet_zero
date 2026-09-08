@@ -7,6 +7,16 @@ export type Locale = (typeof LOCALES)[number];
 // 기본(접두어 없는) 언어. 운영 중인 한국어 사이트가 그대로 루트에 유지됩니다.
 export const DEFAULT_LOCALE: Locale = "ko";
 
+// 실제 번역 경로를 메타데이터와 사이트맵에서 함께 사용합니다.
+export const TRANSLATED_PATHS = ["/", "/compare", "/vs-cctv", "/guide", "/cases", "/claim", "/api", "/pricing"] as const;
+
+export function availableLocales(path: string): Locale[] {
+  if (path === "/") return [...LOCALES];
+  return TRANSLATED_PATHS.some((translated) => translated === path)
+    ? ["ko", "ja", "zh-tw", "vi"]
+    : ["ko"];
+}
+
 // hreflang 표준 태그 매핑. 검색엔진에 "이 URL은 무슨 언어인지"를 알립니다.
 export const HREFLANG: Record<Locale, string> = {
   ko: "ko-KR",
@@ -51,11 +61,11 @@ export function localeFromPathname(pathname: string): Locale {
 
 // Metadata.alternates.languages 에 넣을 hreflang 맵을 만듭니다.
 // available = 해당 페이지가 실제로 번역되어 존재하는 로케일 목록.
-//   - 한국어만 있는 페이지: languageAlternates("/guide") → ko-KR + x-default
-//   - 한+영 모두 있는 페이지: languageAlternates("/", ["ko", "en"])
+//   - 한국어 블로그: languageAlternates("/blog") → ko-KR + x-default
+//   - 홈: languageAlternates("/") → 5개 언어 + x-default
 export function languageAlternates(
   path: string,
-  available: Locale[] = ["ko"]
+  available: Locale[] = availableLocales(path)
 ): Record<string, string> {
   const languages: Record<string, string> = {};
   for (const l of available) {

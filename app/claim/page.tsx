@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "../i18n";
 import Link from "next/link";
 import { SITE_URL } from "../site";
 import { ImagePlaceholder } from "../components/Illustrations";
@@ -11,8 +12,9 @@ export const metadata: Metadata = {
   title: "택배 클레임 해결 - 포장영상 한 편으로 종결하는 법",
   description:
     "상품 누락, 오배송, 파손, 빈 박스 주장 — 택배 클레임 6가지 유형별 해결 방법과, 포장영상으로 분쟁을 즉시 종결하는 표준 응대 스크립트를 제공합니다.",
-  alternates: { canonical: PATH },
+  alternates: { canonical: PATH, languages: languageAlternates(PATH) },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "택배 클레임 해결 가이드",
     description:
       "포장영상으로 택배 분쟁을 한 편의 영상으로 종결하는 방법과 응대 스크립트.",
@@ -142,8 +144,8 @@ export default function ClaimPage() {
             포장영상으로 종결하세요
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            "상품이 안 들어 있었다", "박스가 찌그러져 왔다", "다른 상품이
-            왔다" — 셀러라면 누구나 겪는 클레임입니다. 이 글은 택배 클레임 6가지
+            &quot;상품이 안 들어 있었다&quot;, &quot;박스가 찌그러져 왔다&quot;, &quot;다른 상품이
+            왔다&quot; — 셀러라면 누구나 겪는 클레임입니다. 이 글은 택배 클레임 6가지
             유형별 해결 방법과, 포장영상으로 분쟁을 즉시 종결하는 표준 응대
             스크립트를 제공합니다.
           </p>
@@ -206,9 +208,9 @@ export default function ClaimPage() {
 
         <section className="mb-14 rounded-3xl border border-zinc-200 p-8 dark:border-zinc-800">
           <blockquote className="text-lg italic leading-8 text-zinc-800 dark:text-zinc-200">
-            "예전엔 빈 박스 환불 요청 한 건에 30분씩 통화했는데, 포장영상
+            &quot;예전엔 빈 박스 환불 요청 한 건에 30분씩 통화했는데, 포장영상
             도입 후 카톡으로 영상 링크 한 줄만 보내면 끝납니다. 부당 환불도
-            확실히 줄었어요."
+            확실히 줄었어요.&quot;
           </blockquote>
           <p className="mt-4 text-sm text-zinc-500">— 식품 셀러 김OO 대표</p>
         </section>

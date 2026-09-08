@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "../i18n";
 import Link from "next/link";
 import { SITE_URL } from "../site";
 import { ImagePlaceholder } from "../components/Illustrations";
@@ -11,8 +12,9 @@ export const metadata: Metadata = {
   title: "포장영상 API · WMS 연동 - 카페24, 고도몰, 자체 시스템 호환",
   description:
     "포장영상을 기존 WMS·OMS·이커머스 시스템과 연동하는 방법. 표준 REST API와 바코드 인터페이스로 카페24·고도몰·메이크샵·자체 개발 시스템 모두 지원합니다.",
-  alternates: { canonical: PATH },
+  alternates: { canonical: PATH, languages: languageAlternates(PATH) },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "포장영상 API · WMS 연동 가이드",
     description:
       "표준 REST API로 포장영상을 기존 WMS·OMS·이커머스에 통합. 운송장 자동 매칭과 영상 링크 자동 발송.",

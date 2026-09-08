@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "../i18n";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL } from "../site";
@@ -20,8 +21,9 @@ export const metadata: Metadata = {
     "포장대 카메라 설치",
     "택배 포장영상 도입 방법",
   ],
-  alternates: { canonical: PATH },
+  alternates: { canonical: PATH, languages: languageAlternates(PATH) },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "포장영상 도입 가이드 2026 - 카메라 설치부터 운영까지",
     description:
       "포장영상 처음이라면 이 글 한 편으로 충분합니다. 카메라 위치·각도, 바코드 연동, 직원 교육, 업종별 도입 포인트.",

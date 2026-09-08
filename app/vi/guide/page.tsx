@@ -23,9 +23,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: localePath("vi", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "Hướng dẫn triển khai video đóng gói 2026 - Từ lắp camera đến vận hành",
     description:
       "Lần đầu dùng video đóng gói? Một bài viết này là đủ. Vị trí・góc camera, kết nối mã vạch, đào tạo nhân viên và điểm lưu ý theo ngành hàng.",

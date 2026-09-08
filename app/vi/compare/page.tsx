@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "So sánh giá, thời gian lưu trữ, tích hợp WMS, API và điều khoản cam kết của 4 loại dịch vụ video đóng gói (Zeropacking + Công ty A·B·C) trong một bảng. Kèm ma trận gợi ý theo quy mô doanh nghiệp.",
   alternates: {
     canonical: localePath("vi", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja", "zh-tw", "vi"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "So sánh các nhà cung cấp video đóng gói - Giá, tính năng trong một bảng",
     description:
       "Bảng so sánh 4 loại dịch vụ video đóng gói + hướng dẫn gợi ý theo quy mô doanh nghiệp.",

@@ -14,9 +14,10 @@ export const metadata: Metadata = {
     "梱包動画を既存のWMS・OMS・ECシステムと連携する方法。標準REST APIとバーコードインターフェースで、Shopify・BASE・futureshop・自社開発システムまですべて対応します。",
   alternates: {
     canonical: localePath("ja", PATH),
-    languages: languageAlternates(PATH, ["ko", "ja"]),
+    languages: languageAlternates(PATH),
   },
   openGraph: {
+    images: ["/packing-video-hero.webp"],
     title: "梱包動画API・WMS連携ガイド",
     description:
       "標準REST APIで梱包動画を既存のWMS・OMS・ECに統合。送り状番号の自動マッチングと動画リンクの自動送信。",

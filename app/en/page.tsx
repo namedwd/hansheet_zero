@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL, SERVICE_URL } from "../site";
+import { SITE_URL, SERVICE_URL, serviceHomeUrl, serviceLandingUrl } from "../site";
 import { StepIllustration, ImagePlaceholder } from "../components/Illustrations";
 import { ConversionCTA } from "../components/ConversionCTA";
 import { languageAlternates, localePath } from "../i18n";
@@ -145,13 +145,13 @@ export default function HomeEn() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href={`${SERVICE_URL}/checkout`}
+                href={serviceLandingUrl("en", "hero-trial")}
                 className="flex h-12 items-center justify-center rounded-full bg-black px-7 text-base font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
               >
                 Start free for 15 days
               </a>
               <a
-                href={`${SERVICE_URL}/packing-video`}
+                href={`${serviceHomeUrl("en")}/packing-video`}
                 className="flex h-12 items-center justify-center rounded-full border border-zinc-200 px-7 text-base font-medium text-black transition-colors hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900"
               >
                 See how it works
@@ -266,7 +266,7 @@ export default function HomeEn() {
                     </h3>
                   </div>
                   <div className="h-32 rounded-lg bg-zinc-50 p-3 dark:bg-zinc-950">
-                    <StepIllustration step={s.n} />
+                    <StepIllustration step={s.n} locale="en" />
                   </div>
                   <p className="text-sm leading-6 text-zinc-700 dark:text-zinc-300">
                     {s.desc}

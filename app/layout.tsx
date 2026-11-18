@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Noto_Sans_KR } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { SITE_URL } from "./site";
 import { Nav, Footer } from "./components/Nav";
@@ -113,6 +114,8 @@ export default function RootLayout({
         </header>
         <div className="flex-1">{children}</div>
         <Footer />
+        {/* Vercel Web Analytics — 방문 수 집계(쿠키 없음). */}
+        <Analytics />
       </body>
     </html>
   );

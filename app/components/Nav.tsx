@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SERVICE_URL, inquiryUrl, serviceLandingUrl } from "../site";
+import { SERVICE_URL, inquiryUrl, serviceHomeUrl, serviceLandingUrl } from "../site";
 import {
   LOCALES,
   LOCALE_LABEL,
@@ -31,6 +31,8 @@ const DICT: Record<
       product: { href: string; label: string; external?: boolean }[];
       inquiryLink: string;
       serviceLink: string;
+      // 푸터 맨 아래 사업자 정보. 외국어 페이지에 한글이 남지 않도록 언어별로 둡니다.
+      business: { name: string; registration: string[]; contact: string };
       rightsNote: (year: number) => React.ReactNode;
     };
   }
@@ -71,6 +73,11 @@ const DICT: Record<
       ],
       inquiryLink: "도입 문의하기",
       serviceLink: "제로패킹 서비스",
+      business: {
+        name: "한시트 (운영: 제로패킹)",
+        registration: ["대표자: 이완동 · 사업자등록번호: 564-44-01128", "통신판매업신고: 2026-서울강북-0102"],
+        contact: "이메일: contact@zeropacking.com · 운영시간: 평일 09:00~18:00 (점심시간 제외)",
+      },
       rightsNote: (year) => (
         <>
           © {year} 한시트 · 택배 포장영상 자동 촬영 가이드 사이트. 실제 서비스
@@ -98,15 +105,20 @@ const DICT: Record<
       companyTitle: "Hansheet",
       topics: [{ href: "/", label: "What is a packing video?" }],
       product: [
-        { href: `${SERVICE_URL}/checkout`, label: "15-day free trial", external: true },
+        { href: serviceHomeUrl("en"), label: "15-day free trial", external: true },
       ],
       inquiryLink: "Contact sales",
       serviceLink: "Zeropacking service",
+      business: {
+        name: "Hansheet (operated by Zeropacking)",
+        registration: ["Business registration no. (Republic of Korea): 564-44-01128"],
+        contact: "Email: contact@zeropacking.com · Hours: weekdays 09:00–18:00 Korea time (UTC+9), except lunch break",
+      },
       rightsNote: (year) => (
         <>
           © {year} Hansheet · Guide to automatic packing-video recording for
           parcel shipping. The actual service is provided by{" "}
-          <a href={SERVICE_URL} className="underline hover:text-black dark:hover:text-white">
+          <a href={serviceHomeUrl("en")} className="underline hover:text-black dark:hover:text-white">
             Zeropacking (zeropacking.com)
           </a>
           .
@@ -145,14 +157,19 @@ const DICT: Record<
       product: [
         { href: "/api", label: "API・WMS連携" },
         { href: "/pricing", label: "料金プラン" },
-        { href: "https://www.zeropacking.com/ja", label: "無料で試す", external: true },
+        { href: serviceHomeUrl("ja"), label: "無料で試す", external: true },
       ],
       inquiryLink: "お問い合わせ",
       serviceLink: "ゼロパッキング",
+      business: {
+        name: "ハンシート（運営：ゼロパッキング）",
+        registration: ["事業者登録番号（韓国）: 564-44-01128"],
+        contact: "メール: contact@zeropacking.com · 営業時間: 平日 9:00〜18:00（日本時間、昼休みを除く）",
+      },
       rightsNote: (year) => (
         <>
           © {year} ハンシート · 宅配の梱包動画 自動撮影ガイド。実際のサービスは{" "}
-          <a href={SERVICE_URL} className="underline hover:text-black dark:hover:text-white">
+          <a href={serviceHomeUrl("ja")} className="underline hover:text-black dark:hover:text-white">
             ゼロパッキング (zeropacking.com)
           </a>
           {" "}でご利用いただけます。
@@ -191,14 +208,19 @@ const DICT: Record<
       product: [
         { href: "/api", label: "API・WMS 串接" },
         { href: "/pricing", label: "費用方案" },
-        { href: "https://www.zeropacking.com/zh-tw", label: "免費試用", external: true },
+        { href: serviceHomeUrl("zh-tw"), label: "免費試用", external: true },
       ],
       inquiryLink: "聯絡我們",
       serviceLink: "Zeropacking 服務",
+      business: {
+        name: "Hansheet（營運：Zeropacking）",
+        registration: ["營業登記號碼（韓國）：564-44-01128"],
+        contact: "電子郵件：contact@zeropacking.com · 服務時間：週一至週五 09:00–18:00（韓國時間 UTC+9，午休除外）",
+      },
       rightsNote: (year) => (
         <>
           © {year} Hansheet · 宅配包裝影片自動錄影指南。實際服務由{" "}
-          <a href={SERVICE_URL} className="underline hover:text-black dark:hover:text-white">
+          <a href={serviceHomeUrl("zh-tw")} className="underline hover:text-black dark:hover:text-white">
             Zeropacking (zeropacking.com)
           </a>
           {" "}提供。
@@ -237,15 +259,20 @@ const DICT: Record<
       product: [
         { href: "/api", label: "Tích hợp API・WMS" },
         { href: "/pricing", label: "Bảng giá" },
-        { href: "https://www.zeropacking.com/vi", label: "Dùng thử miễn phí", external: true },
+        { href: serviceHomeUrl("vi"), label: "Dùng thử miễn phí", external: true },
       ],
       inquiryLink: "Liên hệ",
       serviceLink: "Dịch vụ Zeropacking",
+      business: {
+        name: "Hansheet (vận hành bởi Zeropacking)",
+        registration: ["Mã số đăng ký kinh doanh (Hàn Quốc): 564-44-01128"],
+        contact: "Email: contact@zeropacking.com · Giờ làm việc: Thứ Hai–Thứ Sáu 09:00–18:00 theo giờ Hàn Quốc (UTC+9), trừ giờ nghỉ trưa",
+      },
       rightsNote: (year) => (
         <>
           © {year} Hansheet · Hướng dẫn tự động ghi video đóng gói cho giao hàng.
           Dịch vụ thực tế được cung cấp bởi{" "}
-          <a href={SERVICE_URL} className="underline hover:text-black dark:hover:text-white">
+          <a href={serviceHomeUrl("vi")} className="underline hover:text-black dark:hover:text-white">
             Zeropacking (zeropacking.com)
           </a>
           .
@@ -473,7 +500,7 @@ export function Footer() {
                   {f.inquiryLink}
                 </a>
               </li>
-              <li><a href={SERVICE_URL} className="hover:text-black dark:hover:text-white">{f.serviceLink}</a></li>
+              <li><a href={serviceHomeUrl(locale)} className="hover:text-black dark:hover:text-white">{f.serviceLink}</a></li>
               <li>
                 <a href="mailto:contact@zeropacking.com" className="hover:text-black dark:hover:text-white">
                   contact@zeropacking.com
@@ -485,10 +512,11 @@ export function Footer() {
 
         <div className="mt-8 border-t border-zinc-200 pt-6 text-xs text-zinc-500 dark:border-zinc-800">
           <address className="not-italic">
-            <p className="font-semibold text-zinc-700 dark:text-zinc-300">한시트 (운영: 제로패킹)</p>
-            <p className="mt-1">대표자: 이완동 · 사업자등록번호: 564-44-01128</p>
-            <p>통신판매업신고: 2026-서울강북-0102</p>
-            <p className="mt-1">이메일: contact@zeropacking.com · 운영시간: 평일 09:00~18:00 (점심시간 제외)</p>
+            <p className="font-semibold text-zinc-700 dark:text-zinc-300">{f.business.name}</p>
+            {f.business.registration.map((line, index) => (
+              <p key={line} className={index === 0 ? "mt-1" : undefined}>{line}</p>
+            ))}
+            <p className="mt-1">{f.business.contact}</p>
           </address>
           <p className="mt-4">{f.rightsNote(new Date().getFullYear())}</p>
         </div>

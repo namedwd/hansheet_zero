@@ -258,7 +258,7 @@ export default function HomeZhTw() {
                     </h3>
                   </div>
                   <div className="h-32 rounded-lg bg-zinc-50 p-3 dark:bg-zinc-950">
-                    <StepIllustration step={s.n} />
+                    <StepIllustration step={s.n} locale="zh-tw" />
                   </div>
                   <p className="text-sm leading-6 text-zinc-700 dark:text-zinc-300">
                     {s.desc}

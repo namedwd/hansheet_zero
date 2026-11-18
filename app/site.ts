@@ -11,9 +11,24 @@ export const SERVICE_URL = "https://zeropacking.com";
 // 도입 문의 링크 — 이 사이트를 본 업체가 도입 문의를 남기는 곳.
 export const INQUIRY_URL = "https://www.zeropacking.com/#inquiry";
 
+// 로케일별 제로패킹 첫 화면. 외국어 페이지에서 나가는 링크는 반드시 같은 언어 화면으로 보냅니다.
+// (한국어 홈으로 보내면 일본어·영어 방문자가 한글 화면을 만납니다.)
+const LOCALE_HOME: Partial<Record<Locale, string>> = {
+  en: "https://www.zeropacking.com/en",
+  ja: "https://www.zeropacking.com/ja",
+  "zh-tw": "https://www.zeropacking.com/zh-tw",
+  vi: "https://www.zeropacking.com/vi",
+};
+
+// "제로패킹" 이름에 거는 링크(푸터 등). 한국어는 기존 홈 그대로.
+export function serviceHomeUrl(locale: Locale): string {
+  return LOCALE_HOME[locale] ?? SERVICE_URL;
+}
+
 // 로케일별 문의/서비스 진입점. 해외 유입은 각 언어 창구로 보내야
-// "그래서 어디에 문의?"가 끊기지 않습니다. 한국어/영어는 기존 한국 창구를 공유.
+// "그래서 어디에 문의?"가 끊기지 않습니다.
 const LOCALE_INQUIRY: Partial<Record<Locale, string>> = {
+  en: "https://www.zeropacking.com/en#inquiry",
   ja: "https://www.zeropacking.com/ja#inquiry",
   "zh-tw": "https://www.zeropacking.com/zh-tw#inquiry",
   vi: "https://www.zeropacking.com/vi#inquiry",
@@ -39,12 +54,6 @@ export function inquiryUrl(locale: Locale, content = "inquiry"): string {
 }
 
 // 무료체험/서비스 랜딩. 해외 로케일은 해당 언어 랜딩으로.
-const LOCALE_LANDING: Partial<Record<Locale, string>> = {
-  ja: "https://www.zeropacking.com/ja",
-  "zh-tw": "https://www.zeropacking.com/zh-tw",
-  vi: "https://www.zeropacking.com/vi",
-};
-
 export function serviceLandingUrl(locale: Locale, content = "trial"): string {
-  return withUtm(LOCALE_LANDING[locale] ?? `${SERVICE_URL}/checkout`, locale, content);
+  return withUtm(LOCALE_HOME[locale] ?? `${SERVICE_URL}/checkout`, locale, content);
 }

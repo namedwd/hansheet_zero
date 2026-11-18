@@ -135,7 +135,7 @@ export default function VsCCTVPage() {
 
         <section className="mb-14">
           <figure className="overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
-            <ComparisonChart className="h-auto w-full" />
+            <ComparisonChart locale="ko" className="h-auto w-full" />
             <figcaption className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
               제로패킹 자체 측정 평균값. 실제 환경에 따라 달라질 수 있음.
             </figcaption>

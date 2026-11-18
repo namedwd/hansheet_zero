@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "./site";
-import { POSTS } from "./blog/posts";
+import { POSTS } from "./(ko)/blog/posts";
 import { availableLocales, languageAlternates, localePath, TRANSLATED_PATHS } from "./i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {

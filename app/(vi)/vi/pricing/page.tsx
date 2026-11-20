@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL, STORAGE_GB, serviceLandingUrl } from "../../../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB, serviceLandingUrl, storageNote } from "../../../site";
 import { JsonLd, buildBreadcrumb } from "../../../components/JsonLd";
 import { ConversionCTA } from "../../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../../i18n";
@@ -165,6 +165,9 @@ export default function PricingPage() {
                 </li>
               ))}
             </ul>
+            <p className="mt-4 text-xs leading-5 text-zinc-500 dark:text-zinc-400" data-storage-note>
+              {storageNote("vi")}
+            </p>
 
             <a
               href={serviceLandingUrl("vi", "pricing-trial")}

@@ -12,6 +12,21 @@ export const SERVICE_URL = "https://zeropacking.com";
 // (zeroweb lib/constants.js STORAGE.PER_STATION_GB, 2026-11-20에 30 → 50).
 export const STORAGE_GB = 50;
 
+// 그 용량이 영상 몇 건인지 한 줄로. 기본 화질(HD 720p)은 1분에 약 18.75MB이고, 100건 단위로 내려서 적습니다.
+// 계산과 문구는 제로패킹과 같습니다(zeroweb lib/constants.js videosPerStationMonth, components/StorageNote.js).
+const STORAGE_VIDEOS = Math.floor((STORAGE_GB * 1000) / 18.75 / 100) * 100;
+const STORAGE_NOTE: Record<Locale, (count: string) => string> = {
+  ko: (count) => `${STORAGE_GB}GB는 HD 화질 1분 영상 약 ${count}건 분량입니다. (포장대 1대, 한 달 기준)`,
+  en: (count) => `${STORAGE_GB} GB holds about ${count} one-minute HD videos, per station per month.`,
+  ja: (count) => `${STORAGE_GB}GBは、HD画質の1分動画で約${count}本分です（梱包台1台・1か月あたり）。`,
+  "zh-tw": (count) => `${STORAGE_GB}GB 約可存放 ${count} 部 1 分鐘的 HD 影片（每台、每月）。`,
+  vi: (count) => `${STORAGE_GB}GB chứa được khoảng ${count} video HD dài 1 phút, cho mỗi trạm mỗi tháng.`,
+};
+const NUMBER_LOCALE: Record<Locale, string> = { ko: "ko-KR", en: "en-US", ja: "ja-JP", "zh-tw": "zh-TW", vi: "vi-VN" };
+export function storageNote(locale: Locale): string {
+  return STORAGE_NOTE[locale](STORAGE_VIDEOS.toLocaleString(NUMBER_LOCALE[locale]));
+}
+
 // 도입 문의 링크 — 이 사이트를 본 업체가 도입 문의를 남기는 곳.
 export const INQUIRY_URL = "https://www.zeropacking.com/#inquiry";
 

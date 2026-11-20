@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL, SERVICE_URL, STORAGE_GB, serviceHomeUrl, serviceLandingUrl } from "../../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB, serviceHomeUrl, serviceLandingUrl, storageNote } from "../../site";
 import { StepIllustration } from "../../components/Illustrations";
 import { NeedsFigure } from "../../components/NeedsFigure";
 import { SiteImage, figureCaption } from "../../components/Figures";
@@ -300,6 +300,8 @@ export default function HomeEn() {
               <br />
               Includes 3-month cloud retention, {STORAGE_GB}GB storage, HD quality and
               video-link sharing. Shopify stores are connected on request.
+              <br />
+              {storageNote("en")}
             </p>
             <div className="mt-6">
               <a

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { languageAlternates } from "../../i18n";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL, STORAGE_GB } from "../../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB, storageNote } from "../../site";
 import { JsonLd, buildBreadcrumb } from "../../components/JsonLd";
 import { ConversionCTA } from "../../components/ConversionCTA";
 import { publicMoney, publicPrice } from "../../publicPricing";
@@ -151,6 +151,9 @@ export default function PricingPage() {
                 </li>
               ))}
             </ul>
+            <p className="mt-4 text-xs leading-5 text-zinc-500 dark:text-zinc-400" data-storage-note>
+              {storageNote("ko")}
+            </p>
 
             <a
               href={`${SERVICE_URL}/checkout`}

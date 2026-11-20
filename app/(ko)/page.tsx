@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { SITE_URL, SERVICE_URL, STORAGE_GB, inquiryUrl, serviceLandingUrl } from "../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB, inquiryUrl, serviceLandingUrl, storageNote } from "../site";
 import { StepIllustration } from "../components/Illustrations";
 import { NeedsFigure } from "../components/NeedsFigure";
 import { ConversionCTA } from "../components/ConversionCTA";
@@ -343,6 +343,8 @@ export default function Home() {
               연간 결제는 10개월 요금으로 12개월 이용 · 15일 무료체험.
               <br />
               3개월 클라우드 보관, {STORAGE_GB}GB 저장, HD 화질, 영상 링크 공유 기능 모두 포함. 쇼피파이 매장은 요청하시면 연결해 드립니다.
+              <br />
+              {storageNote("ko")}
             </p>
             <p className="mt-4 text-sm text-zinc-500">출처: <a href={SERVICE_URL} className="underline">제로패킹 공식 안내</a> · 확인일 <time dateTime="2026-11-20">2026년 11월 20일</time></p>
             <div className="mt-6">

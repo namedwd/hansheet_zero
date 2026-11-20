@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB } from "../../site";
 import { languageAlternates } from "../../i18n";
 import { JsonLd, buildBreadcrumb } from "../../components/JsonLd";
 import { ConversionCTA } from "../../components/ConversionCTA";
@@ -58,9 +58,9 @@ export default function ComparePage() {
       </section>
       <section className="mb-12 rounded-2xl bg-zinc-50 p-6 dark:bg-zinc-950">
         <h2 className="text-2xl font-semibold">제로패킹 공개 요금과 기능</h2>
-        <p className="mt-4 leading-7">포장대 1개당 월 {ZP_PRICE}(부가세 별도), 3개월 보관, 30GB 저장, HD 화질, 링크 공유, WMS 연동 및 API 제공이 공식 사이트에 안내되어 있습니다. 연간 결제 할인과 15일 무료체험도 안내되어 있습니다.</p>
+        <p className="mt-4 leading-7">포장대 1개당 월 {ZP_PRICE}(부가세 별도), 3개월 보관, {STORAGE_GB}GB 저장, HD 화질, 링크 공유, WMS 연동 및 API 제공이 공식 사이트에 안내되어 있습니다. 연간 결제 할인과 15일 무료체험도 안내되어 있습니다.</p>
         <p className="mt-4 leading-7">실제 연동 가능한 시스템, 카메라 호환성, 해외 결제·지원 조건은 도입 환경을 전달하고 확인하세요.</p>
-        <p className="mt-4 text-sm text-zinc-500">출처: <a href={SERVICE_URL} className="underline">제로패킹 공식 서비스 안내</a> · 확인일 <time dateTime="2026-09-08">2026년 9월 8일</time></p>
+        <p className="mt-4 text-sm text-zinc-500">출처: <a href={SERVICE_URL} className="underline">제로패킹 공식 서비스 안내</a> · 확인일 <time dateTime="2026-11-20">2026년 11월 20일</time></p>
       </section>
       <ConversionCTA title="우리 출고 환경에 맞는 구성을 확인하세요" />
       <nav aria-label="관련 가이드" className="mt-10 flex flex-wrap gap-6 underline"><Link href="/vs-cctv">포장영상과 CCTV 차이</Link><Link href="/cases">업종별 활용 사례</Link><Link href="/guide">설치·운영 가이드</Link></nav>

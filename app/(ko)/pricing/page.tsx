@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { languageAlternates } from "../../i18n";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL } from "../../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB } from "../../site";
 import { JsonLd, buildBreadcrumb } from "../../components/JsonLd";
 import { ConversionCTA } from "../../components/ConversionCTA";
 import { publicMoney, publicPrice } from "../../publicPricing";
@@ -35,9 +35,10 @@ const FEATURES = [
   "운송장 번호 자동 색인",
   "HD 화질 녹화",
   "3개월 클라우드 보관",
-  "30GB 저장 용량",
+  `${STORAGE_GB}GB 저장 용량`,
   "고객 영상 링크 공유",
   "WMS·OMS API 연동",
+  "쇼피파이 연동(요청 시 연결)",
   "Webhook 이벤트",
   "이메일 지원",
 ];

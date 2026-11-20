@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL, inquiryUrl, serviceLandingUrl } from "../../site";
 import { StepIllustration } from "../../components/Illustrations";
+import { NeedsFigure } from "../../components/NeedsFigure";
 import { SiteImage, figureCaption } from "../../components/Figures";
 import { ConversionCTA } from "../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../i18n";
@@ -215,6 +216,8 @@ export default function HomeJa() {
             </ul>
           </section>
 
+          <NeedsFigure locale="ja" />
+
           <section className="mb-16">
             <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50 sm:text-3xl">
               梱包動画の自動撮影、こう動きます
@@ -254,7 +257,7 @@ export default function HomeJa() {
                       {s.title}
                     </h3>
                   </div>
-                  <div className="h-32 rounded-lg bg-zinc-50 p-3 dark:bg-zinc-950">
+                  <div className="overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
                     <StepIllustration step={s.n} locale="ja" />
                   </div>
                   <p className="text-sm leading-6 text-zinc-700 dark:text-zinc-300">

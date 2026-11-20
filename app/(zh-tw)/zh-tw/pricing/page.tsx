@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL, serviceLandingUrl } from "../../../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB, serviceLandingUrl } from "../../../site";
 import { JsonLd, buildBreadcrumb } from "../../../components/JsonLd";
 import { ConversionCTA } from "../../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../../i18n";
@@ -40,9 +40,10 @@ const FEATURES = [
   "託運單號自動索引",
   "HD 畫質錄影",
   "3 個月雲端保存",
-  "30GB 儲存容量",
+  `${STORAGE_GB}GB 儲存容量`,
   "客戶影片連結分享",
   "WMS、OMS API 串接",
+  "Shopify 串接（提出需求後連接）",
   "Webhook 事件",
   "電子郵件支援",
 ];

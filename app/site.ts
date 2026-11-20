@@ -8,6 +8,10 @@ export const SITE_URL =
 // 본 서비스(제로패킹) URL — CTA 링크가 향하는 곳. 마이크로사이트와 분리됩니다.
 export const SERVICE_URL = "https://zeropacking.com";
 
+// 포장대 1대에 매달 포함되는 촬영 용량(GB). 제로패킹과 같은 값이어야 합니다
+// (zeroweb lib/constants.js STORAGE.PER_STATION_GB, 2026-11-20에 30 → 50).
+export const STORAGE_GB = 50;
+
 // 도입 문의 링크 — 이 사이트를 본 업체가 도입 문의를 남기는 곳.
 export const INQUIRY_URL = "https://www.zeropacking.com/#inquiry";
 

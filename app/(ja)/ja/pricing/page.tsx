@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL, serviceLandingUrl } from "../../../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB, serviceLandingUrl } from "../../../site";
 import { JsonLd, buildBreadcrumb } from "../../../components/JsonLd";
 import { ConversionCTA } from "../../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../../i18n";
@@ -45,9 +45,10 @@ const FEATURES = [
   "送り状番号の自動インデックス",
   "HD画質録画",
   "3か月クラウド保管",
-  "30GBストレージ容量",
+  `${STORAGE_GB}GBストレージ容量`,
   "顧客向け動画リンク共有",
   "WMS・OMS API連携",
+  "Shopify連携（ご依頼で接続）",
   "Webhookイベント",
   "メールサポート",
 ];

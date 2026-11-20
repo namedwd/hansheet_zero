@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { SITE_URL, SERVICE_URL, inquiryUrl, serviceLandingUrl } from "../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB, inquiryUrl, serviceLandingUrl } from "../site";
 import { StepIllustration } from "../components/Illustrations";
+import { NeedsFigure } from "../components/NeedsFigure";
 import { ConversionCTA } from "../components/ConversionCTA";
 import { languageAlternates } from "../i18n";
 import { publicMoney } from "../publicPricing";
@@ -270,6 +271,8 @@ export default function Home() {
             </ul>
           </section>
 
+          <NeedsFigure locale="ko" />
+
           <section className="mb-16">
             <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50 sm:text-3xl">
               포장영상 자동 촬영, 이렇게 작동합니다
@@ -309,7 +312,7 @@ export default function Home() {
                       {s.title}
                     </h3>
                   </div>
-                  <div className="h-32 rounded-lg bg-zinc-50 p-3 dark:bg-zinc-950">
+                  <div className="overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
                     <StepIllustration step={s.n} locale="ko" />
                   </div>
                   <p className="text-sm leading-6 text-zinc-700 dark:text-zinc-300">
@@ -339,9 +342,9 @@ export default function Home() {
               포장대 1개 기준 월 <strong>{ZP_PRICE}</strong> (부가세 별도) ·
               연간 결제는 10개월 요금으로 12개월 이용 · 15일 무료체험.
               <br />
-              3개월 클라우드 보관, 30GB 저장, HD 화질, 영상 링크 공유 기능 모두 포함.
+              3개월 클라우드 보관, {STORAGE_GB}GB 저장, HD 화질, 영상 링크 공유 기능 모두 포함. 쇼피파이 매장은 요청하시면 연결해 드립니다.
             </p>
-            <p className="mt-4 text-sm text-zinc-500">출처: <a href={SERVICE_URL} className="underline">제로패킹 공식 안내</a> · 확인일 <time dateTime="2026-09-08">2026년 9월 8일</time></p>
+            <p className="mt-4 text-sm text-zinc-500">출처: <a href={SERVICE_URL} className="underline">제로패킹 공식 안내</a> · 확인일 <time dateTime="2026-11-20">2026년 11월 20일</time></p>
             <div className="mt-6">
               <a
                 href={`${SERVICE_URL}/pricing`}

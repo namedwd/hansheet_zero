@@ -1,11 +1,12 @@
-// SEO 친화적 SVG 일러스트레이션
+// 본문 그림: 4단계 사진형 그림과 검색 시간 비교 차트(SVG)
 // - 모든 SVG는 role="img" + <title>/<desc>로 접근성 + 검색엔진에 의미 전달
 // - 벡터라 화질 손실 없음, 파일 크기 작음
 // - 그림 안 글자와 설명은 페이지 언어를 따릅니다(locale). 외국어 페이지에 한글이 남지 않게 합니다.
 
+import Image from "next/image";
 import type { Locale } from "../i18n";
 
-// 4단계 그림의 설명(화면에는 안 보이고 화면 낭독기·검색엔진이 읽음).
+// 4단계 그림의 설명(alt: 화면에는 안 보이고 화면 낭독기·검색엔진이 읽음).
 const STEP_LABELS: Record<Locale, [string, string, string, string]> = {
   ko: ["바코드 스캔으로 포장영상 시작", "포장 과정 HD 녹화", "운송장 번호로 클라우드 색인", "영상 링크 공유로 클레임 종결"],
   en: ["Scan the barcode to start the packing video", "Packing recorded in HD", "Indexed in the cloud by tracking number", "Share the video link to close the claim"],
@@ -86,6 +87,9 @@ const COMPARISON_TEXT: Record<Locale, {
   },
 };
 
+// 4단계 그림: 글자 없는 그림 네 장(public/images/step-*.webp, 제로패킹 첫 화면과 같은 파일).
+const STEP_PICTURES = ["/images/step-1-scan.webp", "/images/step-2-pack.webp", "/images/step-3-upload.webp", "/images/step-4-find.webp"] as const;
+
 export function StepIllustration({
   step,
   locale,
@@ -95,64 +99,15 @@ export function StepIllustration({
   locale: Locale;
   className?: string;
 }) {
-  const common = "w-full h-full";
-  const label = STEP_LABELS[locale][step - 1];
-  if (step === 1)
-    return (
-      <svg viewBox="0 0 120 120" className={`${className} ${common}`} role="img" aria-label={label}>
-        <rect x="20" y="40" width="80" height="40" rx="4" fill="#fafafa" stroke="#e4e4e7" />
-        {[24, 30, 38, 44, 52, 60, 66, 74, 82, 90, 96].map((x, i) => (
-          <rect key={i} x={x} y="46" width={i % 2 === 0 ? 2 : 3} height="28" fill="#18181b" />
-        ))}
-        <line x1="20" y1="60" x2="100" y2="60" stroke="#ef4444" strokeWidth="2">
-          <animate attributeName="y1" values="46;74;46" dur="2s" repeatCount="indefinite" />
-          <animate attributeName="y2" values="46;74;46" dur="2s" repeatCount="indefinite" />
-        </line>
-      </svg>
-    );
-  if (step === 2)
-    return (
-      <svg viewBox="0 0 120 120" className={`${className} ${common}`} role="img" aria-label={label}>
-        <rect x="30" y="30" width="60" height="50" rx="6" fill="#18181b" />
-        <circle cx="60" cy="55" r="14" fill="#3f3f46" />
-        <circle cx="60" cy="55" r="9" fill="#09090b" />
-        <circle cx="56" cy="51" r="3" fill="#a1a1aa" />
-        <circle cx="80" cy="40" r="3" fill="#ef4444">
-          <animate attributeName="opacity" values="1;0.2;1" dur="1.4s" repeatCount="indefinite" />
-        </circle>
-        <text x="60" y="100" textAnchor="middle" fontSize="10" fill="#52525b" fontWeight="600">
-          REC ● HD
-        </text>
-      </svg>
-    );
-  if (step === 3)
-    return (
-      <svg viewBox="0 0 120 120" className={`${className} ${common}`} role="img" aria-label={label}>
-        <path
-          d="M 35 60 Q 20 60 20 45 Q 20 30 35 30 Q 38 18 55 20 Q 75 18 82 32 Q 95 32 95 47 Q 95 62 80 62 L 35 62 Z"
-          fill="#3b82f6"
-        />
-        <line x1="60" y1="68" x2="60" y2="88" stroke="#3b82f6" strokeWidth="2" strokeDasharray="2 2" />
-        <polygon points="55,86 60,94 65,86" fill="#3b82f6" />
-        <rect x="30" y="94" width="60" height="14" rx="3" fill="#fafafa" stroke="#e4e4e7" />
-        <text x="60" y="104" textAnchor="middle" fontSize="8" fill="#27272a" fontFamily="monospace">
-          1234-5678
-        </text>
-      </svg>
-    );
   return (
-    <svg viewBox="0 0 120 120" className={`${className} ${common}`} role="img" aria-label={label}>
-      <rect x="25" y="35" width="50" height="60" rx="6" fill="#18181b" />
-      <rect x="29" y="42" width="42" height="40" rx="2" fill="#fafafa" />
-      <polygon points="44,55 44,73 60,64" fill="#18181b" />
-      <g transform="translate(70, 30)">
-        <circle cx="10" cy="10" r="6" fill="#22c55e" />
-        <circle cx="30" cy="22" r="6" fill="#22c55e" />
-        <circle cx="10" cy="34" r="6" fill="#22c55e" />
-        <line x1="10" y1="10" x2="30" y2="22" stroke="#22c55e" strokeWidth="2" />
-        <line x1="30" y1="22" x2="10" y2="34" stroke="#22c55e" strokeWidth="2" />
-      </g>
-    </svg>
+    <Image
+      src={STEP_PICTURES[step - 1]}
+      alt={STEP_LABELS[locale][step - 1]}
+      width={900}
+      height={600}
+      sizes="(max-width: 640px) 100vw, 360px"
+      className={`${className} h-auto w-full`}
+    />
   );
 }
 

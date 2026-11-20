@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, SERVICE_URL, serviceLandingUrl } from "../../../site";
+import { SITE_URL, SERVICE_URL, STORAGE_GB, serviceLandingUrl } from "../../../site";
 import { JsonLd, buildBreadcrumb } from "../../../components/JsonLd";
 import { ConversionCTA } from "../../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../../i18n";
@@ -40,9 +40,10 @@ const FEATURES = [
   "Tự động lập chỉ mục theo mã vận đơn",
   "Ghi hình chất lượng HD",
   "Lưu trữ đám mây 3 tháng",
-  "Dung lượng lưu trữ 30GB",
+  `Dung lượng lưu trữ ${STORAGE_GB}GB`,
   "Chia sẻ link video cho khách hàng",
   "Tích hợp API WMS·OMS",
+  "Tích hợp Shopify (kết nối theo yêu cầu)",
   "Sự kiện Webhook",
   "Hỗ trợ qua email",
 ];

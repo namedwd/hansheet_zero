@@ -196,6 +196,15 @@ export default function ClaimPage() {
         </section>
 
         <section className="mb-14">
+          <figure>
+            <SiteImage name="claim" locale="ja" />
+            <figcaption className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+              {figureCaption("claim", "ja")}
+            </figcaption>
+          </figure>
+        </section>
+
+        <section className="mb-14">
           <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50 sm:text-3xl">
             標準対応スクリプト(コピーしてご利用ください)
           </h2>

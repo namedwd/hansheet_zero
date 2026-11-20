@@ -5,6 +5,7 @@ import { JsonLd, buildBreadcrumb, buildArticle } from "../../../components/JsonL
 import { ConversionCTA } from "../../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../../i18n";
 import { publicMoney } from "../../../publicPricing";
+import { SiteImage, figureCaption } from "../../../components/Figures";
 
 // 제로패킹과 같은 가격표(app/publicPricing.js)의 금액.
 const ZP_PRICE = publicMoney("JPY");
@@ -121,6 +122,16 @@ export default function ApiPage() {
         </header>
 
         <section className="mb-14">
+          <figure>
+            <SiteImage name="link" locale="ja" />
+            <figcaption className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+              {figureCaption("link", "ja")}
+            </figcaption>
+          </figure>
+        </section>
+
+
+        <section className="mb-14">
           <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50 sm:text-3xl">
             主要エンドポイント
           </h2>
@@ -140,7 +151,7 @@ export default function ApiPage() {
                   >
                     {e.method}
                   </span>
-                  <code className="font-mono text-sm text-black dark:text-white">{e.path}</code>
+                  <code className="break-all font-mono text-sm text-black dark:text-white">{e.path}</code>
                 </div>
                 <p className="mt-2 text-sm leading-6 text-zinc-700 dark:text-zinc-300">{e.desc}</p>
               </li>

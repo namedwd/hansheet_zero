@@ -5,6 +5,7 @@ import { languageAlternates } from "../../i18n";
 import { JsonLd, buildBreadcrumb } from "../../components/JsonLd";
 import { ConversionCTA } from "../../components/ConversionCTA";
 import { publicMoney } from "../../publicPricing";
+import { SiteImage, figureCaption } from "../../components/Figures";
 
 // 제로패킹과 같은 가격표(app/publicPricing.js)의 금액.
 const ZP_PRICE = publicMoney("KRW");
@@ -42,6 +43,16 @@ export default function ComparePage() {
         <p className="mt-6 text-lg leading-8">{description}</p>
         <p className="mt-4 text-sm leading-6 text-zinc-500">한시트는 제로패킹이 운영하는 가이드입니다. 아래 표는 도입 방식의 차이를 설명하며, 특정 업체의 순위나 실측 성능 비교가 아닙니다.</p>
       </header>
+
+      <section className="mb-12">
+        <figure>
+          <SiteImage name="compare" locale="ko" />
+          <figcaption className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+            {figureCaption("compare", "ko")}
+          </figcaption>
+        </figure>
+      </section>
+
       <section className="mb-12">
         <h2 className="text-2xl font-semibold">네 가지 도입 방식 비교</h2>
         <div className="mt-6 overflow-x-auto rounded-2xl border border-zinc-200 dark:border-zinc-800">

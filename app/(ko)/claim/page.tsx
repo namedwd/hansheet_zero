@@ -188,6 +188,15 @@ export default function ClaimPage() {
         </section>
 
         <section className="mb-14">
+          <figure>
+            <SiteImage name="claim" locale="ko" />
+            <figcaption className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+              {figureCaption("claim", "ko")}
+            </figcaption>
+          </figure>
+        </section>
+
+        <section className="mb-14">
           <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50 sm:text-3xl">
             표준 응대 스크립트 (복사해서 사용하세요)
           </h2>

@@ -5,6 +5,7 @@ import { JsonLd, buildBreadcrumb, buildArticle } from "../../../components/JsonL
 import { ConversionCTA } from "../../../components/ConversionCTA";
 import { languageAlternates, localePath } from "../../../i18n";
 import { publicMoney } from "../../../publicPricing";
+import { SiteImage, figureCaption } from "../../../components/Figures";
 
 // 제로패킹과 같은 가격표(app/publicPricing.js)의 금액. 대만도 달러로 결제합니다.
 const ZP_PRICE = publicMoney("USD");
@@ -219,6 +220,16 @@ export default function ComparePage() {
             正確的目前價格請直接向各業者確認。
           </p>
         </header>
+
+        <section className="mb-14">
+          <figure>
+            <SiteImage name="compare" locale="zh-tw" />
+            <figcaption className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+              {figureCaption("compare", "zh-tw")}
+            </figcaption>
+          </figure>
+        </section>
+
 
         <section className="mb-14">
           <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50 sm:text-3xl">
